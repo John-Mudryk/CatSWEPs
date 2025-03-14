@@ -1,5 +1,4 @@
-# **[Addon Name]**  
-*(Replace this with your actual addon name)*  
+# **[Cat's Warhammer SWEPs]**  
 
 ## **Overview**  
 This addon introduces a custom collection of weapons for **Garry's Mod**, inspired by the universe of *Warhammer 40,000*. It includes a diverse set of ranged and melee weapons designed for balanced and customizable gameplay across various server setups.  
@@ -11,8 +10,8 @@ The addon was created as both a learning project and a community contribution—
 ## **Key Features**  
 
 - ✅ **Wide Weapon Variety:** Includes modern, lore-inspired, and legacy weapons from the Warhammer 40k universe.  
-- ⚙️ **Customizable Stats:** Weapon stats such as damage, range, and fire rate can be easily modified via **DWEP** (Dynamic Weapon Editor for TFA Base).  
-- 🔄 **Dual Firing Modes:** Some weapons, like Plasma Guns, offer multiple firing modes (hitscan and projectile).  
+- ⚙️ **Customizable Stats:** Weapon stats such as damage, range, and fire rate can be easily modified via **DWEP** (Dynamic Weapon Editor for TFA Base) or similar methods.  
+- 🔄 **Multiple Modes:** Some weapons, like Plasma Guns, offer multiple firing modes (hitscan and projectile), or different projectiles through TFA attachments.  
 - 🔥 **Functional Grenade Types:** Each grenade type has distinct behaviors affecting players and NPCs.  
 - 🛡️ **Melee and Defense Options:** Includes power and chain melee weapons, as well as functional boarding shields.  
 - 🔥 **Chaos Variants:** Corrupted weapon versions with visual and functional differences to reflect Chaos influences from the lore.  
@@ -26,13 +25,13 @@ The addon was created as both a learning project and a community contribution—
 2. Install any **required model packs** if they're not already part of your server's addons.  
 3. Add the addon to your server collection if hosting.  
 4. Restart your game/server to ensure everything is loaded correctly.  
-5. Weapons can be spawned through the in-game **Q menu > Weapons tab > [Addon Name] category**.  
+5. Weapons can be spawned through the in-game **Q menu > Weapons tab > Cat's SWEPs categories**.  
 
 ---
 
 ## 🛠️ **Weapon Categories & Details**  
 
-### ⚙️ **1. Base SWEPs (Modern Inspired Weapons)**  
+### ⚙️ **1. Base SWEPs (More Modern Models and Custom Patterns)**  
 These weapons are built using more modern models and come with various attachments. They're designed for general combat use and flexibility.  
 
 **Weapon List & Features:**  
@@ -61,7 +60,7 @@ These weapons are built using more modern models and come with various attachmen
 
 ---
 
-### 📚 **2. Lore SWEPs (Warhammer-Inspired Weapons)**  
+### 📚 **2. Lore SWEPs (Direct Warhammer-Inspired Weapons)**  
 These weapons are designed to closely match official descriptions and imagery from Warhammer 40k lore.  
 
 **Weapon List:**  
@@ -119,12 +118,14 @@ Corrupted versions of standard weapons, featuring distinct visual changes like p
   - Fire rate  
   - Ammo capacity  
 
-- **Changing Timers:**  
-  For time-sensitive weapons (like Melta Bombs), adjust the configuration values to set the delay anywhere from **5 seconds to 1 hour**.  
+- **Melta Timer:**  
+  For time-sensitive weapons (like Melta Bombs), right click to set the delay anywhere from **5 seconds to 1 hour**.  
 
 - **Switching Firing Modes:**  
-  For weapons like Plasma Guns, toggle between **hitscan** and **projectile** modes for varied gameplay styles.  
+  For weapons like Plasma Guns or toggle between **hitscan** and **projectile** modes using attachment system.  
 
+- **Switching Firing Modes:**  
+  For weapons like Plasma Guns or toggle between **hitscan** and **projectile** modes using attachment system. 
 ---
 
 ## ❓ **Common Questions**  
@@ -136,7 +137,7 @@ A: Only if you don’t already have them through other addons. Most models used 
 A: Press **E + Click** to toggle the attachment mode.  
 
 **Q: Can I adjust weapon damage or behavior?**  
-A: Yes, use the **DWEP** system for easy stat changes.  
+A: Yes, use the **DWEP** or other editing system for easy stat changes.  
 
 ---
 
@@ -160,7 +161,7 @@ A: Yes, use the **DWEP** system for easy stat changes.
 ## 🤝 **Credits**  
 
 - Community creators for models and base code.  
-- [Your Name] – Scripting, balancing, and customization.  
+- Me – Scripting, balancing, and customization.  
 - The TFA community for the weapon base.  
 
 ---
