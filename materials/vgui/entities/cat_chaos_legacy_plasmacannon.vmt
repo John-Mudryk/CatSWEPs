@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "vgui/entities/cat_chaos_legacy_plasmacannon"
+	"$translucent" 1
+}

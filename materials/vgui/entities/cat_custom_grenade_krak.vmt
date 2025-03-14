@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_grenade_krak"
+	"$translucent" 1
+}

@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_lasgun"
+	"$translucent" 1
+}

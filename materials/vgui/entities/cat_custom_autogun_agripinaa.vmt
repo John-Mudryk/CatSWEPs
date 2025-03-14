@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_autogun_agripinaa"
+	"$translucent" 1
+}

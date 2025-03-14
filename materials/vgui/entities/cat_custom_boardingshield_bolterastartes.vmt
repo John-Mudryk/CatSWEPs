@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_boardingshield_bolterastartes"
+	"$translucent" 1
+}

@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_shotgun_combat_accatran"
+	"$translucent" 1
+}
