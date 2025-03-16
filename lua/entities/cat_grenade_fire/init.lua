@@ -215,8 +215,10 @@ function ENT:StopFireEffect()
     ActiveFireGrenades[self.FireID] = nil
 end
 
+
 -- Cleanup on removal
 function ENT:OnRemove()
     timer.Remove("WaitForGround_" .. self:EntIndex())
     self:StopFireEffect()
 end
+

@@ -2,11 +2,11 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Range Calibration"
-ATTACHMENT.ShortName = "OVER" --Abbreviation, 5 chars or less please
+ATTACHMENT.Name = "Focal Calibration"
+ATTACHMENT.ShortName = "RANGE" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Calibrate to a finer beam to extend range and pierce heavy armour", TFA.Attachments.Colors["-"], "More recoil", "Lower firerate", "Double waste of magazine"  }
-ATTACHMENT.Icon = "entities/effect_cat_laser__hell_over.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Calibrate to a finer beam that pierces heavy armour", TFA.Attachments.Colors["+"], "Increased range", "Increased accuracy", TFA.Attachments.Colors["-"], "Increased recoil", "Decreased fire-rate", "Double waste of magazine"  }
+ATTACHMENT.Icon = "entities/effect_cat_hellgun_big.png"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {

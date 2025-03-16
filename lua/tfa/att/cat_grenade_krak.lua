@@ -3,7 +3,7 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "Krak Grenade"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Higher damage", TFA.AttachmentColors["-"], "Lower area of effect"}
+ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Increased damage", TFA.AttachmentColors["-"], "Decreased area of effect"}
 ATTACHMENT.Icon = "sprites/rico1_noz"
 ATTACHMENT.ShortName = "KRAK"
 

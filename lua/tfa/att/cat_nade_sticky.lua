@@ -4,7 +4,7 @@ end
 
 ATTACHMENT.Name = "Sticky Toggle"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Toggle the magnetic attachment method" }
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Toggle magnetic attachment method" }
 ATTACHMENT.Icon = "entities/fuse_sticky.png"
 ATTACHMENT.ShortName = "STICKY"
 

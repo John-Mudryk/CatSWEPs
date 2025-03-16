@@ -5,8 +5,8 @@ end
 
 ATTACHMENT.Name = "Underbarrel Shotgun"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "E+Click to select shotgun", "10% less vertical recoil", TFA.AttachmentColors["-"], "5% higher spread", "5% lower accuracy" }
-ATTACHMENT.Icon = "entities/cat_under_bolter_black.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized shotgun attachment", TFA.AttachmentColors["+"], "E+Click to select shotgun", "Decreased vertical recoil", TFA.AttachmentColors["-"], "Increased spread" }
+ATTACHMENT.Icon = "entities/cat_under_bolter_black.png" 
 ATTACHMENT.ShortName = "SHOTGUN"
 
 ATTACHMENT.Damage = 60

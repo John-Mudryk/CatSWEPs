@@ -2,17 +2,17 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Slug Shell"
+ATTACHMENT.Name = "Slug Shells"
 ATTACHMENT.ShortName = "SLUG" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Switch ammo type to a high calibre slug"  }
-ATTACHMENT.Icon = "entities/tfa_ammo_slug.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Switch to high calibre slugs", TFA.Attachments.Colors["+"], "Increased per-shot damage", "Decreased spread", TFA.Attachments.Colors["-"], "Reduced shot count" }
+ATTACHMENT.Icon = "entities/tfa_ammo_slug.png"
 
 ATTACHMENT.WeaponTable = {
 	["TracerName"] = function( wep, stat ) return "effect_t_sniper" end,
 	["Primary"] = {
 		["Damage"] = function( wep, stat ) return stat * 5.5 end,
-		["Spread"] = function( wep, stat ) return stat * 0.05 end,
+		["Spread"] = function( wep, stat ) return stat * 0.2 end,
 		["IronAccuracy"] = function( wep, stat ) return stat * 0.05 end,
 		["NumShots"] = function( wep, stat ) return 1 end,
 		["Force"] = function( wep, stat ) return stat * 10 end,

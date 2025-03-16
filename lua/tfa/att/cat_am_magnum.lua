@@ -5,8 +5,8 @@ end
 ATTACHMENT.Name = "Magnum Ammunition"
 ATTACHMENT.ShortName = "MAGNUM" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "15% more damage", TFA.Attachments.Colors["-"], "20% more recoil", TFA.Attachments.Colors["-"], "20% more spread"  }
-ATTACHMENT.Icon = "entities/Magnum_Bullet.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Switch to heavier ammunition", TFA.Attachments.Colors["+"], "Increased damage", "Increased penetration", TFA.Attachments.Colors["-"], "Increased recoil", "Increased spread"  }
+ATTACHMENT.Icon = "entities/Magnum_Bullet.png" 
 ATTACHMENT.TFADataVersion = TFA.LatestDataVersion
 
 ATTACHMENT.WeaponTable = {

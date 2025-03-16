@@ -4,15 +4,14 @@ end
 
 ATTACHMENT.Name = "Improved Grip"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Slightly improves accuracy", TFA.AttachmentColors["+"], "Better recoil control", }
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Attach a better grip", TFA.AttachmentColors["+"], "Increased accuracy", "Increased recoil control", }
 ATTACHMENT.Icon = "entities/grip_icon.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "GRIP"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 0.85 end,
-		["KickDown"] = function(wep,stat) return stat * 0.85 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 0.85 end,
+		["SpreadIncrement"] = function( wep, stat ) return stat * 0.85 end,
+		["SpreadRecovery"] = function( wep, stat ) return stat * 1.15 end,
 		["Spread"] = function(wep,stat) return stat * 0.95 end,
 		["IronAccuracy"] = function(wep,stat) return stat * 0.95 end
 	},

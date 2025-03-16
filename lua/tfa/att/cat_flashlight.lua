@@ -4,7 +4,7 @@ end
 
 ATTACHMENT.Name = "Tactical Flashlight"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Illuminate the darkness", TFA.AttachmentColors["-"], "Replaces default flashlight", }
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Replace default flashlight with stronger focused beam", "Illuminate the darkness" }
 ATTACHMENT.Icon = "entities/flashlight_icon.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "FLASH"
 

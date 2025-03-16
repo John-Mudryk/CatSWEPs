@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Light Stock"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better hipfire spread and movespeed", TFA.Attachments.Colors["-"], "Worse aiming and recoil" }
-ATTACHMENT.Icon = "entities/gun-stock.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize a lighter stock", TFA.Attachments.Colors["+"], "Increased Mobility", "Decreased hip-fire spread", TFA.Attachments.Colors["-"], "Increased aiming spread", "Increased recoil" }
+ATTACHMENT.Icon = "entities/gun-stock.png"
 ATTACHMENT.ShortName = "LIGHT"
 
 ATTACHMENT.WeaponTable = {

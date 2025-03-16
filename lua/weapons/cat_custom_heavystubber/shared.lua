@@ -88,7 +88,7 @@ SWEP.JamFactor = 0.001 -- How to increase jam factor after each shot.
 --Ammo Related
 
 SWEP.Primary.ClipSize = 175					-- This is the size of a clip
-SWEP.Primary.DefaultClip = 0					-- This is the number of bullets the gun gives you, counting a clip as defined directly above.
+SWEP.Primary.DefaultClip = 350					-- This is the number of bullets the gun gives you, counting a clip as defined directly above.
 SWEP.Primary.Ammo = "smg1"					-- What kind of ammo.  Options, besides custom, include pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, and AirboatGun.
 --Pistol, buckshot, and slam like to ricochet. Use AirboatGun for a light metal peircing shotgun pellets
 

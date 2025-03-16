@@ -49,7 +49,7 @@ SWEP.Primary.RPM			= 480		-- This is in Rounds Per Minute This is in Rounds Per 
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
 SWEP.Primary.ClipSize			= 30		-- Size of a clip
-SWEP.Primary.DefaultClip		= 0	                -- Default number of bullets in a clip
+SWEP.Primary.DefaultClip		= 120	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .4		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
@@ -193,6 +193,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 1 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

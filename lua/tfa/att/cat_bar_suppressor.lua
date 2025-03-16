@@ -4,12 +4,14 @@ end
 
 ATTACHMENT.Name = "Suppressor"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Improves accuracy, recoil and reduces sound of gunfire", TFA.AttachmentColors["-"], "Slightly increases hip-fire spread", }
-ATTACHMENT.Icon = "entities/tfa_br_supp.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Attach a silencer", TFA.AttachmentColors["+"], "Suppressed sound", "Increased recoil control", "Decreased aiming spread", TFA.AttachmentColors["-"], "Increased hip-fire spread", }
+ATTACHMENT.Icon = "entities/tfa_br_supp.png"
 ATTACHMENT.ShortName = "SILENCER"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
+		["SpreadIncrement"] = function( wep, stat ) return stat * 0.9 end,
+		["SpreadRecovery"] = function( wep, stat ) return stat * 1.1 end,
 		["KickUp"] = function(wep,stat) return stat * 0.75 end,
 		["KickDown"] = function(wep,stat) return stat * 0.75 end,
 		["KickHorizontal"] = function(wep,stat) return stat * 0.75 end,

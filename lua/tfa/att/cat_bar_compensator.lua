@@ -4,17 +4,15 @@ end
 
 ATTACHMENT.Name = "Compensator"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Improves recoil control", TFA.AttachmentColors["-"], "Slightly decreases accuracy", }
-ATTACHMENT.Icon = "entities/Icon_attach_Muzzle_Compensator_Large.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Increased Recoil Control", "Decreased recoil" }
+ATTACHMENT.Icon = "entities/Icon_attach_Muzzle_Compensator_Large.png"
 ATTACHMENT.ShortName = "COMP"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 0.65 end,
-		["KickDown"] = function(wep,stat) return stat * 0.65 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 0.65 end,
-		["Spread"] = function(wep,stat) return stat * 1.025 end,
-		["IronAccuracy"] = function(wep,stat) return stat * 1.025 end
+		["SpreadIncrement"] = function( wep, stat ) return stat * 0.85 end,
+		["SpreadRecovery"] = function( wep, stat ) return stat * 1.15 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.85 end,
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.95 end,
 

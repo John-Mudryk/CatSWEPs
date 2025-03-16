@@ -5,8 +5,8 @@ end
 
 ATTACHMENT.Name = "Combi-Flamer"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "E+Click to select flamer mode", "Burns enemies in close range", TFA.AttachmentColors["-"], "Limited range", "Low Fuel Capacity" }
-ATTACHMENT.Icon = "entities/cat_under_flamer.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized flamer attachment", TFA.AttachmentColors["+"], "E+Click to select flamer mode", "Burns enemies in close range", TFA.AttachmentColors["-"], "Limited range", "Low Fuel Capacity" }
+ATTACHMENT.Icon = "entities/cat_under_flamer.png" 
 ATTACHMENT.ShortName = "FLAMER"
 
 ATTACHMENT.Damage = 50
@@ -32,10 +32,6 @@ ATTACHMENT.WeaponTable = {
 		["SGSound"] = function(wep,stat)
 			return stat or wep:GetStat("Secondary.Sound") or wep:GetStat("Primary.Sound")
 		end,
-		["KickUp"] = function(wep,stat) return stat * 0.9 end,
-		["KickDown"] = function(wep,stat) return stat * 0.9 end,
-		["Spread"] = function(wep,stat) return stat * 1.05 end,
-		["IronAccuracy"] = function(wep,stat) return stat * 1.05 end
 	},
 	["Secondary"] = {
 		["ClipSize"] = ATTACHMENT.ClipSize,

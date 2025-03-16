@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Advanced Grip"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Improves accuracy", TFA.AttachmentColors["+"], "Increased recoil control", }
-ATTACHMENT.Icon = "entities/grip_icon2.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Attach an improved grip", TFA.AttachmentColors["+"], "Increased accuracy", "Decreased recoil", }
+ATTACHMENT.Icon = "entities/grip_icon2.png"
 ATTACHMENT.ShortName = "GRIP"
 
 ATTACHMENT.WeaponTable = {

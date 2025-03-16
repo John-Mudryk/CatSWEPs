@@ -5,7 +5,7 @@ end
 
 ATTACHMENT.Name = "Underbarrel Grenade Launcher"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "E+Click to select grenade launcher", "20% less vertical recoil", TFA.AttachmentColors["-"], "10% higher spread", "5% lower accuracy" }
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized grenade launcher attachment", TFA.AttachmentColors["+"], "E+Click to select grenade launcher", "Decreased vertical recoil", TFA.AttachmentColors["-"], "Increased spread" }
 ATTACHMENT.Icon = "entities/cat_under_launcher_black.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "LAUNCHER"
 

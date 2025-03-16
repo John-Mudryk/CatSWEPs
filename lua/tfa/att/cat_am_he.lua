@@ -3,7 +3,7 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "High Explosive Rounds"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Area damage", TFA.AttachmentColors["-"], "Increased recoil", TFA.AttachmentColors["-"], "Lower Direct Damage"}
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Switch to high explosive ammunition", TFA.AttachmentColors["+"], "Area damage", TFA.AttachmentColors["-"], "Increased recoil", "Decreased damage", "Decreased penetration"}
 ATTACHMENT.Icon = "entities/explosive_bullet.png"
 ATTACHMENT.ShortName = "HE"
 
@@ -11,7 +11,7 @@ ATTACHMENT.WeaponTable = {
 	["Primary"] = {
 		["DamageType"] = function(wep,stat) return bit.bor( stat or 0, DMG_BLAST ) end,
 		["Damage"] = function(wep,stat) return stat * 0.75 end,
-		["Recoil"] = function(wep,stat) return stat * 2 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 2 end,
 		["Force"] = function(wep,stat) return stat * 5 end,
 		["Knockback"] = function(wep,stat) return stat * 5 end,
 		["PenetrationPower"] =  function(wep,stat) return 0 end,

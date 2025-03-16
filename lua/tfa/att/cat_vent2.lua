@@ -4,19 +4,18 @@ end
 
 ATTACHMENT.Name = "Heat Dispersion Vent"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better hipfire spread and movespeed", TFA.Attachments.Colors["-"], "Worse aiming and recoil" }
-ATTACHMENT.Icon = "entities/vent_icon1.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized cooling vents", TFA.Attachments.Colors["+"], "Increased mobility", "Increased recoil control", "Decreased aiming spread", TFA.Attachments.Colors["-"], "Increased hip-fire spread" }
+ATTACHMENT.Icon = "entities/vent_icon1.png"
 ATTACHMENT.ShortName = "HEAT"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 1.075 end,
-		["KickDown"] = function(wep,stat) return stat * 1.075 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 1.075 end,
-		["Spread"] = function(wep,stat) return stat * .9 end,
-		["IronAccuracy"] = function(wep,stat) return stat * 1.1 end
+		["SpreadIncrement"] = function( wep, stat ) return stat * 0.95 end,
+		["SpreadRecovery"] = function( wep, stat ) return stat * 1.05 end,
+		["Spread"] = function(wep,stat) return stat * 1.05 end,
+		["IronAccuracy"] = function(wep,stat) return stat * 0.95 end
 	},
-	["MoveSpeed"] = function(wep,stat) return stat * 1.05 end,
+	["MoveSpeed"] = function(wep,stat) return stat * 1.025 end,
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 1.075 end,
 
 }

@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Barrel Extension"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Improves accuracy, recoil and damage", TFA.AttachmentColors["-"], "Slightly increases hip-fire spread", }
-ATTACHMENT.Icon = "entities/barrel_extend.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Increased damage", "Decreased aiming spread", "Decreased recoil" , TFA.AttachmentColors["-"], "Decreased fire-rate", "Decreased hip-fire spread" }
+ATTACHMENT.Icon = "entities/barrel_extend.png"
 ATTACHMENT.ShortName = "EXTEND"
 
 ATTACHMENT.WeaponTable = {

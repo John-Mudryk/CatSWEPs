@@ -47,7 +47,7 @@ SWEP.Primary.RPM			= 60		-- This is in Rounds Per Minute This is in Rounds Per M
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
 SWEP.Primary.ClipSize			= 1		-- Size of a clip
-SWEP.Primary.DefaultClip		= 1	                -- Default number of bullets in a clip
+SWEP.Primary.DefaultClip		= 6	                -- Default number of bullets in a clip
 SWEP.Primary.Automatic			= false 		-- Automatic/Semi Auto
 SWEP.Primary.Ammo			= "grenade"	-- pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, AirboatGun
 

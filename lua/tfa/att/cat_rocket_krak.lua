@@ -7,7 +7,7 @@ ATTACHMENT.ShortName = "KRAK"
 ATTACHMENT.Icon = "particles/flamelet4"
 ATTACHMENT.Description = { 
     --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["="], "Krak warhead", TFA.AttachmentColors["+"], "350% damage", TFA.AttachmentColors["-"], "83% less explosive radius", 
+    TFA.AttachmentColors["="], "Load krak warheads", TFA.AttachmentColors["+"], "Increased damage", TFA.AttachmentColors["-"], "Decreased area of effect", 
 }
 
 ATTACHMENT.WeaponTable = {

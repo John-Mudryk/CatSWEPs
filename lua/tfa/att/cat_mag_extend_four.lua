@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Extended Magazine"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Quadruple magazine capacity"}
-ATTACHMENT.Icon = "gm_construct/overlay_4" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize a greater magazine size", TFA.Attachments.Colors["="], "Quadruple magazine capacity", TFA.AttachmentColors["-"], "Increased reload time", "Decreased mobility" }
+ATTACHMENT.Icon = "gm_construct/overlay_4" 
 ATTACHMENT.ShortName = "MAG 4X"
 
 function ATTACHMENT:Attach( wep )
@@ -74,8 +74,8 @@ function ATTACHMENT:Detach( wep )
     -- Ensure SequenceTimeOverride exists
     	wep.SequenceTimeOverride = wep.SequenceTimeOverride or {}
     -- Reset reload times
-   	wep.SequenceTimeOverride[ACT_VM_RELOAD] = wep.SequenceTimeOverride[ACT_VM_RELOAD] / 2.5
-    	wep.SequenceTimeOverride[ACT_VM_RELOAD_EMPTY] = wep.SequenceTimeOverride[ACT_VM_RELOAD_EMPTY] / 2.5
+   	wep.SequenceTimeOverride[ACT_VM_RELOAD] = wep.SequenceTimeOverride[ACT_VM_RELOAD] / 2
+    	wep.SequenceTimeOverride[ACT_VM_RELOAD_EMPTY] = wep.SequenceTimeOverride[ACT_VM_RELOAD_EMPTY] / 2
 
 	if Weapon_act == "cat_custom_boltpistol"||
 			Weapon_act == "cat_custom_boltpistolastartes"  then

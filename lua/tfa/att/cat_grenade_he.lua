@@ -3,7 +3,7 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "High Explosive Grenade"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Higher area of effect", TFA.AttachmentColors["-"], "Lower damage"}
+ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Increased area of effect", TFA.AttachmentColors["-"], "Decreased damage"}
 ATTACHMENT.Icon = "particles/flamelet5"
 ATTACHMENT.ShortName = "HE"
 

@@ -34,12 +34,13 @@ SWEP.AdminSpawnable			= true
 SWEP.Primary.Force = 5 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickback
 
+
 SWEP.Primary.Sound			= "weapons/rivet/rivet-1.wav"		-- script that calls the primary fire sound
 SWEP.Primary.RPM			= 750		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
 SWEP.Primary.ClipSize			= 35		-- Size of a clip
-SWEP.Primary.DefaultClip		= 0	                -- Default number of bullets in a clip
+SWEP.Primary.DefaultClip		= 140	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .2		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)

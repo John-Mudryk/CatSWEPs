@@ -3,10 +3,10 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "Incendiary Ammunition"
-ATTACHMENT.ShortName = "Incendiary" --Abbreviation, 5 chars or less please
+ATTACHMENT.ShortName = "FIRE" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Lights target on fire", TFA.Attachments.Colors["+"], "5% more damage", TFA.Attachments.Colors["-"], "10% more recoil", TFA.Attachments.Colors["-"], "5% more spread"  }
-ATTACHMENT.Icon = "entities/incendiary_bullet.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Load incendiary ammunition", TFA.Attachments.Colors["+"], "Damage over time", "Increased damage", TFA.Attachments.Colors["-"], "Increased recoil", "Increased spread"  }
+ATTACHMENT.Icon = "entities/incendiary_bullet.png"
 ATTACHMENT.TFADataVersion = TFA.LatestDataVersion
 
 ATTACHMENT.WeaponTable = {
@@ -17,7 +17,8 @@ ATTACHMENT.WeaponTable = {
 		["Spread"] = function( wep, stat ) return stat * 1.05 end,
 		["IronAccuracy"] = function( wep, stat ) return stat * 1.05 end,
 		["KickUp"] = function( wep, stat ) return stat * 1.1 end,
-		["KickDown"] = function( wep, stat ) return stat * 1.1 end
+		["KickDown"] = function( wep, stat ) return stat * 1.1 end,
+		["KickHorizontal"] = function( wep, stat ) return stat * 1.1 end
 	},
 }
 

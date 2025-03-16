@@ -3,7 +3,7 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "HUD Scope"
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Use attached HUD equipment to zoom in" }
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize attached HUD equipment" }
 ATTACHMENT.Icon = "entities/scope_astartes.png"
 ATTACHMENT.ShortName = "HUD"
 

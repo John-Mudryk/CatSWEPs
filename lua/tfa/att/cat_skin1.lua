@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Grey Paint"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Change paint colour" }
-ATTACHMENT.Icon = "entities/skin1.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Change paint colour" }
+ATTACHMENT.Icon = "entities/skin1.png"
 ATTACHMENT.ShortName = "GREY"
 
 ATTACHMENT.WeaponTable = {

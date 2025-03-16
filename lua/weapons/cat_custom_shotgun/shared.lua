@@ -39,7 +39,7 @@ SWEP.Primary.RPM			= 80		-- This is in Rounds Per Minute This is in Rounds Per M
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
 SWEP.Primary.ClipSize			= 12		-- Size of a clip
-SWEP.Primary.DefaultClip		= 0	                -- Default number of bullets in a clip
+SWEP.Primary.DefaultClip		= 60	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .2		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
@@ -190,7 +190,7 @@ SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_slug", "cat_am_birdshot", "cat_am_incend", "cat_am_boltslug"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two", "cat_mag_extend_three"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_stock_heavy", "cat_stock_light"}, order = 3 },
-	[4] = { offset = { 0, 0 }, atts = { "cat_scope_dot", "cat_scope_reflex"}, order = 4 },
+	[4] = { offset = { 0, 0 }, atts = {  "cat_scope_reflex", "cat_scope_dot"}, order = 4 },
 	[5] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bayonet"}, order = 6 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },

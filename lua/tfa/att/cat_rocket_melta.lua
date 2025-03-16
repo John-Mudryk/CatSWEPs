@@ -7,7 +7,7 @@ ATTACHMENT.ShortName = "MELTA"
 ATTACHMENT.Icon = "particles/flamelet5"
 ATTACHMENT.Description = { 
     --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["="], "Melta warhead", TFA.AttachmentColors["+"], "250% higher explosive radius", TFA.AttachmentColors["+"], "1000% more damage",
+    TFA.AttachmentColors["="], "Load melta warheads", TFA.AttachmentColors["+"], "Increased area of effect", "Increased damage",
 }
 
 ATTACHMENT.WeaponTable = {

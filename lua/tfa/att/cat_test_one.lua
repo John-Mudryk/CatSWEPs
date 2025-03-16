@@ -2,18 +2,14 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Sight"
+ATTACHMENT.Name = "Launcher Iron Sight"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better Aiming and recoil", TFA.Attachments.Colors["-"], "Worse hip-fire spread" }
-ATTACHMENT.Icon = "sprites/scanner_bottom" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Utilize a front sight post", TFA.Attachments.Colors["+"], "Decreased aiming spread" }
+ATTACHMENT.Icon = "sprites/scanner_bottom"
 ATTACHMENT.ShortName = "Sight"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 0.9 end,
-		["KickDown"] = function(wep,stat) return stat * 0.9 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 0.9 end,
-		["Spread"] = function(wep,stat) return stat * 1.1 end,
 		["IronAccuracy"] = function(wep,stat) return stat * 0.9 end
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.95 end,

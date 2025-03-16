@@ -2,19 +2,20 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Explosive Slug Shell"
+ATTACHMENT.Name = "Explosive Slug Shells"
 ATTACHMENT.ShortName = "BOLT" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Switch ammo type to a high calibre explosive slug"  }
-ATTACHMENT.Icon = "entities/tfa_ammo_fragshell.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Load high-calibre explosive slugs", TFA.Attachments.Colors["+"], "Increased per-shot damage", "Decreased spread", TFA.Attachments.Colors["-"], "Decreased shot count" }
+ATTACHMENT.Icon = "entities/tfa_ammo_fragshell.png"
 
 ATTACHMENT.WeaponTable = {
 	["TracerName"] = function( wep, stat ) return "effect_t_boltgun" end,
 	["Primary"] = {
+		["DamageType"] = function( wep, stat ) return DMG_BLAST end,
 		["Damage"] = function( wep, stat ) return stat * 5 end,
-		["Spread"] = function( wep, stat ) return 0.005 end,
-		["IronAccuracy"] = function( wep, stat ) return 0.001 end,
-		["PenetrationPower"] = function( wep, stat ) return stat * 10 end,
+		["Spread"] = function( wep, stat ) return stat * 0.2 end,
+		["IronAccuracy"] = function( wep, stat ) return stat * 0.05 end,
+		["PenetrationPower"] = function( wep, stat ) return stat * 2 end,
 		["Force"] = function( wep, stat ) return stat * 3 end,
 		["Knockback"] = function( wep, stat ) return stat * 3 end,
 		["NumShots"] = function( wep, stat ) return 1 end,

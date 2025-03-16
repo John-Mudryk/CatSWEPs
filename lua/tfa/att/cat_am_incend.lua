@@ -2,19 +2,19 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Incendiary Shell"
-ATTACHMENT.ShortName = "INCEND" --Abbreviation, 5 chars or less please
+ATTACHMENT.Name = "Incendiary Shells"
+ATTACHMENT.ShortName = "FIRE" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Switch ammo type to a shell filled with larger incendiary shot"  }
-ATTACHMENT.Icon = "entities/orange_shell.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Load shells with larger, incendiary shot", TFA.Attachments.Colors["+"], "Damage over time", "Increased per-shot damage", "Decreased spread", TFA.Attachments.Colors["-"], "Reduced shot count" }
+ATTACHMENT.Icon = "entities/orange_shell.png" 
 
 ATTACHMENT.WeaponTable = {
 	["TracerName"] = function( wep, stat ) return "tfa_tracer_incendiary" end,
 	["Primary"] = {
 		["DamageType"] = function(wep,stat) return DMG_PLASMA end,
 		["Damage"] = function( wep, stat ) return stat * 1.25 end,
-		["Spread"] = function( wep, stat ) return stat + 0.01 end,
-		["IronAccuracy"] = function( wep, stat ) return stat + 0.01 end,
+		["Spread"] = function( wep, stat ) return stat * 0.95 end,
+		["IronAccuracy"] = function( wep, stat ) return stat * 0.95 end,
 		["NumShots"] = function( wep, stat ) return stat * 0.5 end
 	}
 }

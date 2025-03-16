@@ -5,11 +5,7 @@ end
 
 ATTACHMENT.Name = "Combi-Plasma"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { 
-    TFA.AttachmentColors["+"], "E+Click to select plasma mode", 
-    "Fires a concentrated plasma beam", 
-    TFA.AttachmentColors["-"], "Low fire-rate", 
-    TFA.AttachmentColors["-"], "Requires energy cells", 
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized plasma gun attachment", TFA.AttachmentColors["+"], "E+Click to select plasma mode", "Fires a concentrated plasma beam", TFA.AttachmentColors["-"], "Low fire-rate",  
 }
 ATTACHMENT.Icon = "entities/cat_under_plasma.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "PLASMA"
@@ -33,10 +29,6 @@ ATTACHMENT.WeaponTable = {
 		["PGSound"] = function(wep,stat)
 			return stat or wep:GetStat("Secondary.Sound") or wep:GetStat("Primary.Sound")
 		end,
-		["KickUp"] = function(wep,stat) return stat * 0.9 end,
-		["KickDown"] = function(wep,stat) return stat * 0.9 end,
-		["Spread"] = function(wep,stat) return stat * 1.05 end,
-		["IronAccuracy"] = function(wep,stat) return stat * 1.05 end
 	},
 	["Secondary"] = {
 		["ClipSize"] = ATTACHMENT.ClipSize,

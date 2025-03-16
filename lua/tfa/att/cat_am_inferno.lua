@@ -3,7 +3,7 @@ if not ATTACHMENT then
 end
 
 ATTACHMENT.Name = "Inferno bolts"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Burns the target", TFA.AttachmentColors["+"], "Reduced kickback", TFA.AttachmentColors["-"], "Reduced damage"}
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Load bolts that burn the target", TFA.AttachmentColors["+"], "Damage over time", "Increased fire-rate", "Decreased recoil", TFA.AttachmentColors["-"], "Reduced damage"}
 ATTACHMENT.Icon = "entities/cat_ammo_inferno.png"
 ATTACHMENT.ShortName = "INFERNO"
 
@@ -11,7 +11,10 @@ ATTACHMENT.WeaponTable = {
 	["Primary"] = {
 		["DamageType"] = function(wep,stat) return DMG_PLASMA end,
 		["Damage"] = function(wep,stat) return stat * 0.75 end,
-		["Recoil"] = function(wep,stat) return stat * 0.8 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.8 end,
+		["KickUp"] = function( wep, stat ) return stat * 0.8 end,
+		["KickDown"] = function( wep, stat ) return stat * 0.8 end,
+		["KickHorizontal"] = function( wep, stat ) return stat * 0.8 end,
 		["RPM"] = function( wep, stat ) return stat * 1.25 end,
 	},
 	["TracerName"] = "effect_t_boltgun_inferno"

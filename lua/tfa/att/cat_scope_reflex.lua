@@ -4,15 +4,13 @@ end
 
 ATTACHMENT.Name = "Reflex Sight"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better Hipfire accuracy and recoil", TFA.Attachments.Colors["-"], "Slightly worse aiming" }
-ATTACHMENT.Icon = "scope/gdcw_elcansight" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize short ranged scope", TFA.Attachments.Colors["+"], "Decreased aiming spread", "Decreased recoil", TFA.Attachments.Colors["-"], "Increased hip-fire spread" }
+ATTACHMENT.Icon = "scope/gdcw_elcansight"
 ATTACHMENT.ShortName = "REFLEX"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 0.9 end,
-		["KickDown"] = function(wep,stat) return stat * 0.9 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 0.9 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.9 end,
 		["Spread"] = function(wep,stat) return stat * 0.9 end,
 		["IronAccuracy"] = function(wep,stat) return stat * 1.05 end
 	},

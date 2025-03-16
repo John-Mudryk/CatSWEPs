@@ -7,7 +7,7 @@ ATTACHMENT.ShortName = "HE"
 ATTACHMENT.Icon = "particles/flamelet3"
 ATTACHMENT.Description = { 
     --TFA.AttachmentColors["="], "", 
-    TFA.AttachmentColors["="], "High explosive warhead", TFA.AttachmentColors["+"], "200% higher explosive radius", TFA.AttachmentColors["-"], "25% less damage",
+    TFA.AttachmentColors["="], "Load high explosive warheads", TFA.AttachmentColors["+"], "Increased area of effect", TFA.AttachmentColors["-"], "Decreased damage",
 }
 
 ATTACHMENT.WeaponTable = {

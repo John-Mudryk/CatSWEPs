@@ -5,7 +5,7 @@ end
 
 ATTACHMENT.Name = "Combi-Melta"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = {  TFA.AttachmentColors["+"], "E+Click to select melta mode", "Emits a superheated beam", "Melts through armor and vehicles", TFA.AttachmentColors["+"], "Extremely high damage at close range", TFA.AttachmentColors["-"], "Very limited range",  TFA.AttachmentColors["-"], "Consumes a large amount of fuel per shot" }
+ATTACHMENT.Description = {  TFA.AttachmentColors["="], "Utilized melta gun attachment", TFA.AttachmentColors["+"], "E+Click to select melta mode", "Emits close-range superheated beam", "Melts through armor and vehicles", TFA.AttachmentColors["-"], "Limited range", "Consumes high fuel per shot" }
 
 ATTACHMENT.Icon = "entities/cat_under_melta.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "MELTA"
@@ -30,10 +30,6 @@ ATTACHMENT.WeaponTable = {
 		["MGSound"] = function(wep,stat)
 			return stat or wep:GetStat("Secondary.Sound") or wep:GetStat("Primary.Sound")
 		end,
-		["KickUp"] = function(wep,stat) return stat * 1 end,
-		["KickDown"] = function(wep,stat) return stat * 1 end,
-		["Spread"] = function(wep,stat) return stat * 1 end,
-		["IronAccuracy"] = function(wep,stat) return stat * 1 end
 	},
 	["Secondary"] = {
 		["ClipSize"] = ATTACHMENT.ClipSize,

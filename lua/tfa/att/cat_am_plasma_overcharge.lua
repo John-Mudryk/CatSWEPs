@@ -12,8 +12,8 @@ end
 ATTACHMENT.Name = "Overcharge"
 ATTACHMENT.ShortName = "OVER" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Charge the plasma longer with higher risk of self damage" }
-ATTACHMENT.Icon = "particle/Particle_Glow_02" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Charge the plasma for a longer period", TFA.Attachments.Colors["+"], "Area damage", "Increased damage", "Increased penetration", TFA.Attachments.Colors["-"], "Decreased fire-rate", "Double waste of magazine"  }
+ATTACHMENT.Icon = "particle/Particle_Glow_02"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
@@ -41,7 +41,7 @@ function ATTACHMENT:Detach(wep)
 end
 
 function ATTACHMENT:CustomBulletCallback(wep, attacker, trace, dmginfo)
-	util.BlastDamage( wep, attacker, trace.HitPos, dmginfo:GetDamage()/40, dmginfo:GetDamage()/5 )
+	util.BlastDamage( wep, attacker, trace.HitPos, 75, dmginfo:GetDamage()/10 )
 end
 
 if not TFA_ATTACHMENT_ISUPDATING then

@@ -7,8 +7,8 @@ end
 ATTACHMENT.Name = "Lower Charge"
 ATTACHMENT.ShortName = "LOW" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Charge the plasma for a shorter time at the expense of lower damage"  }
-ATTACHMENT.Icon = "particle/Particle_Glow_05" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Charge the plasma for a shorter period", TFA.Attachments.Colors["+"], "Increased fire-rate", TFA.Attachments.Colors["-"], "Decreased damage", "Decreased penetration"  }
+ATTACHMENT.Icon = "particle/Particle_Glow_05"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {

@@ -2,10 +2,10 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Galvanic Rifle"
+ATTACHMENT.Name = "Rifle Conversion"
 --ATTACHMENT.ID = "base" normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Improves accuracy, recoil and damage", TFA.AttachmentColors["-"], "Slightly increases hip-fire spread", }
-ATTACHMENT.Icon = "entities/GalvanicRifle.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Convert weapon to a rifle", TFA.AttachmentColors["+"], "Improves accuracy" , "Increased damage", "Decreased recoil", TFA.AttachmentColors["-"], "Increased hip-fire spread", }
+ATTACHMENT.Icon = "entities/GalvanicRifle.png"
 ATTACHMENT.ShortName = "RIFLE"
 
 ATTACHMENT.WeaponTable = {

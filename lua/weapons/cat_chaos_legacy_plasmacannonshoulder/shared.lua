@@ -45,7 +45,7 @@ SWEP.Primary.RPM			= 30	-- This is in Rounds Per Minute This is in Rounds Per Mi
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
 SWEP.Primary.ClipSize			= 10		-- Size of a clip
-SWEP.Primary.DefaultClip		= 0	                -- Default number of bullets in a clip
+SWEP.Primary.DefaultClip		= 40	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .1		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .1		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .1	             -- Maximum up recoil (stock)
@@ -166,7 +166,7 @@ SWEP.MuzzleAttachment			= "1" 		-- Should be "1" for CSS models or "muzzle" for 
 SWEP.ShellAttachment			= "2" 		-- Should be "2" for CSS models or "shell" for hl2 models
 
 -- Tracer Stuff
-SWEP.TracerName		 = "tracer_laser_big_plasma_chaos"   -- Change to a string of your tracer name.  Can be custom. There is a nice example at https://github.com/garrynewman/garrysmod/blob/master/garrysmod/gamemodes/base/entities/effects/tooltracer.lua
+SWEP.TracerName		 = "tracer_laser_big_plasmacannon_chaos"   -- Change to a string of your tracer name.  Can be custom. There is a nice example at https://github.com/garrynewman/garrysmod/blob/master/garrysmod/gamemodes/base/entities/effects/tooltracer.lua
 SWEP.TracerCount		= 1	 -- 0 disables, otherwise, 1 in X chance
 
 -- Weapon jam
@@ -216,6 +216,10 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 DEFINE_BASECLASS("tfa_bash_base")
+
+SWEP.CustomBulletCallback = function(wep, attacker, trace, dmginfo)
+    util.BlastDamage(wep, attacker, trace.HitPos, dmginfo:GetDamage() / 20, dmginfo:GetDamage() / 2)
+end
 
 function SWEP:ShootBullet(...)
 	-- If an attachment is equipped, fire a projectile

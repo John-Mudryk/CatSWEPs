@@ -2,8 +2,8 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Psy bolts"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Psychically charged bolts", TFA.AttachmentColors["+"], "Reduced kickback", TFA.AttachmentColors["+"], "Increased damage"}
+ATTACHMENT.Name = "Psy-Bolts"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Load psychically charged bolts", TFA.AttachmentColors["+"], "Increased damage", "Increased penetration", "Decreased recoil"}
 ATTACHMENT.Icon = "entities/cat_ammo_psy.png"
 ATTACHMENT.ShortName = "PSY"
 
@@ -11,8 +11,7 @@ ATTACHMENT.WeaponTable = {
 	["Primary"] = {
 		["DamageType"] = function(wep,stat) return DMG_AIRBOAT end,
 		["Damage"] = function(wep,stat) return stat * 2.5 end,
-		["Recoil"] = function(wep,stat) return stat * 0.8 end,
-		["RPM"] = function( wep, stat ) return stat * 1 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.8 end,
 		["Force"] = function( wep, stat ) return stat * 1.75 end,
 		["Kickback"] = function( wep, stat ) return stat * 1.75 end,
 		["PenetrationPower"] = function( wep, stat ) return stat * 3 end,

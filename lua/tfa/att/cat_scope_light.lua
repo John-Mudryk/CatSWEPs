@@ -4,15 +4,13 @@ end
 
 ATTACHMENT.Name = "Light Scope"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better Aiming and recoil", TFA.Attachments.Colors["-"], "Worse hip-fire spread" }
-ATTACHMENT.Icon = "scope/gdcw_scopesight" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize medium ranged scope", TFA.Attachments.Colors["+"], "Decreased aiming spread", "Decreased recoil", TFA.Attachments.Colors["-"], "Increased hip-fire spread" }
+ATTACHMENT.Icon = "scope/gdcw_scopesight"
 ATTACHMENT.ShortName = "LIGHT"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
-		["KickUp"] = function(wep,stat) return stat * 0.8 end,
-		["KickDown"] = function(wep,stat) return stat * 0.8 end,
-		["KickHorizontal"] = function(wep,stat) return stat * 0.8 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.9 end,
 		["Spread"] = function(wep,stat) return stat * 1.3 end,
 		["IronAccuracy"] = function(wep,stat) return stat * 0.75 end
 	},

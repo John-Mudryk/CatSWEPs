@@ -5,8 +5,8 @@ end
 ATTACHMENT.Name = "Low Charge"
 ATTACHMENT.ShortName = "LOW" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["-"], "Lower damage per shot", TFA.Attachments.Colors["+"], "Less recoil", "Less spread", "Higher RPM" }
-ATTACHMENT.Icon = "entities/effect_cat_laser__hell_over.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Set weapon to lower intensity", TFA.Attachments.Colors["+"], "Increased fire-rate", "Decreased spread", "Decreased recoil", TFA.Attachments.Colors["-"], "Decreased damage", "Decreased penetration" }
+ATTACHMENT.Icon = "entities/effect_cat_laser__hell_over.png"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {

@@ -7,7 +7,7 @@ ATTACHMENT.Name = "Marking Phosphor"
 ATTACHMENT.ShortName = "MARK" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Leaving a burning beacon on the target for allies to focus on" }
-ATTACHMENT.Icon = "particle/fire" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Icon = "particle/glow_haze_nofog"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
@@ -47,7 +47,7 @@ function ATTACHMENT:CustomBulletCallback(wep, attacker, trace, dmginfo)
 		dmg:SetDamageType( DMG_BURN )
 
 		if ( target:Health() > 0 ) then
-			ParticleEffectAttach("wk_explosives_grenade_rad_core", 4, target, math.Rand(1, 3))
+			ParticleEffectAttach("vortigaunt_charge_token", 4, target, math.Rand(1, 3))
 			timer.Create( "phosphor" .. timer_name_add , 1, 10, function()  -- 'timer' is not like 'for', firstly it takes 1 from repeats and then do function
 				if ( !target:IsValid() || target:Health() <= 0 ) then 
 					timer.Remove("phosphor" .. timer_name_add)

@@ -4,8 +4,8 @@ end
 
 ATTACHMENT.Name = "Chain Bayonet"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Better bash damage and recoil", TFA.Attachments.Colors["-"], "Slightly worse hip-fire spread and movespeed" }
-ATTACHMENT.Icon = "entities/chainbayonet_icon.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Affix chain bayonet", TFA.Attachments.Colors["+"], "Increased Bash Damage", "Decreased Recoil", TFA.Attachments.Colors["-"], "Increased hip-fire spread", "Decreased mobility" }
+ATTACHMENT.Icon = "entities/chainbayonet_icon.png"
 ATTACHMENT.ShortName = "CHAIN"
 
 ATTACHMENT.WeaponTable = {

@@ -2,15 +2,16 @@ if not ATTACHMENT then
 	ATTACHMENT = {}
 end
 
-ATTACHMENT.Name = "Hellfire bolts"
-ATTACHMENT.Description = { TFA.AttachmentColors["+"], "Melts targets with acid that bypasses armor", TFA.AttachmentColors["+"], "Reduced kickback", TFA.AttachmentColors["+"], "Increased damage"}
+ATTACHMENT.Name = "Hellfire Bolts"
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Load bolts that melt the target with acid", TFA.AttachmentColors["+"], "Damage over time", "Reduced recoil", TFA.Attachments.Colors["-"], "Reduced direct damage"}
 ATTACHMENT.Icon = "entities/cat_ammo_paralyze.png"
 ATTACHMENT.ShortName = "HELLFIRE"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {
 		["DamageType"] = function(wep,stat) return DMG_RADIATION end,
-		["Recoil"] = function(wep,stat) return stat * 0.8 end,
+		["Damage"] = function(wep,stat) return stat * 0.9 end,
+		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.8 end,
 	},
 	["TracerName"] = "effect_t_boltgun_hellfire"
 }
