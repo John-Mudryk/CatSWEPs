@@ -184,13 +184,13 @@ SWEP.Type_Displayed             = "Autotellurian Pattern Mk. I + Atticus Pattern
 -- Attachments
 SWEP.VElements = {
 	["gun"] = { type = "Model", model = "models/joazzz/weapons/gravitongun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.309, 1.636, -0.715), angle = Angle(5.594, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["shield"] = { type = "Model", model = "models/joazzz/weapons/w_shield.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(12.597, -10.436, 3.023), angle = Angle(15.765, 40.588, 18.965), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 24} }
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(12.597, -10.436, 3.023), angle = Angle(15.765, 40.588, 18.965), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 24} }
 
 }
 
 SWEP.WElements = {
 	["gunW"] = { type = "Model", model = "models/joazzz/weapons/gravitongun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(13.906, 1.44, -3.398), angle = Angle(-13.65, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["shield"] = { type = "Model", model = "models/joazzz/weapons/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(4.883, -8.115, 4.888), angle = Angle(86.148, 165.11, -77.848), size = Vector(0.782, 0.782, 0.782), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 24} }
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(4.883, -8.115, 4.888), angle = Angle(86.148, 165.11, -77.848), size = Vector(0.782, 0.782, 0.782), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 24} }
 
 }
 

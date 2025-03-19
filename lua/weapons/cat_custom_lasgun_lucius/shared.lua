@@ -116,8 +116,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.04, -6.014, 2.605)
-SWEP.IronSightsAng = Vector(-2.3, -1.52, 0)
+SWEP.IronSightsPos = Vector(-4.08, -5.664, 2.279)
+SWEP.IronSightsAng = Vector(0.046, -1.673, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -173,7 +173,7 @@ SWEP.Type_Displayed             = "Lucius Pattern No. 98"
 
 -- Attachments
 SWEP.VElements = {
-	["lucius"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.765, 0.333, 0), angle = Angle(-2.54, 179.837, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lucius"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 0.284, -0.398), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 

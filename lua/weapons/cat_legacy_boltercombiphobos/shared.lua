@@ -169,7 +169,7 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Rifle" 
-SWEP.Type_Displayed             = "Phobos Pattern Mk. Ic"
+SWEP.Type_Displayed             = "Phobos Pattern Mk. IIc"
 
 -- Attachments
 SWEP.VElements = {

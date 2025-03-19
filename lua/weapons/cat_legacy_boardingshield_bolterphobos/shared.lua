@@ -175,19 +175,19 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Rifle" 
-SWEP.Type_Displayed             = "Phobos Pattern Mk. I + Atticus Pattern Mk. II"
+SWEP.Type_Displayed             = "Phobos Pattern Mk. II + Atticus Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
 	["bolterP"] = { type = "Model", model = "models/joazzz/weapons/bolter_phobospattern.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.158, 0.521, -12.304), angle = Angle(5, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["shield"] = { type = "Model", model = "models/joazzz/weapons/w_shield.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(12.597, -10.436, 3.023), angle = Angle(15.765, 40.588, 18.965), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 25} },
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(12.597, -10.436, 3.023), angle = Angle(15.765, 40.588, 18.965), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 25} },
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_curve.mdl", bone = "mag_bone", rel = "", pos = Vector(0.432, 0.507, -2.437), angle = Angle(12.862, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
 }
 
 
 SWEP.WElements = {
 	["bolterP"] = { type = "Model", model = "models/joazzz/weapons/bolter_phobospattern.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(9.996, 1.521, 5.875), angle = Angle(-13.002, -1.818, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["shield"] = { type = "Model", model = "models/joazzz/weapons/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(4.883, -8.115, 4.888), angle = Angle(86.148, 165.11, -77.848), size = Vector(0.782, 0.782, 0.782), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 25} }
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(4.883, -8.115, 4.888), angle = Angle(86.148, 165.11, -77.848), size = Vector(0.782, 0.782, 0.782), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 25} }
 }
 
 -- Define reload sound events
@@ -200,6 +200,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
+    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_astartes" }, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_bayonetchain"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }

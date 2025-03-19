@@ -71,9 +71,9 @@ SWEP.BlockDamageTypes = {
 }
 
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 150
+SWEP.Secondary.BashDamage = SWEP.Primary.Damage
 SWEP.Secondary.BashDelay = 0.1
-SWEP.Secondary.BashLength = 16 * 6
+SWEP.Secondary.BashLength = SWEP.Primary.Range
 
 SWEP.SequenceLengthOverride = {
 	[ACT_VM_HITCENTER] = 0.8
@@ -142,6 +142,7 @@ SWEP.Primary.DefaultClip = -1
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "none"
 SWEP.Primary.Damage = 350 
+SWEP.Primary.Range = 120
 SWEP.Primary.Spread = 0.0001
 
 SWEP.SmiteActive = false -- Tracks if Smite is currently being fired

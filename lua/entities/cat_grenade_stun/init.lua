@@ -19,7 +19,7 @@ end
 
 -- Stun durations (in seconds)
 ENT.PlayerStunDuration = 20
-ENT.NPCStunDuration = 20
+ENT.NPCStunDuration = 10
 ENT.StunnedNPCs = {} -- Track stunned NPCs for restoring behavior
 
 AddCSLuaFile("cl_init.lua")

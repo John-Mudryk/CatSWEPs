@@ -173,14 +173,14 @@ SWEP.Type_Displayed             = "Tigrus Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -11.096), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 5, [3] = 2} },
+	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -11.096), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 5, [3] = 0} },
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_straight.mdl", bone = "mag_bone", rel = "", pos = Vector(-0.573, 0.507, -8.759), angle = Angle(8.02, 0, 0), size = Vector(1, 1.25, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_drum.mdl", bone = "mag_bone", rel = "", pos = Vector(3.374, 0.324, 0.521), angle = Angle(7.876, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
 
 SWEP.WElements = {
-	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(9.996, 1.71, 5.876), angle = Angle(-13.002, -1.818, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[3] = 2} }
+	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(9.996, 1.71, 5.876), angle = Angle(-13.002, -1.818, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[3] = 0} }
 }
 
 -- Define reload sound events

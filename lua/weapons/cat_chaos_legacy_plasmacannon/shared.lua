@@ -200,10 +200,6 @@ SWEP.AttachmentExclusions = {}
 
 DEFINE_BASECLASS("tfa_bash_base")
 
-SWEP.CustomBulletCallback = function(wep, attacker, trace, dmginfo)
-    util.BlastDamage(wep, attacker, trace.HitPos, dmginfo:GetDamage() / 20, dmginfo:GetDamage() / 2)
-end
-
 function SWEP:ShootBullet(...)
 	-- If an attachment is equipped, fire a projectile
 	if self:IsUsingProjectile() then

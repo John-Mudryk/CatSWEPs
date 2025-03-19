@@ -173,7 +173,7 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Launcher" 
-SWEP.Type_Displayed             = "Proteus Pattern Mk. II" 
+SWEP.Type_Displayed             = "Proteus Pattern Mk. I" 
 
 -- Attachments
 SWEP.VElements = {

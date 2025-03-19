@@ -216,9 +216,9 @@ SWEP.BlockDamageTypes = {
 }
 
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 260
+SWEP.Secondary.BashDamage = SWEP.Primary.Damage * 0.8
 SWEP.Secondary.BashDelay = 0.1
-SWEP.Secondary.BashLength = 16 * 4
+SWEP.Secondary.BashLength = SWEP.Primary.Range 0.8
 
 SWEP.SequenceLengthOverride = {
 	[ACT_VM_HITCENTER] = 0.8

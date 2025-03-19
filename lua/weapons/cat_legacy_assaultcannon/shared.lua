@@ -171,7 +171,7 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Light Machine Gun" 
-SWEP.Type_Displayed             = "Mk. VIII Absolo Pattern" 
+SWEP.Type_Displayed             = "Absolo Pattern Mk. VIII" 
 
 -- Attachments
 SWEP.VElements = {

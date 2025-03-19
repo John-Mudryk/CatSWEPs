@@ -21,87 +21,161 @@ SWEP.Primary.Range = 60
 
 SWEP.Primary.Attacks = {
 	{
-		["act"] = ACT_VM_PRIMARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
-		["dir"] = Vector(0, 20, -70), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage, --Damage
-		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
-		["delay"] = 0.4, --Delay
-		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("pulv_swing_light2.wav"), -- Sound ID
-		["snd_delay"] = 0.26,
-		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
-		["end"] = 0.5, --time before next attack
-		["hull"] = 42, --Hullsize
-		["direction"] = "F", --Swing dir,
-		["combotime"] = 0.1
-	},
-	{
 		["act"] = ACT_VM_HITLEFT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
-		["dir"] = Vector(75, 0, 0), -- Trace arc cast
+		["dir"] = Vector(120, 0, 0), -- Trace arc cast
 		["dmg"] = SWEP.Primary.Damage, --Damage
-		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
-		["delay"] = 0.4, --Delay
-		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("pulv_swing_light2.wav"), -- Sound ID
+		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.45, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss4.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
-		["end"] = 0.5, --time before next attack
+		["end"] = 0.8, --time before next attack
 		["hull"] = 42, --Hullsize
 		["direction"] = "R", --Swing dir,
-		["combotime"] = 0.2
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
 	},
 	{
 		["act"] = ACT_VM_HITRIGHT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
-		["dir"] = Vector(-75, 0, 0), -- Trace arc cast
+		["dir"] = Vector(-120, 0, 0), -- Trace arc cast
 		["dmg"] = SWEP.Primary.Damage, --Damage
-		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
-		["delay"] = 0.4, --Delay
-		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("pulv_swing_light2.wav"), -- Sound ID
+		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.45, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss4.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(1, 5, 0), --viewpunch angle
-		["end"] = 0.5, --time before next attack
+		["end"] = 0.8, --time before next attack
 		["hull"] = 42, --Hullsize
 		["direction"] = "L", --Swing dir,
-		["combotime"] = 0.2
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
+	},
+	{
+		["act"] = ACT_VM_PRIMARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range, -- Trace distance
+		["dir"] = Vector(0, 20, -70), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage, --Damage
+		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.45, --Delay
+		["spr"] = true, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss4.wav"), -- Sound ID
+		["snd_delay"] = 0.26,
+		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
+		["end"] = 0.8, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "F", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
 	},
 	{
 		["act"] = ACT_VM_PULLBACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
 		["dir"] = Vector(0, 20, 70), -- Trace arc cast
 		["dmg"] = SWEP.Primary.Damage, --Damage
-		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
-		["delay"] = 0.4, --Delay
-		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("pulv_swing_light2.wav"), -- Sound ID
+		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.45, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss4.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(-5, 0, 0), --viewpunch angle
-		["end"] = 0.5, --time before next attack
+		["end"] = 0.8, --time before next attack
 		["hull"] = 42, --Hullsize
 		["direction"] = "B", --Swing dir,
-		["combotime"] = 0.2
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
 	}
 }
 
 SWEP.Secondary.Attacks = {
 	{
 		["act"] = ACT_VM_SECONDARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range * 1.25, -- Trace distance
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(0, 20, -70), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.35, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
 		["delay"] = 0.6, --Delay
 		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("pulv_swing_hard.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
 		["end"] = 0.9, --time before next attack
-		["hull"] = 16, --Hullsize
+		["hull"] = 42, --Hullsize
 		["direction"] = "F", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
 	},
+	{
+		["act"] = ACT_VM_MISSLEFT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
+		["dir"] = Vector(120, 0, 0), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
+		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.7, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd_delay"] = 0.4,
+		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
+		["end"] = 1.1, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "R", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
+	},
+	{
+		["act"] = ACT_VM_MISSRIGHT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
+		["dir"] = Vector(-120, 0, 0), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
+		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.65, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd_delay"] = 0.5,
+		["viewpunch"] = Angle(1, 5, 0), --viewpunch angle
+		["end"] = 1.1, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "L", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
+	},
+	{
+		["act"] = ACT_VM_SECONDARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
+		["dir"] = Vector(0, 20, -70), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
+		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.8, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd_delay"] = 0.6,
+		["viewpunch"] = Angle(10, 0, 0), --viewpunch angle
+		["end"] = 1.1, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "B", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
+	},
+	{
+		["act"] = ACT_VM_PULLBACK_HIGH, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
+		["dir"] = Vector(0, 20, -70), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
+		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.55, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd_delay"] = 0.5,
+		["viewpunch"] = Angle(7.5, 0, 0), --viewpunch angle
+		["end"] = 1.1, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "F", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/katana/melee_katana_04.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block02.wav"),
+	}
 }
 
 SWEP.AllowSprintAttack = true
@@ -158,9 +232,9 @@ SWEP.BlockDamageTypes = {
 }
 
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 220
+SWEP.Secondary.BashDamage = SWEP.Primary.Damage * 1.1
 SWEP.Secondary.BashDelay = 0.1
-SWEP.Secondary.BashLength = 16 * 3
+SWEP.Secondary.BashLength = SWEP.Primary.Range
 
 SWEP.SequenceLengthOverride = {
 	[ACT_VM_HITCENTER] = 0.8

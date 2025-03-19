@@ -44,7 +44,7 @@ function ATTACHMENT:Detach(wep)
 end
 
 function ATTACHMENT:CustomBulletCallback(wep, attacker, trace, dmginfo)
-	util.BlastDamage( wep, attacker, trace.HitPos, 150, dmginfo:GetDamage()/5 )
+	util.BlastDamage( wep, attacker, trace.HitPos, dmginfo:GetDamage()/40, dmginfo:GetDamage()/5 )
 end
 
 if not TFA_ATTACHMENT_ISUPDATING then

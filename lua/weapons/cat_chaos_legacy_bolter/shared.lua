@@ -201,7 +201,6 @@ SWEP.Attachments = {
     	[4] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_grip"}, order = 6 },
-    	[7] = { offset = { 0, 0 }, atts = { "cat_vent", "cat_vent2"}, order = 7 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

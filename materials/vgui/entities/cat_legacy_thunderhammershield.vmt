@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_legacy_thunderhammershield"
+	"$translucent" 1
+}

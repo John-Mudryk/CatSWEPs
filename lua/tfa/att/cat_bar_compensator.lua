@@ -24,7 +24,7 @@ ATTACHMENT.WeaponTable = {
 			["bodygroup"] = {[3] = 1},
 		},
 		["bolterT"] = {
-			["bodygroup"] = {[3] = 0},
+			["bodygroup"] = {[3] = 2},
 		},
 
 	},
@@ -36,7 +36,7 @@ ATTACHMENT.WeaponTable = {
 			["bodygroup"] = {[3] = 1},
 		},
 		["bolterT"] = {
-			["bodygroup"] = {[3] = 0},
+			["bodygroup"] = {[3] = 2},
 		},
 	},
 }

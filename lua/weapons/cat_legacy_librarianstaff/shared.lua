@@ -8,7 +8,7 @@ SWEP.ShowWorldModel = false
 SWEP.ViewModelFOV = 80
 SWEP.UseHands = true
 SWEP.CameraOffset = Angle(0, 0, 0)
-SWEP.WorldModel = "models/joazzz/weapons/librarian_staff.mdl"
+SWEP.WorldModel = "models/zadkiel/weapons/librarian_staff.mdl"
 SWEP.HoldType = "melee2"
 SWEP.Primary.Directional = true
 SWEP.Spawnable = true
@@ -71,9 +71,9 @@ SWEP.BlockDamageTypes = {
 }
 
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 150
+SWEP.Secondary.BashDamage = SWEP.Primary.Damage
 SWEP.Secondary.BashDelay = 0.1
-SWEP.Secondary.BashLength = 16 * 6
+SWEP.Secondary.BashLength = SWEP.Primary.Range
 
 SWEP.SequenceLengthOverride = {
 	[ACT_VM_HITCENTER] = 0.8
@@ -86,11 +86,11 @@ SWEP.ViewModelBoneMods = {
 
 
 SWEP.VElements = {
-	["staff"] = { type = "Model", model = "models/joazzz/weapons/librarian_staff.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0, 0, -28.532), angle = Angle(0, -91.667, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
+	["staff"] = { type = "Model", model = "models/zadkiel/weapons/librarian_staff.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0, 0, -28.532), angle = Angle(0, -91.667, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
 }
 
 SWEP.WElements = {
-	["staff"] = { type = "Model", model = "models/joazzz/weapons/librarian_staff.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.466, -1.162, 44.618), angle = Angle(180, -180, -3.911), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
+	["staff"] = { type = "Model", model = "models/zadkiel/weapons/librarian_staff.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.466, -1.162, 44.618), angle = Angle(180, -180, -3.911), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -149,6 +149,7 @@ SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "none"
 SWEP.Primary.Damage = 350 
 SWEP.Primary.Spread = 0.0001
+SWEP.Primary.Range = 120
 
 SWEP.SmiteActive = false -- Tracks if Smite is currently being fired
 SWEP.SmiteFireSound = "ambient/energy/weld1.wav"
