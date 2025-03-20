@@ -17,7 +17,7 @@ SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(5, 5, -6)
 SWEP.Primary.Damage = 675
-SWEP.Primary.Range = 100
+SWEP.Primary.Range = 125
 
 SWEP.Primary.Attacks = {
 	{
@@ -179,6 +179,7 @@ SWEP.Secondary.Attacks = {
 }
 
 SWEP.AllowSprintAttack = false
+SWEP.MoveSpeed = 0.8
 
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_HYBRID-- ANI = mdl, Hybrid = ani + lua, Lua = lua only
 SWEP.SprintAnimation = {
@@ -245,11 +246,11 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["sword"] = { type = "Model", model = "models/joazzz/weapons/chaos/sword_powersword.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -0.518, 5.5), angle = Angle(-3.507, -90.675, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 16, bodygroup = {[0] = 1, [1] = 13, [2] = 12} }
+	["sword"] = { type = "Model", model = "models/joazzz/weapons/chaos/sword_powersword.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -0.018, 12.5), angle = Angle(-3.507, -90.675, 0), size = Vector(0.7, 0.7, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 16, bodygroup = {[0] = 1, [1] = 13, [2] = 12} }
 }
 
 SWEP.WElements = {
-	["sword"] = { type = "Model", model = "models/joazzz/weapons/chaos/sword_powersword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, -7), angle = Angle(0, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 16, bodygroup = {[0] = 1, [1] = 13, [2] = 12} },
+	["sword"] = { type = "Model", model = "models/joazzz/weapons/chaos/sword_powersword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, -17), angle = Angle(0, 0, 180), size = Vector(1, 1, 1.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 16, bodygroup = {[0] = 1, [1] = 13, [2] = 12} },
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -263,20 +264,209 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
+SWEP.PlagueMaxStacks = 5  -- Max plague stacks on a single target
+SWEP.PlagueDuration = 15   -- Each stack lasts 15 seconds
+SWEP.PlagueDamageMultiplier = 0.05  -- 5% of base damage per tick
+SWEP.PlagueTickInterval = 1  -- Damage applied every 1 second
+SWEP.HealBaseRate = 0.01  -- 1% max HP per second base heal
+SWEP.HealBonusPerTarget = 0.0025  -- 0.25% extra per afflicted target
+
 function SWEP:ChoosePrimaryAttack()
-    local ind, attack = self.BaseClass.ChoosePrimaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChoosePrimaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
-	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack.dmg = self:GetStat("Primary.Damage")
+        attack.len = self:GetStat("Primary.Range")
+
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+            if IsValid(hitEnt) and (hitEnt:IsNPC() or hitEnt:IsPlayer()) then
+                wep:ApplyPlagueEffect(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+            if IsValid(hitEnt) and (hitEnt:IsNPC() or hitEnt:IsPlayer()) then
+                wep:ApplyPlagueEffect(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
+
+function SWEP:ApplyPlagueEffect(target)
+    if not IsValid(target) or not target:Alive() then return end
+    local attacker = self:GetOwner()
+    local wep = self  -- Store SWEP reference
+
+    -- Increment plague stacks safely
+    local currentStacks = target:GetNWInt("PlagueStacks", 0)
+    local newStacks = math.min(currentStacks + 1, self.PlagueMaxStacks)
+    target:SetNWInt("PlagueStacks", newStacks)
+
+    -- Unique timer ID for this target
+    local timerID = "PlagueEffect_" .. target:EntIndex()
+
+    -- Refresh the plague timer if it already exists
+    if timer.Exists(timerID) then
+        timer.Adjust(timerID, self.PlagueTickInterval, self.PlagueDuration / self.PlagueTickInterval)
+        return
+    end
+
+    -- Apply periodic damage
+    timer.Create(timerID, self.PlagueTickInterval, self.PlagueDuration / self.PlagueTickInterval, function()
+        if not IsValid(target) or not target:Alive() or not IsValid(attacker) or not IsValid(wep) then
+            timer.Remove(timerID)
+            return
+        end
+
+        local stacks = target:GetNWInt("PlagueStacks", 0)
+        if stacks > 0 then
+            local plagueDamage = wep:GetStat("Primary.Damage") * wep.PlagueDamageMultiplier * stacks
+            local dmginfo = DamageInfo()
+            dmginfo:SetDamage(plagueDamage)
+            dmginfo:SetAttacker(attacker)
+            dmginfo:SetInflictor(wep)
+            dmginfo:SetDamageType(DMG_POISON)
+
+            target:TakeDamageInfo(dmginfo)
+            target:EmitSound("ambient/levels/canals/toxic_slime_gurgle8.wav", 75, 100)
+        end
+    end)
+
+    -- Ensure stacks decay over time, reducing by 1 every few seconds
+    local decayID = "PlagueDecay_" .. target:EntIndex()
+    if not timer.Exists(decayID) then
+        timer.Create(decayID, 5, 0, function()
+            if not IsValid(target) then
+                timer.Remove(decayID)
+                return
+            end
+
+            local stacks = target:GetNWInt("PlagueStacks", 0)
+            if stacks > 0 then
+                target:SetNWInt("PlagueStacks", stacks - 1)
+            else
+                timer.Remove(decayID)
+            end
+        end)
+    end
+end
+
+function SWEP:Think()
+    if self.BaseClass and self.BaseClass.Think then
+        self.BaseClass.Think(self)
+    end
+
+    local owner = self:GetOwner()
+    if not IsValid(owner) or not owner:Alive() then return end
+
+    -- Make sure healing happens once per second
+    if not self.HealingTimer or CurTime() > self.HealingTimer then
+        self:ApplyHealing()
+        self.HealingTimer = CurTime() + 1  -- Set next heal time
+    end
+end
+
+function SWEP:ApplyHealing()
+    local owner = self:GetOwner()
+    if not IsValid(owner) then return end
+
+    local maxHP = owner:GetMaxHealth()
+    local baseHeal = math.ceil(maxHP * 0.005) -- 0.5% of max HP, rounded up
+
+    local afflictedCount = 0
+    for _, ent in ipairs(ents.GetAll()) do
+        if IsValid(ent) and ent:GetNWInt("PlagueStacks", 0) > 0 then
+            afflictedCount = afflictedCount + 1
+            if afflictedCount >= 5 then break end -- Only count up to 5 afflicted
+        end
+    end
+
+    -- Bonus healing per afflicted (max 5)
+    local bonusHeal = math.ceil(maxHP * 0.0025 * afflictedCount)
+    local totalHeal = baseHeal + bonusHeal
+
+    -- Apply health healing
+    owner:SetHealth(math.min(owner:Health() + totalHeal, maxHP))
+
+    -- Fix for Armor Healing  
+    if owner.SetArmor and owner:GetMaxArmor() > 0 then
+        local maxArmor = owner:GetMaxArmor()
+        owner:SetArmor(math.min(owner:Armor() + totalHeal, maxArmor))
+    end
+end
+
+hook.Add("HUDPaint", "PlagueBlade_HUD", function()
+    local ply = LocalPlayer()
+    local wep = ply:GetActiveWeapon()
+
+    -- Ensure player is holding the Plague Blade
+    if not IsValid(wep) or wep:GetClass() ~= "cat_chaos_legacy_powerswordnurgle" then return end
+
+    local afflictedCount = 0
+    for _, ent in ipairs(ents.GetAll()) do
+        if IsValid(ent) and ent:GetNWInt("PlagueStacks", 0) > 0 then
+            afflictedCount = afflictedCount + 1
+        end
+    end
+
+    -- Set up positioning
+    local x, y = 50, 50
+    local width, height = 200, 40
+
+    -- Draw background box
+    draw.RoundedBox(8, x - 5, y - 5, width + 10, height + 10, Color(0, 0, 0, 150))
+
+    -- Draw Afflicted Count at Bottom of Screen
+    draw.SimpleTextOutlined(
+        "Gifted: " .. afflictedCount,
+        "DermaLarge",
+        x + width / 2, y + height / 2,
+        Color(0, 255, 0, 255), -- Green text
+        TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER,
+        2, Color(0, 0, 0, 255) -- Black outline
+    )
+end)
+
+hook.Add("PostDrawTranslucentRenderables", "PlagueBlade_3DText", function()
+    local ply = LocalPlayer()
+    local wep = ply:GetActiveWeapon()
+
+    -- Ensure player is holding the Plague Blade
+    if not IsValid(wep) or wep:GetClass() ~= "cat_chaos_legacy_powerswordnurgle" then return end
+
+    for _, ent in ipairs(ents.GetAll()) do
+        local stacks = ent:GetNWInt("PlagueStacks", 0)
+        if IsValid(ent) and stacks > 0 then
+            local pos = ent:GetPos() + Vector(0, 0, 85) -- Adjust height above entity
+            local ang = EyeAngles()
+            ang:RotateAroundAxis(ang:Right(), 90)
+            ang:RotateAroundAxis(ang:Up(), -90)
+
+            cam.Start3D2D(pos, ang, 0.1)
+                draw.SimpleTextOutlined(
+                    "Plagues: " .. stacks,
+                    "DermaLarge",
+                    0, 0,
+                    Color(0, 255, 0, 255), -- Green text
+                    TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER,
+                    2, Color(0, 0, 0, 255) -- Black outline
+                )
+            cam.End3D2D()
+        end
+    end
+end)
+
+

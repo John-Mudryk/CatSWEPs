@@ -1,6 +1,6 @@
 SWEP.Base = "tfa_melee_base"
 SWEP.Category = "Cat's Legacy Chaos SWEPs"
-SWEP.PrintName = "Sword of Blood"
+SWEP.PrintName = "Reaver's Fang"
 SWEP.ViewModel = "models/zadkiel/weapons/c_oren_katana.mdl"
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
@@ -10,7 +10,7 @@ SWEP.CameraOffset = Angle(0, 0, 0)
 --SWEP.InspectPos = Vector(17.184, -4.891, -11.902) - SWEP.VMPos
 --SWEP.InspectAng = Vector(70, 46.431, 70)
 SWEP.WorldModel = "models/joazzz/weapons/chaos/sword_powersword.mdl"
-SWEP.HoldType = "melee2"
+SWEP.HoldType = "melee"
 SWEP.Primary.Directional = true
 SWEP.Spawnable = true
 SWEP.AdminOnly = false
@@ -178,7 +178,7 @@ SWEP.Secondary.Attacks = {
 	}
 }
 
-SWEP.AllowSprintAttack = false
+SWEP.AllowSprintAttack = true
 
 SWEP.Sprint_Mode = TFA.Enum.LOCOMOTION_HYBRID-- ANI = mdl, Hybrid = ani + lua, Lua = lua only
 SWEP.SprintAnimation = {
@@ -263,20 +263,165 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
+SWEP.BloodlustStacks = 0 -- Starts at 0 stacks
+SWEP.BloodlustMax = 8 -- Max stacks
+SWEP.BloodlustDecayTime = 5 -- Time in seconds before stacks reset
+SWEP.BloodlustTimer = 0 -- Keeps track of last hit time
+
+if SERVER then
+    AddCSLuaFile()
+end
+
 function SWEP:ChoosePrimaryAttack()
-    local ind, attack = self.BaseClass.ChoosePrimaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChoosePrimaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
-	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * self:GetBloodlustDamageMultiplier()
+        attack.len = self:GetStat("Primary.Range")
+
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+            if IsValid(hitEnt) then
+                wep:ApplyBloodlust(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25 * self:GetBloodlustDamageMultiplier()
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+            if IsValid(hitEnt) then
+                wep:ApplyBloodlust(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
+
+function SWEP:ApplyBloodlust(target)
+    if not IsValid(target) then return end
+    local owner = self:GetOwner()
+
+    -- Increase Bloodlust Stacks (Max 8)
+    self.BloodlustStacks = math.min(self.BloodlustStacks + 1, self.BloodlustMax)
+    self:SetNWInt("BloodlustStacks", self.BloodlustStacks) -- Sync to clients
+
+    -- Reset decay timer using timer.Simple instead of Think()
+    if timer.Exists("BloodlustDecay_" .. self:EntIndex()) then
+        timer.Remove("BloodlustDecay_" .. self:EntIndex()) -- Remove existing timer
+    end
+
+    timer.Create("BloodlustDecay_" .. self:EntIndex(), self.BloodlustDecayTime, 1, function()
+        if IsValid(self) and IsValid(owner) then
+            self.BloodlustStacks = 0
+            self:SetNWInt("BloodlustStacks", 0) -- Reset networked value
+	    self:SetNWFloat("BloodlustFadeTime", CurTime() + 3)
+        end
+    end)
+
+    -- Calculate lifesteal amount
+    local baseHeal = 0.015 -- 1.5% base heal
+    local maxBonusHeal = 0.015 -- Additional 3.5% heal at max stacks (so total is 3%)
+    local bonusPerStack = maxBonusHeal / self.BloodlustMax -- Properly distribute over max stacks
+    local healAmount = owner:GetMaxHealth() * (baseHeal + (self.BloodlustStacks * bonusPerStack))
+
+    owner:SetHealth(math.min(owner:Health() + healAmount, owner:GetMaxHealth()))
+
+end
+
+
+function SWEP:GetBloodlustDamageMultiplier()
+    return 1 + (self.BloodlustStacks * 0.0125) -- Each stack gives 1% more damage, max 10%
+end
+
+hook.Add("PlayerDeath", "BloodlustOnKill", function(victim, inflictor, attacker)
+    -- Ensure the attacker is a player and is using THIS weapon
+    if IsValid(attacker) and attacker:IsPlayer() and IsValid(attacker:GetActiveWeapon()) then
+        local wep = attacker:GetActiveWeapon()
+        
+        if wep:GetClass() == "cat_chaos_legacy_powerswordkhorne" then  -- Change this to your SWEP's class name
+            -- Give %% max armor per kill at highest stack
+            local maxArmor = attacker:GetMaxArmor() or 100 -- Default to 100 max armor if nil
+            local baseArmorGain = 0.01 -- 1% base armor per kill
+		local maxArmorGain = 0.05  -- 5% armor cap at max stacks
+		local bonusPerStack = 4 / (wep.BloodlustMax or 8) --Ensures 5% total at max stacks
+
+	    local armorGain = maxArmor * math.min(baseArmorGain + (self.BloodlustStacks * bonusPerStack), maxArmorGain)
+
+            attacker:SetArmor(math.min(attacker:Armor() + armorGain, maxArmor))
+
+            attacker:EmitSound("ambient/levels/canals/toxic_slime_gurgle2.wav", 75, 100) -- Play a sound
+        end
+    end
+end)
+
+hook.Add("OnNPCKilled", "BloodlustOnKillNPC", function(npc, attacker, inflictor)
+    if IsValid(attacker) and attacker:IsPlayer() and IsValid(attacker:GetActiveWeapon()) then
+        local wep = attacker:GetActiveWeapon()
+        
+        if wep:GetClass() == "cat_chaos_legacy_powerswordkhorne" then  -- Change this to your SWEP's class name
+            local maxArmor = attacker:GetMaxArmor() or 100
+            local baseArmorGain = 0.01 -- 1% base armor per kill
+		local maxArmorGain = 0.05  -- 5% armor cap at max stacks
+		local bonusPerStack = 4 / (wep.BloodlustMax or 8) --Ensures 5% total at max stacks
+
+	    local armorGain = maxArmor * math.min(baseArmorGain + (wep.BloodlustStacks * bonusPerStack), maxArmorGain)
+
+            attacker:SetArmor(math.min(attacker:Armor() + armorGain, maxArmor))
+
+            attacker:EmitSound("ambient/levels/canals/toxic_slime_gurgle2.wav", 75, 100)
+        end
+    end
+end)
+
+hook.Add("HUDPaint", "BloodlustHUD", function()
+    local ply = LocalPlayer()
+    if not IsValid(ply) then return end
+    
+    local wep = ply:GetActiveWeapon()
+    if not IsValid(wep) or wep:GetClass() ~= "cat_chaos_legacy_powerswordkhorne" then return end
+
+    local stacks = wep:GetNWInt("BloodlustStacks", 0) 
+    local maxStacks = wep.BloodlustMax or 8
+    local fadeTime = wep:GetNWFloat("BloodlustFadeTime", 0)
+    local isFading = fadeTime > CurTime()
+
+    -- Set up positioning
+    local x, y = 50, 50
+    local width, height = 200, 40
+
+    -- Draw background box
+    draw.RoundedBox(8, x - 5, y - 5, width + 10, height + 10, Color(0, 0, 0, 150))
+
+    -- Draw stack counter
+    draw.SimpleTextOutlined(
+        "Bloodlust: " .. stacks .. "/" .. maxStacks, 
+        "DermaLarge", 
+        x + width / 2, y + height / 2, 
+        Color(255, 0, 0, 255), 
+        TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER, 
+        2, Color(0, 0, 0, 255)
+    )
+
+    -- Show warning when Bloodlust fades
+    if isFading then
+        draw.SimpleTextOutlined(
+            "**Your fury fades... Bloodlust has ended.**",
+            "DermaLarge",
+            ScrW() / 2, 40, -- Top center of the screen
+            Color(255, 50, 50, 255), -- Fading red color
+            TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER,
+            2, Color(0, 0, 0, 255)
+        )
+    end
+end)
+
+

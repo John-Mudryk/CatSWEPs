@@ -1,6 +1,6 @@
 SWEP.Base = "tfa_melee_base"
 SWEP.Category = "Cat's Legacy Chaos SWEPs"
-SWEP.PrintName = "Razor of Change"
+SWEP.PrintName = "Prophet's Razor"
 SWEP.ViewModel = "models/zadkiel/weapons/c_oren_katana.mdl"
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
@@ -263,11 +263,23 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
+SWEP.LastEffectTime = 0 -- Cooldown system to prevent effect spam
+SWEP.EffectCooldown = 10 -- Seconds before another effect can trigger
+
 function SWEP:ChoosePrimaryAttack()
     local ind, attack = self.BaseClass.ChoosePrimaryAttack(self) -- Call original function
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
-	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") -- Update damage
+        attack.len = self:GetStat("Primary.Range") -- Update range
+
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+
+            if IsValid(hitEnt) then
+                wep:ApplyTzeentchEffect(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
@@ -277,6 +289,328 @@ function SWEP:ChooseSecondaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
 	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+    
+        attack.callback = function(attk, wep, trace)
+            if not trace.Hit then return end
+            local hitEnt = trace.Entity
+
+            if IsValid(hitEnt) then
+                wep:ApplyTzeentchEffect(hitEnt)
+            end
+        end
     end
     return ind, attack
 end
+
+function SWEP:ApplyTzeentchEffect(target)
+    if not IsValid(target) then return end
+    if CurTime() < self.LastEffectTime + self.EffectCooldown then return end -- Cooldown check
+
+    local effectID = math.random(1, 15) -- Choose a random effect
+    self.LastEffectTime = CurTime() -- Store last effect time
+    self.NextEffectTime = CurTime() + self.EffectCooldown -- Store next effect time
+    self:SetNWFloat("NextEffectTime", self.NextEffectTime) -- Network it
+    self:SetNWString("CurrentEffectMessage", "") -- Reset message
+
+    local owner = self:GetOwner()
+
+    -- Play a visual effect (subtle blue glow)
+    local effectData = EffectData()
+    effectData:SetOrigin(target:GetPos())
+    effectData:SetEntity(target)
+    util.Effect("psyker_explosion", effectData)
+
+    -- Play a sound (chaotic whispers)
+    target:EmitSound("ambient/levels/citadel/strange_talk".. math.random(1, 11).. ".wav", 75, 120)
+
+    local effectMessage = "" -- This will store the chat message
+
+    if effectID == 1 then
+        -- Warp Surge (User speed boost)
+        if IsValid(owner) then
+            owner:SetWalkSpeed(owner:GetWalkSpeed() * 1.3)
+            owner:SetRunSpeed(owner:GetRunSpeed() * 1.3)
+            timer.Simple(3, function()
+                if IsValid(owner) then
+                    owner:SetWalkSpeed(owner:GetWalkSpeed() / 1.3)
+                    owner:SetRunSpeed(owner:GetRunSpeed() / 1.3)
+                end
+            end)
+        end
+        effectMessage = "Warp Surge! - You feel a surge of power, increasing your speed for 3 seconds!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    elseif effectID == 2 then
+        -- Reality Fracture (DoT on enemy)
+        local dotDamage = self.Primary.Damage * 0.25
+        for i = 1, 3 do
+            timer.Simple(i, function()
+                if IsValid(target) and target:Health() > 0 then
+                    local dmginfo = DamageInfo()
+                    dmginfo:SetDamage(dotDamage)
+                    dmginfo:SetAttacker(owner)
+                    dmginfo:SetInflictor(self)
+                    dmginfo:SetDamageType(DMG_SHOCK)
+                    target:TakeDamageInfo(dmginfo)
+                end
+            end)
+        end
+        effectMessage = "Reality Fracture! - Your strike distorts reality, causing your enemy to take additional damage over time!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+elseif effectID == 3 then
+        -- Temporal Shift (Switch weapons for 3 sec)
+        if IsValid(owner) and owner:IsPlayer() then
+            local weapons = owner:GetWeapons()
+            if #weapons > 1 then
+                local randomWeapon = weapons[math.random(#weapons)]
+                owner:SelectWeapon(randomWeapon:GetClass())
+                timer.Simple(3, function()
+                    if IsValid(owner) then
+                        owner:SelectWeapon(self:GetClass()) -- Switch back to the sword
+                    end
+                end)
+            end
+        end
+        effectMessage = "Temporal Shift! - You are forced to wield another weapon for 3 seconds!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+elseif effectID == 4 then
+    -- Arcane Overload (NEW: Small AoE explosion)
+    if IsValid(target) then
+        local explosion = ents.Create("env_explosion")
+        explosion:SetPos(target:GetPos())
+        explosion:SetOwner(owner)
+        explosion:SetKeyValue("iMagnitude", "40") -- Damage
+        explosion:SetKeyValue("iRadiusOverride", "150") -- Small radius
+        explosion:Spawn()
+        explosion:Fire("Explode", 0, 0)
+    end
+    effectMessage = "Arcane Overload! - Your enemy suddenly explodes in a burst of chaotic energy!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+
+    elseif effectID == 5 then
+        -- Warp Hunger (User heals 5% of max HP)
+        if IsValid(owner) and owner:Health() < owner:GetMaxHealth() then
+            owner:SetHealth(math.min(owner:Health() + owner:GetMaxHealth() * 0.05, owner:GetMaxHealth()))
+        end
+        effectMessage = "Warp Hunger! - The sword drains energy from the enemy, healing you slightly!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    elseif effectID == 6 then
+        -- Mutated Backlash (User takes 5% of primary damage)
+        if IsValid(owner) then
+            local dmginfo = DamageInfo()
+            dmginfo:SetDamage(self.Primary.Damage * 0.05)
+            dmginfo:SetAttacker(owner)
+            dmginfo:SetInflictor(self)
+            dmginfo:SetDamageType(DMG_SHOCK)
+            owner:TakeDamageInfo(dmginfo)
+        end
+        effectMessage = "Mutated Backlash! - Your body twists painfully as the sword drains your own vitality!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    elseif effectID == 7 then
+        -- Twisted Blessing (Enemy heals 15% of sword damage )
+        if IsValid(target) then
+            target:SetHealth(math.min(target:Health() + self.Primary.Damage * 0.5, target:GetMaxHealth()))
+        end
+        effectMessage = "Twisted Blessing! - The chaotic forces betray you, healing your foe!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    elseif effectID == 8 then
+        -- Reality Warp (Teleport enemy randomly within 5m)
+        local randomOffset = Vector(math.random(-250, 250), math.random(-250, 250), 0)
+        local newPos = target:GetPos() + randomOffset
+        target:SetPos(newPos)
+        effectMessage = "Reality Warp! Your strike sends your enemy teleporting unpredictably!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+    
+elseif effectID == 9 then
+        -- Paradox Surge (User slowed for 3 sec)
+        if IsValid(owner) then
+            owner:SetWalkSpeed(owner:GetWalkSpeed() * 0.6)
+            owner:SetRunSpeed(owner:GetRunSpeed() * 0.6)
+            timer.Simple(3, function()
+                if IsValid(owner) then
+                    owner:SetWalkSpeed(owner:GetWalkSpeed() / 0.6)
+                    owner:SetRunSpeed(owner:GetRunSpeed() / 0.6)
+                end
+            end)
+        end
+        effectMessage = "Paradox Surge! - Your body staggers as time distorts around you, slowing your movement!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+ elseif effectID == 10 then
+        -- Gift of Change (Temporary armor)
+        if IsValid(owner) then
+            owner:SetArmor(owner:Armor() + owner:GetMaxArmor() * 0.1)
+        end
+        effectMessage = "Gift of Change! - Tzeentch grants you a temporary increase to toughness!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    elseif effectID == 11 then
+    for i = 1, 3 do
+        timer.Simple(i * 0.5, function()
+            local strikePos = owner:GetPos() + Vector(math.random(-150, 150), math.random(-150, 150), 50) -- Keep it above ground
+            local effectData = EffectData()
+            effectData:SetOrigin(strikePos)
+            util.Effect("cat_plasma_explosion_small_chaos", effectData, true, true)
+
+            for _, ent in ipairs(ents.FindInSphere(strikePos, 75)) do
+                if IsValid(ent) and (ent:IsPlayer() or ent:IsNPC()) then
+                    local dmg = DamageInfo()
+                    dmg:SetDamage(self.Primary.Damage * 0.2)
+                    dmg:SetAttacker(owner)
+                    dmg:SetDamageType(DMG_SHOCK)
+                    ent:TakeDamageInfo(dmg)
+                end
+            end
+        end)
+    end
+    effectMessage = "Arcane Storm! - Chaos rains from the skies!"
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+elseif effectID == 12 then
+    if IsValid(owner) then
+        local originalPos = owner:GetPos() -- Save starting position
+
+        effectMessage = "Warp Anchor! - Return to your position in 5 seconds..."
+	self:SetNWString("CurrentEffectMessage", effectMessage)
+
+        -- Return the player to original position after 5 sec
+        timer.Simple(5, function()
+            if IsValid(owner) then
+                owner:SetPos(originalPos)
+		util.Effect("timestart", effectData)
+            end
+        end)
+    end
+
+elseif effectID == 13 then
+    if IsValid(owner) then
+        local upwardForce = Vector(0, 0, 750) -- Adjust this value to control launch height
+
+        if owner:IsOnGround() then
+            owner:SetVelocity(upwardForce) -- Directly apply velocity upwards
+            effectMessage = "Tzeentch’s Trick! - You are flung into the air!"
+            owner:EmitSound("ambient/levels/labs/teleport_mechanism_windup1.wav", 75, 100)
+	    self:SetNWString("CurrentEffectMessage", effectMessage)
+        else
+            effectMessage = "Tzeentch’s Trick! - The warp spared you... this time."
+            owner:EmitSound("ambient/levels/labs/teleport_postblast.wav", 75, 100)
+	    self:SetNWString("CurrentEffectMessage", effectMessage)
+        end
+    end
+
+elseif effectID == 14 then
+    if IsValid(owner) then
+        local mutationType = math.random(1, 2) -- Random mutation
+
+        -- Play a mutation effect
+        local effectData = EffectData()
+        effectData:SetOrigin(owner:GetPos())
+        util.Effect("strider_impale_ground", effectData, true, true)
+        owner:EmitSound("ambient/levels/citadel/weapon_disintegrate1.wav", 75, 100)
+
+        if mutationType == 1 then
+            -- Buff: Gain 10% max HP
+            local newMaxHP = owner:GetMaxHealth() * 1.1
+            owner:SetHealth(math.min(owner:Health() + (newMaxHP - owner:GetMaxHealth()), newMaxHP))
+            owner:SetArmor(owner:Armor() + 25)
+            effectMessage = "Unstable Mutation! - Your body surges with chaotic power!"
+	    self:SetNWString("CurrentEffectMessage", effectMessage)
+        else
+            -- Debuff: Lose 10% max HP
+            local newMaxHP = owner:GetMaxHealth() * 0.9
+            owner:SetHealth(math.max(1, owner:Health() - (owner:GetMaxHealth() - newMaxHP)))
+	    owner:SetArmor(math.max(0, owner:Armor() - 25))
+            effectMessage = "Unstable Mutation! - Your body withers under chaotic strain!"
+	    self:SetNWString("CurrentEffectMessage", effectMessage)
+        end
+     end
+
+
+elseif effectID == 15 then
+
+    effectMessage = "Fractured Reality! - Time distorts unpredictably!"
+    self:SetNWString("CurrentEffectMessage", effectMessage)
+
+    local effectData = EffectData()
+    	effectData:SetOrigin(owner:GetPos())
+    	util.Effect("timestop", effectData)
+
+	timeShift = math.random(1, 2)
+	if timeShift == 1 then
+    game.SetTimeScale(0.5) -- Half-speed for everyone
+    	else
+    game.SetTimeScale(1.5) -- Double-speed for everyone
+	end
+
+    timer.Simple(3, function()
+        -- Create effect for returning to normal time
+        local effectDataEnd = EffectData()
+        effectDataEnd:SetOrigin(owner:GetPos())
+        util.Effect("timestart", effectDataEnd)
+
+        game.SetTimeScale(1) -- Restore normal speed
+    end)
+
+
+end
+    -- Send message to player's chat
+    -- if IsValid(owner) and owner:IsPlayer() then
+    --    owner:ChatPrint(effectMessage)
+    -- end
+end
+
+if CLIENT then
+    local displayTime = 5 -- How long the message stays on screen
+    local effectCooldown = 10 -- Hardcoded to match SWEP.EffectCooldown
+
+    hook.Add("HUDPaint", "RazorOfChangeHUD", function()
+        local ply = LocalPlayer()
+        local wep = ply:GetActiveWeapon()
+
+        -- Check if the player is holding the Razor of Change
+        if not IsValid(wep) or wep:GetClass() ~= "cat_chaos_legacy_powerswordtzeentch" then return end
+
+        -- Retrieve networked values
+        local effectMessage = wep:GetNWString("CurrentEffectMessage", "")
+        local nextEffectTime = wep:GetNWFloat("NextEffectTime", 0)
+
+        -- Draw the effect message (only if within display time)
+        if effectMessage ~= "" and CurTime() - nextEffectTime + effectCooldown < displayTime then
+            draw.SimpleTextOutlined(
+                effectMessage,
+                "DermaLarge",
+                ScrW() / 2, 40, -- Adjust position
+                Color(0, 200, 255, 255), -- Blue text for chaos vibes
+                TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER,
+                2, Color(0, 0, 0, 255) -- Black outline
+            )
+        end
+
+    local x, y = 50, 50
+    local width, height = 200, 40
+
+    -- Draw background box
+    draw.RoundedBox(8, x - 5, y - 5, width + 10, height + 10, Color(0, 0, 0, 180))
+
+        -- Draw the cooldown timer
+        local timeLeft = math.max(0, math.Round(nextEffectTime - CurTime()))
+        draw.SimpleTextOutlined(
+            "Next Effect: " .. timeLeft .. "s",
+            "DermaLarge",
+            x + width / 2, y + height / 2, -- Adjust position slightly above
+            Color(55, 0, 255, 255), -- Slight purple to stand out
+            TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER,
+            2, Color(0, 0, 0, 255) -- Black outline
+        )
+    end)
+end
+
+
+
+
