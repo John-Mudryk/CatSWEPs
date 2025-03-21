@@ -268,6 +268,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Crusade Pattern Mk. II"
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

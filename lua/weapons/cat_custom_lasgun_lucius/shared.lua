@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_lasgun_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_galvanic.mdl"	-- Weapon world model
@@ -38,7 +38,8 @@ SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickba
 
 SWEP.ViewModelBoneMods = {
 	["mag_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(-1, 1, 0), angle = Angle(0, 0, 0) }
 }
 
 SWEP.Primary.Sound			= "weapons/lucylas/lasgunfire.mp3"		-- script that calls the primary fire sound
@@ -173,7 +174,9 @@ SWEP.Type_Displayed             = "Lucius Pattern No. 98"
 
 -- Attachments
 SWEP.VElements = {
-	["lucius"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 0.284, -0.398), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lucius"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 0.284, -0.398), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
 }
 
 

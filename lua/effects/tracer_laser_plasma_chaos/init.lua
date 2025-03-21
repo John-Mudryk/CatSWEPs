@@ -61,6 +61,6 @@ function EFFECT:Render( )
 					 6,													// Width
 					 texcoord,														// Start tex coord
 					 texcoord + self.Length / 256,									// End tex coord
-					 Color( 255, 125, 255, math.Clamp(self.Alpha, 0,255)) )		// Color (optional)'
+					 Color( 255, 55, 255, math.Clamp(self.Alpha, 0,255)) )		// Color (optional)'
 					 
 end

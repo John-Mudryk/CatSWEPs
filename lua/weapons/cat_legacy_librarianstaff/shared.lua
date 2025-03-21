@@ -64,7 +64,7 @@ SWEP.BlockDamageMaximum = 0.0 --Multiply damage by this for a maximumly effectiv
 SWEP.BlockDamageMinimum = 0.0 --Multiply damage by this for a minimumly effective block
 SWEP.BlockTimeWindow = 1 --Time to absorb maximum damage
 SWEP.BlockTimeFade = 1 --Time for blocking to do minimum damage.  Does not include block window
-SWEP.BlockSound = Sound("block_1.wav")
+SWEP.BlockSound = Sound("weapons/laserrifle/impacts/fx_laser_impact_02.wav")
 SWEP.BlockDamageCap = 200
 SWEP.BlockDamageTypes = {
 	DMG_SLASH,DMG_CLUB,DMG_CRUSH,DMG_BULLET,DMG_BLAST,DMG_BURN,DMG_PLASMA,DMG_SHOCK,DMG_DISSOLVE
@@ -409,6 +409,112 @@ function SWEP:Think()
                 self:FireSmiteBullet()
                 self.LastSmiteShot = CurTime()
             end
+        end
+    end
+end
+
+function SWEP:Think2(...)
+
+    if self.BaseClass and self.BaseClass.Think2 then
+        self.BaseClass.Think2(self, ...)
+    end
+
+    if not self:VMIV() then return end
+
+    local stat = self:GetStatus()
+    local isBlocking = (stat == 24)  -- 24 means actively blocking
+
+    if CLIENT then
+        if isBlocking then
+            if not IsValid(self.ShieldModel) then
+                -- Create the shield model
+                self.ShieldModel = ClientsideModel("models/props_trainstation/trainstation_clock001.mdl")
+                self.ShieldModel:SetNoDraw(false)  -- Ensure it's visible
+                self.ShieldModel:SetMaterial("models/props_combine/portalball001_sheet")
+                self.ShieldModel:SetColor(Color(0, 40, 80, 255))
+                self.ShieldModel:SetModelScale(1, 0)
+
+                -- Play sound when blocking starts
+                if not self.WasBlocking then
+                    self:GetOwner():EmitSound("ambient/levels/citadel/weapon_disintegrate1.wav")
+                end
+            end
+
+            -- Get player's hand position to attach the shield
+            local vm = self:GetOwner():GetViewModel()
+            if IsValid(vm) then
+                local bone = vm:LookupBone("ValveBiped.Bip01_R_Hand")
+                if bone then
+                    local pos, ang = vm:GetBonePosition(bone)
+
+                    -- Adjust position
+                    pos = pos + ang:Right() * 1 + ang:Forward() * 30 + ang:Up() * 1
+                    ang:RotateAroundAxis(ang:Right(), 180)
+
+                    -- Update shield position
+                    self.ShieldModel:SetPos(pos)
+                    self.ShieldModel:SetAngles(ang)
+                end
+            end
+
+            -- Play looped humming sound while blocking
+            if not self.BlockingLoop then
+                self.BlockingLoop = CreateSound(self:GetOwner(), "ambient/levels/citadel/field_loop1.wav")
+                self.BlockingLoop:Play()
+            end
+        else
+            -- Hide or remove the shield if not blocking
+            if IsValid(self.ShieldModel) then
+                self.ShieldModel:Remove()
+                self.ShieldModel = nil
+            end
+
+            -- Stop the looped blocking sound
+            if self.BlockingLoop then
+                self.BlockingLoop:Stop()
+                self.BlockingLoop = nil
+            end
+
+            -- Play sound when blocking stops
+            if self.WasBlocking then
+                self:GetOwner():EmitSound("ambient/levels/citadel/weapon_disintegrate3.wav")
+            end
+        end
+    end
+
+    self.WasBlocking = isBlocking  -- Track state change
+
+    self.BaseClass.Think2(self, ...)
+end
+
+function SWEP:Holster(...)
+    if CLIENT then
+        if IsValid(self.ShieldModel) then
+            self.ShieldModel:Remove()
+            self.ShieldModel = nil
+        end
+
+        -- Stop sound when weapon is holstered
+        if self.BlockingLoop then
+            self.BlockingLoop:Stop()
+            self.BlockingLoop = nil
+        end
+    end
+
+    return self.BaseClass.Holster(self, ...)
+end
+
+function SWEP:OnRemove()
+    if CLIENT then
+        if IsValid(self.ShieldModel) then
+            self.ShieldModel:Remove()
+            self.ShieldModel = nil
+        end
+
+        -- Stop sound when weapon is removed
+        if self.BlockingLoop then
+            self.BlockingLoop:Stop()
+            self.BlockingLoop = nil
         end
     end
 end

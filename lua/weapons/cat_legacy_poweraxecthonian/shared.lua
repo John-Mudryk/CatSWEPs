@@ -245,11 +245,11 @@ SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 }
 SWEP.VElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-15.6), angle = Angle(0, 180, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {}}
+	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-15.6), angle = Angle(0, 180, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {}}
 }
 
 SWEP.WElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, 15), angle = Angle(0, 180, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} },
+	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, 15), angle = Angle(0, 180, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} },
 }
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
 
@@ -257,6 +257,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Carsoran Pattern Mk. I"
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

@@ -173,8 +173,10 @@ SWEP.Type_Displayed             = "Kantreal Mk. III"
 
 -- Attachments
 SWEP.VElements = {
-	["lascarbineK"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lascarbine.mdl", bone = "weapon_bone", rel = "", pos = Vector(5, 0.541, -2.837), angle = Angle(-3.211, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascarbineK"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lascarbine.mdl", bone = "weapon_bone", rel = "", pos = Vector(5, 0.541, -2.837), angle = Angle(-3.211, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(7.783, 0.34, -0.494), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
+
 
 SWEP.WElements = {
 	["lascarbineKW"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lascarbine.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(13.993, 0.597, -2.577), angle = Angle(166.645, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }

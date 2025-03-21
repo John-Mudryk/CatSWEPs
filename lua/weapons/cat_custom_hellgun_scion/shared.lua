@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_hellgun_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_hellgun.mdl"	-- Weapon world model
@@ -117,8 +117,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-3.714, -6.595, 4.776)
-SWEP.IronSightsAng = Vector(-2.511, 0.15, 0)
+SWEP.IronSightsPos = Vector(-3.84, -6.5, 5.13)
+SWEP.IronSightsAng = Vector(-4.081, -0.584, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -174,6 +174,9 @@ SWEP.Type_Displayed             = "Ryza Pattern Mk. I"
 
 -- Attachments
 SWEP.VElements = {
+	["sight2"] = { type = "Model", model = "models/phxtended/trieq1x1x2solid.mdl", bone = "weapon_bone", rel = "", pos = Vector(4.217, 0.439, 0.939), angle = Angle(0, 135, 0), size = Vector(0.009, 0.009, 0.009), color = Color(255, 255, 255, 255), surpresslightning = false, material = "models/combine_advisor/mask", skin = 0, bodygroup = {} },
+	["sight1"] = { type = "Model", model = "models/mechanics/solid_steel/steel_beam45_3.mdl", bone = "weapon_bone", rel = "", pos = Vector(-6.541, 0.217, 0.847), angle = Angle(0, 45, 0), size = Vector(0.019, 0.019, 0.019), color = Color(155, 155, 155, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+
 	["hellgunR"] = { type = "Model", model = "models/ninja/wh40k/imperialguard/weapons/hellgun_stormtrooper.mdl", bone = "weapon_bone", rel = "", pos = Vector(5.758, 0.433, -5.593), angle = Angle(-2.87, 179.136, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.147, 2.604, 0.001), angle = Angle(0, -1.902, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 

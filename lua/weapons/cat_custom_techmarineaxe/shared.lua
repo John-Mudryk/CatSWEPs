@@ -244,6 +244,7 @@ SWEP.SequenceLengthOverride = {
 
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
@@ -254,11 +255,11 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["gun"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_omnissiah_axe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-22.6), angle = Angle(0, 90, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 1, [2] = 1}}
+	["poweraxe"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_omnissiah_axe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-22.6), angle = Angle(0, 90, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 1, [2] = 1}}
 }
 
 SWEP.WElements = {
-	["gun"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_omnissiah_axe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.596, 0, 33.765), angle = Angle(0, -90, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 1, [2] = 1} }
+	["poweraxe"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_omnissiah_axe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.596, 0, 33.765), angle = Angle(0, -90, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 1, [2] = 1} }
 }
 
 

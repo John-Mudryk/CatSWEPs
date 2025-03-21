@@ -29,7 +29,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -46,7 +46,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -63,7 +63,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -80,7 +80,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(-5, 0, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -100,7 +100,7 @@ SWEP.Secondary.Attacks = {
 		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
 		["delay"] = 0.6, --Delay
 		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
 		["end"] = 0.9, --time before next attack
@@ -117,7 +117,7 @@ SWEP.Secondary.Attacks = {
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.7, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
 		["snd_delay"] = 0.4,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -134,7 +134,7 @@ SWEP.Secondary.Attacks = {
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.65, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(1, 5, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -151,7 +151,7 @@ SWEP.Secondary.Attacks = {
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.8, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
 		["snd_delay"] = 0.6,
 		["viewpunch"] = Angle(10, 0, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -168,7 +168,7 @@ SWEP.Secondary.Attacks = {
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.55, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(7.5, 0, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -246,11 +246,11 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["halberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, -10.324), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, -10.324), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 0} }
 }
 
 SWEP.WElements = {
-	["halberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4, 1.489, 8.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4, 1.489, 8.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 0} }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -259,6 +259,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Proteus Pattern Mk. IIc"
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

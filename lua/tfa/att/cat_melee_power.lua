@@ -4,65 +4,91 @@ end
 
 ATTACHMENT.Name = "Power Field"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["+"], "Toggle the power field" }
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Toggle the power field", TFA.Attachments.Colors["-"], "Decreased Damage" }
 ATTACHMENT.Icon = "entities/melee_powerfield.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
-ATTACHMENT.ShortName = "Руна"
+ATTACHMENT.ShortName = "FIELD"
 
 
 ATTACHMENT.WeaponTable = {
 	["VElements"] = {
-		["gun"] = {
+		["powersword"] = {
 			["skin"] = 0
 		},
-		["gun0"] = {
+		["poweraxe"] = {
 			["skin"] = 0
 		},
-		["gun1"] = {
+		["powerhalberd"] = {
 			["skin"] = 0
 		},
-		["gun2"] = {
+		["powerswordCH"] = {
 			["skin"] = 0
 		},
-		["gun3"] = {
+		["poweraxeCH"] = {
 			["skin"] = 0
 		},
-		["gun4"] = {
+		["poweraxeCHB"] = {
 			["skin"] = 0
 		},
-		["gun5"] = {
+		["forcesword"] = {
 			["skin"] = 0
 		},
-		["gun6"] = {
+		["forceaxe"] = {
 			["skin"] = 0
+		},
+		["powerclaw_l"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_r"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_lC"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_rC"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 	},	
 	["WElements"] = {
-		["gun"] = {
+		["powersword"] = {
 			["skin"] = 0
 		},
-		["gun0"] = {
+		["poweraxe"] = {
 			["skin"] = 0
 		},
-		["gun1"] = {
+		["powerhalberd"] = {
 			["skin"] = 0
 		},
-		["gun2"] = {
+		["powerswordCH"] = {
 			["skin"] = 0
 		},
-		["gun3"] = {
+		["poweraxeCH"] = {
 			["skin"] = 0
 		},
-		["gun4"] = {
+		["poweraxeCHB"] = {
 			["skin"] = 0
 		},
-		["gun5"] = {
+		["forcesword"] = {
 			["skin"] = 0
 		},
-		["gun6"] = {
+		["forceaxe"] = {
 			["skin"] = 0
+		},
+		["powerclaw_l"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_r"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_lC"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["powerclaw_rC"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 	},	
-
+	["Primary"] = {
+		["Damage"] = function( wep, stat ) return stat * 0.5 end
+	},
 }
 
 

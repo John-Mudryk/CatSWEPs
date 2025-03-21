@@ -25,8 +25,8 @@ SWEP.MoveSpeed = 1
 
 SWEP.ViewModelFOV			= 60
 SWEP.ViewModelFlip			= false
-SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_hellpistol_v.mdl"	-- Weapon view model
-SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_hellpistol.mdl"	-- Weapon world model
+SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_laspistol_v.mdl"	-- Weapon view model
+SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_laspistol.mdl"	-- Weapon world model
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelFlip                      = false
@@ -35,6 +35,11 @@ SWEP.Spawnable				= true
 SWEP.AdminSpawnable			= true
 SWEP.Primary.Force = 5 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickback
+
+SWEP.ViewModelBoneMods = {
+	["tag_clip"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["tag_weapon"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+}
 
 SWEP.Primary.Sound			= "weapons/lasgun/ig_lasgun_fire2.wav"		-- script that calls the primary fire sound
 SWEP.Primary.RPM			= 320		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
@@ -111,8 +116,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-3.132, -6.408, -0.401)
-SWEP.IronSightsAng = Vector(-0.208, -0.049, 0)
+SWEP.IronSightsPos = Vector(-3.622, -3.493, -0.48)
+SWEP.IronSightsAng = Vector(-1.923, -0.431, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -168,7 +173,12 @@ SWEP.Type_Displayed             = "Cadian Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["hellpistol"] = { type = "Model", model = "models/ninja/wh40k/imperialguard/weapons/hellpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(10.937, -0.161, -1.851), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["sight2"] = { type = "Model", model = "models/phxtended/trieq1x1x2solid.mdl", bone = "tag_weapon", rel = "", pos = Vector(6.969, 0.181, 5.192), angle = Angle(0, 135, 0), size = Vector(0.009, 0.009, 0.009), color = Color(255, 255, 255, 255), surpresslightning = false, material = "models/combine_advisor/mask", skin = 0, bodygroup = {} },
+	["sight1"] = { type = "Model", model = "models/mechanics/solid_steel/steel_beam45_3.mdl", bone = "tag_weapon", rel = "", pos = Vector(0.726, 0.221, 5.676), angle = Angle(0, 45, 0), size = Vector(0.019, 0.019, 0.019), color = Color(155, 155, 155, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	
+	["hellpistol"] = { type = "Model", model = "models/ninja/wh40k/imperialguard/weapons/hellpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(10.107, 0.212, -1.416), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} },
+	
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(10.093, 0.211, -0.601), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 }
 
 SWEP.WElements = {

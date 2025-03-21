@@ -6,7 +6,7 @@ ATTACHMENT.Name = "Overcharge"
 ATTACHMENT.ShortName = "OVER" --Abbreviation, 5 chars or less please
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Set weapon to higher intensity", TFA.Attachments.Colors["+"], "Increased damage", "Increased penetration",  TFA.Attachments.Colors["-"], "Increased recoil", "Decreased accuracy","Triple waste of magazine"  }
-ATTACHMENT.Icon = "entities/effect_cat_lasgun_over.png"
+ATTACHMENT.Icon = "entities/effect_cat_laser_hot.png"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {

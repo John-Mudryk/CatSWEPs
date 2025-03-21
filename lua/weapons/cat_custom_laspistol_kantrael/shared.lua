@@ -173,7 +173,8 @@ SWEP.Type_Displayed             = "Kantrael MG Defender"
 
 -- Attachments
 SWEP.VElements = {
-	["laspistolK"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/laspistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(11.258, 0.91, 0), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["laspistolK"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/laspistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(11.258, 0.91, 0), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lasgun_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(10.989, 0.94, -1.792), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {

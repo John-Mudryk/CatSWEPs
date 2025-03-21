@@ -228,7 +228,7 @@ SWEP.BlockDamageMaximum = 0.0 --Multiply damage by this for a maximumly effectiv
 SWEP.BlockDamageMinimum = 0.0 --Multiply damage by this for a minimumly effective block
 SWEP.BlockTimeWindow = 1 --Time to absorb maximum damage
 SWEP.BlockTimeFade = 1 --Time for blocking to do minimum damage.  Does not include block window
-SWEP.BlockSound = Sound("block_1.wav")
+SWEP.BlockSound = Sound("weapons/laserrifle/impacts/fx_laser_impact_02.wav")
 SWEP.BlockDamageCap = 200
 SWEP.BlockDamageTypes = {
 	DMG_SLASH,DMG_CLUB,DMG_CRUSH,DMG_BULLET,DMG_BLAST,DMG_BURN,DMG_PLASMA,DMG_SHOCK,DMG_DISSOLVE
@@ -248,12 +248,15 @@ SWEP.SequenceLengthOverride = {
 SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 }
+
 SWEP.VElements = {
-	["forceaxe"] = { type = "Model", model = "models/joazzz/weapons/forceaxe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, 15.324), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 2, [2] = 2, [4] = 1} }
+	["forceaxe"] = { type = "Model", model = "models/joazzz/weapons/forceaxe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, 15.324), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 2, [2] = 2, [4] = 1} },
+	["forceshield"] = { type = "Model", model = "models/props_trainstation/trainstation_clock001.mdl", bone = "TrueRoot", rel = "", pos = Vector(30, -5, 6), angle = Angle(0, 180, 0), size = Vector(0.5, 1, 1), color = Color(0, 20, 40, 255), surpresslightning = false, material = "models/props_combine/portalball001_sheet", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
-	["forceaxe"] = { type = "Model", model = "models/joazzz/weapons/forceaxe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(0, 1.489, -11.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 2, [2] = 2, [4] = 1} }
+	["forceaxe"] = { type = "Model", model = "models/joazzz/weapons/forceaxe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(0, 1.489, -11.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 2, [2] = 2, [4] = 1} },
+	["forceshield"] = { type = "Model", model = "models/props_trainstation/trainstation_clock001.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(6.058, 10.494, -10.547), angle = Angle(180, -47.255, 0), size = Vector(0.5, 1, 1), color = Color(0, 20, 40, 255), surpresslightning = false, material = "models/props_combine/portalball001_sheet", skin = 0, bodygroup = {},  active = false }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -262,6 +265,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Infernus Pattern Mk. IIa"
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}
@@ -284,3 +288,65 @@ function SWEP:ChooseSecondaryAttack()
     end
     return ind, attack
 end
+
+function SWEP:Think2(...)
+    if not self:VMIV() then return end
+
+    local stat = self:GetStatus()
+    local isBlocking = (stat == 24)  -- 24 means actively blocking
+
+    if CLIENT then
+        if isBlocking then
+            if not IsValid(self.ShieldModel) then
+                -- Create the shield model
+                self.ShieldModel = ClientsideModel("models/props_trainstation/trainstation_clock001.mdl")
+                self.ShieldModel:SetNoDraw(false)  -- Ensure it's visible
+                self.ShieldModel:SetMaterial("models/props_combine/portalball001_sheet")
+		self.ShieldModel:SetColor(Color(0, 20, 40, 255))
+                self.ShieldModel:SetModelScale(1, 0)
+            end
+
+            -- Get player's hand position to attach the shield
+            local vm = self:GetOwner():GetViewModel()
+            if IsValid(vm) then
+                local bone = vm:LookupBone("ValveBiped.Bip01_R_Hand")
+                if bone then
+                    local pos, ang = vm:GetBonePosition(bone)
+
+                    -- Adjust position
+                    pos = pos + ang:Right() * 1 + ang:Forward() * 30 + ang:Up() * 1
+                    ang:RotateAroundAxis(ang:Right(), 180)
+
+                    -- Update shield position
+                    self.ShieldModel:SetPos(pos)
+                    self.ShieldModel:SetAngles(ang)
+                end
+            end
+        else
+            -- Hide or remove the shield if not blocking
+            if IsValid(self.ShieldModel) then
+                self.ShieldModel:Remove()
+                self.ShieldModel = nil
+            end
+        end
+    end
+
+    self.BaseClass.Think2(self, ...)
+end
+
+function SWEP:Holster(...)
+    if CLIENT and IsValid(self.ShieldModel) then
+        self.ShieldModel:Remove()
+        self.ShieldModel = nil
+    end
+    return self.BaseClass.Holster(self, ...)
+end
+
+function SWEP:OnRemove()
+    if CLIENT and IsValid(self.ShieldModel) then
+        self.ShieldModel:Remove()
+        self.ShieldModel = nil
+    end
+end
+
+

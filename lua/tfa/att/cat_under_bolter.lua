@@ -5,7 +5,7 @@ end
 
 ATTACHMENT.Name = "Combi-Bolter"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.AttachmentColors["="], "Enable second barrel", TFA.AttachmentColors["="], "Double fire-rate", TFA.AttachmentColors["-"], "Increased spread" }
+ATTACHMENT.Description = { TFA.AttachmentColors["="], "Enable second barrel", TFA.AttachmentColors["+"], "Double fire-rate", TFA.AttachmentColors["-"], "Increased spread" }
 ATTACHMENT.Icon = "entities/cat_under_bolter.png"
 ATTACHMENT.ShortName = "BOLTER"
 

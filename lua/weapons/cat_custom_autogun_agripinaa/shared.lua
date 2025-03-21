@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_autogun_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_autogun_sniper.mdl"	-- Weapon world model
@@ -38,7 +38,8 @@ SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickba
 
 SWEP.ViewModelBoneMods = {
 	["mag_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 1, 0), angle = Angle(0, 0, 0) }
 }
 
 SWEP.Primary.Sound			= "weapons/autogun/weapon_autogun.wav"		-- script that calls the primary fire sound
@@ -177,7 +178,10 @@ SWEP.Type_Displayed             = "Agripinaa Pattern Type II" -- Weapon type ove
 
 -- Attachments
 SWEP.VElements = {
-	["autogun"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.595, 0.081, -2.419), angle = Angle(0, -177.976, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["autogun"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.595, 0.081, -2.419), angle = Angle(0, -177.976, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 3} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
+
 }
 
 SWEP.WElements = {

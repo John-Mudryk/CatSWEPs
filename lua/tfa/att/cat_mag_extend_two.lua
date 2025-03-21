@@ -130,24 +130,6 @@ ATTACHMENT.WeaponTable = {
 	},
 	["MoveSpeed"] = function(wep,stat) return stat - 0.025 end,
 	["VElements"] = {
-		["autogun"] = {
-			["bodygroup"] = {[0] = 1},
-		},
-		["lucius"] = {
-			["bodygroup"] = {[0] = 1},
-		},
-		["luciusH"] = {
-			["bodygroup"] = {[0] = 1},
-		},
-		["lasgunG"] = {
-			["bodygroup"] = {[1] = 1},
-		},
-		["lascarbineG"] = {
-			["bodygroup"] = {[1] = 1},
-		},
-		["laspistolA"] = {
-			["bodygroup"] = {[1] = 1},
-		},
 		["bolterGC"] = {
 			["bodygroup"] = {[2] = 2},
 		},

@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_lasgun_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_lasgun.mdl"	-- Weapon world model
@@ -38,7 +38,7 @@ SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickba
 
 SWEP.ViewModelBoneMods = {
 	["mag_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["weapon_bone"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
 }
 
 SWEP.Primary.Sound			= "weapons/lasgun/ig_lasgun_fire1.wav"		-- script that calls the primary fire sound
@@ -116,8 +116,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.051, -6.466, 4.03)
-SWEP.IronSightsAng = Vector(-5.884, -1.586, 0)
+SWEP.IronSightsPos = Vector(-4.24, -6.5, 4.409)
+SWEP.IronSightsAng = Vector(-6, -1.706, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -173,8 +173,15 @@ SWEP.Type_Displayed             = "M-Galaxy M35 Short"
 
 -- Attachments
 SWEP.VElements = {
-	["lasgunG"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.53, 0.287, -3.123), angle = Angle(-4.56, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["sight2"] = { type = "Model", model = "models/phxtended/trieq1x1x2solid.mdl", bone = "weapon_bone", rel = "", pos = Vector(5.736, 0.481, 2.471), angle = Angle(0, 135, 0), size = Vector(0.009, 0.009, 0.009), color = Color(255, 255, 255, 255), surpresslightning = false, material = "models/combine_advisor/mask", skin = 0, bodygroup = {} },
+	["sight1"] = { type = "Model", model = "models/mechanics/solid_steel/steel_beam45_3.mdl", bone = "weapon_bone", rel = "", pos = Vector(-6.511, 0.465, 1.894), angle = Angle(0, 45, 0), size = Vector(0.019, 0.019, 0.019), color = Color(155, 155, 155, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+
+	["lasgunG"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.607, 0.469, -3.135), angle = Angle(-4.989, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 2} },
+
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.116, 0.312, -0.608), angle = Angle(-5, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.116, 0.312, -0.608), angle = Angle(-5, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
 }
+
 
 SWEP.WElements = {
 	["lasgunGW"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(13.993, 0.597, -2.577), angle = Angle(166.645, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }

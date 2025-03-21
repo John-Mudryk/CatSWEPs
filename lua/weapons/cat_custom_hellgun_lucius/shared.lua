@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_hellgun_standart_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_galvanic.mdl"	-- Weapon world model
@@ -38,7 +38,8 @@ SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickba
 
 SWEP.ViewModelBoneMods = {
 	["mag_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(-1, 1, 0), angle = Angle(0, 0, 0) }
 }
 
 SWEP.Primary.Sound			= "weapons/lucylas/grenadier.wav"		-- script that calls the primary fire sound
@@ -116,8 +117,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.02, -7.318, 3)
-SWEP.IronSightsAng = Vector(-0.504, -1.711, 0)
+SWEP.IronSightsPos = Vector(-4.08, -6, 2.48)
+SWEP.IronSightsAng = Vector(-1.101, -1.731, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -173,7 +174,9 @@ SWEP.Type_Displayed             = "Lucius Pattern Type XIV Heavy"
 
 -- Attachments
 SWEP.VElements = {
-	["luciusH"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgungrenadier.mdl", bone = "weapon_bone", rel = "", pos = Vector(0.189, 0.259, -1.206), angle = Angle(0.234, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[2] = 1} }
+	["luciusH"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgungrenadier.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 0.284, -0.398), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2, [2] = 1} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
 }
 
 
