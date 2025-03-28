@@ -157,6 +157,9 @@ ATTACHMENT.WeaponTable = {
 		["lasgunGW"] = {
 			["bodygroup"] = {[1] = 1},
 		},
+		["longlasVW"] = {
+			["bodygroup"] = {[1] = 1},
+		},
 		["lascarbineGW"] = {
 			["bodygroup"] = {[1] = 1},
 		},

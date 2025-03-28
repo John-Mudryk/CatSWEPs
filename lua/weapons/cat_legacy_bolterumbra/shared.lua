@@ -175,7 +175,11 @@ SWEP.Type_Displayed             = "Umbra Pattern Mk. I"
 SWEP.VElements = {
 	["bolterU"] = { type = "Model", model = "models/joazzz/weapons/bolter_umbrapattern.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -10.377), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 5} },
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_curve.mdl", bone = "mag_bone", rel = "", pos = Vector(3.303, 0.479, -0.171), angle = Angle(3.974, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_box.mdl", bone = "mag_bone", rel = "", pos = Vector(3.299, 0.5, 0.28), angle = Angle(4, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
+	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_box.mdl", bone = "mag_bone", rel = "", pos = Vector(3.299, 0.5, 0.28), angle = Angle(4, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
+
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterU", pos = Vector(-6.62, 0.004, 17.641), angle = Angle(-15, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterU", pos = Vector(-9.761, 0.004, 17.641), angle = Angle(-8, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 
@@ -194,7 +198,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_astartes"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_light2_hud", "cat_scope_heavy2_hud", "cat_scope_astartes"}, order = 3 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_bayonetchain"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_grip"}, order = 6 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
@@ -202,3 +206,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-4.361, 0, 0.159)
+SWEP.IronSightsAng_Light = Vector(-6.774, -1.21, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.361, 0, 0.159)
+SWEP.IronSightsAng_Heavy = Vector(-7.623, -1.002, 0)

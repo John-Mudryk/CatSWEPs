@@ -24,7 +24,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_bazooka_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_bazooka.mdl"	-- Weapon world model
@@ -38,7 +38,7 @@ SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, -3.5, -2.5), angle = Angle(0, 0, 0) }
 }
 
 
@@ -59,7 +59,7 @@ SWEP.Primary.MaxSurfacePenetrationCount = 7
 SWEP.Primary.PenetrationPower = 75
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 40		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 70		-- How much you 'zoom' in. Less is more! 
 
 SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
@@ -71,7 +71,7 @@ SWEP.Primary.Spread		= 0.003	-- Define from-the-hip accuracy 1 is terrible, .000
 SWEP.Primary.IronAccuracy = 0.0003	-- Ironsight accuracy, should be the same for shotguns
 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -117,7 +117,7 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-1.121, -18.018, -0.64)
+SWEP.IronSightsPos = Vector(1.279, -5, 0.159)
 SWEP.IronSightsAng = Vector(0, 0, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
@@ -176,7 +176,8 @@ SWEP.Type_Displayed             = "Soundstrike Pattern Mk. I Modified"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(0, 4.638, -3.638), angle = Angle(3.482, 90, -7.773), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["missilelauncher"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(-18.333, 0.76, 2.677), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "missilelauncher", pos = Vector(8.55, 13.399, 2.95), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -193,11 +194,15 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = {"cat_rocket_krak","cat_rocket_he","cat_rocket_melta"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-0.401, -7, 2.24)
+SWEP.IronSightsAng_Short = Vector(1.921, -7.637, 0)
 
 --[[PROJECTILES]]--
 

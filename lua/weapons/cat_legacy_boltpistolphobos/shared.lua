@@ -181,7 +181,9 @@ SWEP.Bodygroups_W       = {
 -- Attachments
 SWEP.VElements = {
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(-1.747, 0.312, 1.776), angle = Angle(-11.396, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_phobospattern.mdl", bone = "tag_weapon", rel = "", pos = Vector(5.882, 0.312, 0.529), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
+	["boltpistolP"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_phobospattern.mdl", bone = "tag_weapon", rel = "", pos = Vector(5.882, 0.312, 0.529), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "boltpistolP", pos = Vector(3.371, -0.002, 6.16), angle = Angle(0, 0, 0), size = Vector(0.349, 0.349, 0.349), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+
 }
 
 SWEP.WElements = {
@@ -203,9 +205,12 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2"}, order = 3 },
+    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-3.681, -7, -0.921)
+SWEP.IronSightsAng_Short = Vector(-5.361, -0.299, 0)

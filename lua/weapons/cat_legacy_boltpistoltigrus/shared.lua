@@ -115,8 +115,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-3.641, -5.9, -2.08)
-SWEP.IronSightsAng = Vector(-0.442, -0.013, 0)
+SWEP.IronSightsPos = Vector(-3.641, -2, -2.04)
+SWEP.IronSightsAng = Vector(-0.484, 0.079, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -181,7 +181,8 @@ SWEP.Bodygroups_W       = {
 -- Attachments
 SWEP.VElements = {
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_straight.mdl", bone = "tag_clip", rel = "", pos = Vector(3.447, 0.312, -5.943), angle = Angle(0, 0, 0), size = Vector(0.55, 0.55, 0.55), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_tigruspattern.mdl", bone = "tag_weapon", rel = "", pos = Vector(5.882, 0.312, 0.529), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 2} }
+	["boltpistolT"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_tigruspattern.mdl", bone = "tag_weapon", rel = "", pos = Vector(5.882, 0.312, 0.529), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 2} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "boltpistolT", pos = Vector(5.441, -0.002, 7.402), angle = Angle(0, 0, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -203,9 +204,12 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2"}, order = 3 },
+    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-3.56, -5, -2.08)
+SWEP.IronSightsAng_Short = Vector(-6.06, 0.656, 0)

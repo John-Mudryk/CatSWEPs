@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Lasgun Lucius"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Lucius Lasgun"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -177,6 +177,11 @@ SWEP.VElements = {
 	["lucius"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/luciuslasgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 0.284, -0.398), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} },
 	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(4.3, 0.34, 0.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
+
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lucius", pos = Vector(4.01, 0, 4.465), angle = Angle(0, 0, 0), size = Vector(0.238, 0.238, 0.238), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lucius", pos = Vector(7.214, 0, 4.735), angle = Angle(0, 0, 0), size = Vector(0.275, 0.275, 0.275), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
+
 }
 
 
@@ -197,9 +202,15 @@ SWEP.Attachments = {
         [2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
         [3] = { offset = { 0, 0 }, atts = { "cat_bayonet"}, order = 3 },
 	[4] = { offset = { 0, 0 }, atts = { "cat_stock_light"}, order = 4 },
-	[5] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_heavy2"}, order = 5 },
+	[5] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_light2", "cat_scope_dot2_hud", "cat_scope_light2_hud"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-4.04, -12, 1.96)
+SWEP.IronSightsAng_Short = Vector(-5.226, -3.739, 0)
+
+SWEP.IronSightsPos_Light = Vector(-3.921, -9, 1.039)
+SWEP.IronSightsAng_Light = Vector(2.474, -1.34, 0)

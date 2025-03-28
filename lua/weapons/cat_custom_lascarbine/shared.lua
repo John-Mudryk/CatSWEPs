@@ -31,7 +31,7 @@ SWEP.ViewModelFlip                      = false
 SWEP.Base 				= "tfa_bash_base"
 SWEP.Spawnable				= true
 SWEP.AdminSpawnable			= true
-SSWEP.Primary.Force = 5 -- Force value, leave nil to autocalc
+SWEP.Primary.Force = 5 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickback
 
 SWEP.Primary.Sound			= "weapons/lasgun/ig_lasgun_fire1.wav"		-- script that calls the primary fire sound
@@ -166,6 +166,8 @@ SWEP.Type_Displayed             = "Kantreal Mk. V"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(0.899, 0.55, 3.5), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.306, 1.513, 0), angle = Angle(3.131, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
@@ -185,7 +187,7 @@ SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge", "cat_am_overcharge"}, order = 1 },
     	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_stock_heavy", "cat_stock_light"}, order = 3 },
-    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex"}, order = 4 },
+    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_reflex_hud"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bayonet"}, order = 6 },
     	[7] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 7 },
@@ -194,3 +196,6 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-4.281, -7, 3.64)
+SWEP.IronSightsAng_Reflex = Vector(-5.761, -1.649, 0)

@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Laspistol Kantrael"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Kantrael Laspistol"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -173,8 +173,12 @@ SWEP.Type_Displayed             = "Kantrael MG Defender"
 
 -- Attachments
 SWEP.VElements = {
+	["tubeScope"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "tag_weapon", rel = "", pos = Vector(-0.151, 0.583, 5.283), angle = Angle(-90, -90, 90), size = Vector(0.019, 0.019, 0.019), color = Color(255, 255, 255, 255), surpresslightning = false, material = "scope/gdcw_elcanreticle", skin = 0, bodygroup = {} },
 	["laspistolK"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/laspistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(11.258, 0.91, 0), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} },
-	["mag"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lasgun_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(10.989, 0.94, -1.792), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/fallout/weapons/lasgun_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(10.989, 0.94, -1.792), angle = Angle(0, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "laspistolK", pos = Vector(12.991, 0.358, 7.113), angle = Angle(0, 0, 0), size = Vector(0.319, 0.319, 0.319), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "laspistolK", pos = Vector(12.991, 0.358, 7.113), angle = Angle(0, 0, 0), size = Vector(0.319, 0.319, 0.319), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 }
 
 SWEP.WElements = {
@@ -197,10 +201,16 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge", "cat_am_overcharge"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_stock_heavy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_light2"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_light2", "cat_scope_dot2_hud", "cat_scope_light2_hud"}, order = 3 },
 	[4] = { offset = { 0, 0 }, atts = { "cat_skin1", "cat_skin2", "cat_skin3", "cat_skin4", "cat_skin5", "cat_skin6", "cat_skin7"}, order = 4 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-3.961, -4, -1.081)
+SWEP.IronSightsAng_Short = Vector(-8.959, -0.801, 0)
+
+SWEP.IronSightsPos_Light = Vector(-3.961, -4, -1.081)
+SWEP.IronSightsAng_Light = Vector(-8.859, -0.801, 0)

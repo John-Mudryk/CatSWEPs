@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 45
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_tina_rifle_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_tina_rifle.mdl"	-- Weapon world model
@@ -51,9 +51,9 @@ SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 40
 SWEP.Primary.PenetrationMultiplier = 2
 
-SWEP.Secondary.IronFOV			= 8		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -65,7 +65,7 @@ SWEP.ReticleScale = 0.5 --Scale of the reticle overlay
 
 SWEP.Secondary.UseACOG			= false	 	--Overlay option
 SWEP.Secondary.UseMilDot		= false		--Overlay option
-SWEP.Secondary.UseSVD			= true		--Overlay option
+SWEP.Secondary.UseSVD			= false		--Overlay option
 SWEP.Secondary.UseParabolic		= false		--Overlay option
 SWEP.Secondary.UseElcan			= false	 	--Overlay option
 SWEP.Secondary.UseGreenDuplex		= false		--Overlay option
@@ -74,23 +74,25 @@ SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
 
 if surface then
-	SWEP.Secondary.ScopeTable = nil --[[
-		{
-			scopetex = surface.GetTextureID("scope/gdcw_closedsight"),
-			reticletex = surface.GetTextureID("scope/gdcw_acogchevron"),
-			dottex = surface.GetTextureID("scope/gdcw_acogcross")
-		}
-	]]--
+	SWEP.Secondary.ScopeTable = {
+			ScopeBorder = Color(0, 0, 0, 0), -- no border
+			ScopeMaterial = Material("scope/gdcw_closedsight"),
+			ScopeMaterialScale = 2,
+			ScopeOverlay = Material(""),
+			ScopeCrosshair = { 
+				r = 255, g = 255, b = 255, a = 250, -- Crosshair color
+				scale = 1.35, -- Scale
+				Material = Material("entities/scope_light_crosshair.png") 
+				
+			}
+	}
 end
-
-SWEP.data 				= {}				--The starting firemode
-SWEP.data.ironsights			= 1
 
 SWEP.DamageType = DMG_BULLET
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
 SWEP.Primary.Damage		= 750	-- Base damage per bullet
 SWEP.Primary.Spread		= 0.01	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
-SWEP.Primary.IronAccuracy = 0.0001	-- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.IronAccuracy = 0.001	-- Ironsight accuracy, should be the same for shotguns
 
 --Range Related
 SWEP.Primary.RangeFalloffLUT = {
@@ -137,8 +139,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.16, -5.593, 1.94)
-SWEP.IronSightsAng = Vector(-2.771, -0.756, -1.153)
+SWEP.IronSightsPos = Vector(-6.481, 0, 3.16)
+SWEP.IronSightsAng = Vector(-2.319, -2.455, -30.484)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -194,6 +196,7 @@ SWEP.Type_Displayed             = "Absolution Pattern Mk. III"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_sniper"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.521, 0.536, 4.015), angle = Angle(0, -180, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -209,8 +212,12 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary", "cat_am_he"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_sniper", "cat_scope_sniper_hud"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Sniper = Vector(-4.171, -5.578, 2.9)
+SWEP.IronSightsAng_Sniper = Vector(-10.26, -0.667, 0)

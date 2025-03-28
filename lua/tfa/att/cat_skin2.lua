@@ -22,6 +22,12 @@ ATTACHMENT.WeaponTable = {
 		["lascarbineG"] = {
 			["skin"] = 2,
 		},
+		["longlasK"] = {
+			["skin"] = 2,
+		},
+		["longlasV"] = {
+			["skin"] = 2,
+		},
 		["laspistolA"] = {
 			["skin"] = 2,
 		},
@@ -40,6 +46,12 @@ ATTACHMENT.WeaponTable = {
 			["skin"] = 2,
 		},
 		["lascarbineGW"] = {
+			["skin"] = 2,
+		},
+		["longlasKW"] = {
+			["skin"] = 2,
+		},
+		["longlasVW"] = {
 			["skin"] = 2,
 		},
 		["laspistolAW"] = {

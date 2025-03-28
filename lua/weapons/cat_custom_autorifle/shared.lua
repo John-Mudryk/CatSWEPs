@@ -194,6 +194,9 @@ SWEP.Type_Displayed             = "Agripinaa Pattern Type V"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.171, 0.689, 4.059), angle = Angle(0, -178.601, 0), size = Vector(0.268, 0.268, 0.268), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.171, 0.689, 4.059), angle = Angle(0, -178.601, 0), size = Vector(0.268, 0.268, 0.268), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(23.17, 1.995, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
@@ -213,7 +216,7 @@ SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary"}, order = 1 },
     	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_stock_heavy", "cat_stock_light"}, order = 3 },
-	[4] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy"}, order = 4 },
+	[4] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy", "cat_scope_light_hud", "cat_scope_heavy_hud"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor"}, order = 6 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
@@ -221,3 +224,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-4.761, -5, 2.559)
+SWEP.IronSightsAng_Light = Vector(-6.342, -3.44, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.761, -5, 2.559)
+SWEP.IronSightsAng_Heavy = Vector(-6.442, -3.44, 0)

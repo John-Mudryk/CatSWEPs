@@ -5,24 +5,43 @@ end
 ATTACHMENT.Name = "Reflex Sight"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize short ranged scope", TFA.Attachments.Colors["+"], "Decreased aiming spread", "Decreased recoil", TFA.Attachments.Colors["-"], "Increased hip-fire spread" }
-ATTACHMENT.Icon = "scope/gdcw_elcansight"
+ATTACHMENT.Icon = "entities/scope_reflex_overlay.png"
 ATTACHMENT.ShortName = "REFLEX"
 
 ATTACHMENT.WeaponTable = {
+	["VElements"] = {
+        	["scope_reflex"] = {
+            		active = true
+        	}
+    	},
 	["Primary"] = {
 		["StaticRecoilFactor"] = function(wep,stat) return stat * 0.9 end,
 		["Spread"] = function(wep,stat) return stat * 0.9 end,
 		["IronAccuracy"] = function(wep,stat) return stat * 1.05 end
 	},
 	["Secondary"] = {
-		["UseElcan"] = function(wep,stat) return true end,
-		["IronFOV"] = function(wep,stat) return 50 end,
+		["ScopeTable"] = {
+			ScopeBorder = Color(0, 0, 0, 0), -- no border
+			ScopeMaterial = Material("entities/scope_reflex_overlay.png"),
+			ScopeMaterialScale = 1,
+			ScopeOverlay = Material(""),
+			ScopeCrosshair = { 
+				r = 255, g = 255, b = 255, a = 255, -- Crosshair color
+				scale = 0.15, -- Scale
+				Material = Material("entities/scope_reflex_reticle") 
+				
+			}
+		},
+		["IronFOV"] = function(wep, stat) return 60 end, -- Adjust zoom
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.85 end,
-	["Scoped"] = function(wep,stat) return true end,
+	["Scoped"] = function(wep,stat) return false end,
 	["ScopeScale"] = function(wep,stat) return 0.5 end,
-
+	["IronSightsPos"] = function(wep,stat) return wep.IronSightsPos_Reflex end,
+	["IronSightsAng"] = function(wep,stat) return wep.IronSightsAng_Reflex end,
 }
+
+
 
 
 function ATTACHMENT:Attach(wep)
@@ -60,11 +79,6 @@ elseif Weapon_act == "cat_custom_stubber" then
 			[2] = 2
 		}
 	end
-
-	JamChance = wep["JamChance"]
-
-	wep.JamChance = JamChance - 0.10 -- the (maximal) chance the weapon will jam. Newly spawned weapon will never jam on first shot for example.
-
 end
 
 function ATTACHMENT:Detach(wep)
@@ -95,8 +109,6 @@ function ATTACHMENT:Detach(wep)
 			[1] = 0
 		}
 	end
-	wep.JamChance = JamChance  -- the (maximal) chance the weapon will jam. Newly spawned weapon will never jam on first shot for example.
-
 end
 
 if not TFA_ATTACHMENT_ISUPDATING then

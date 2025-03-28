@@ -24,7 +24,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_bazooka_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_bazooka.mdl"	-- Weapon world model
@@ -38,9 +38,11 @@ SWEP.Primary.Knockback = 0 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(7.074, 0, 0), angle = Angle(-48.213, -34.284, 67.302) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["ValveBiped.Bip01_R_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(2.724, 2.23, 0.86), angle = Angle(8.46, 0, 0) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(3, 0, 0), angle = Angle(-49.112, -61.764, 105) },
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, -5, 6), angle = Angle(0, 0, 0) }
 }
+
 
 
 SWEP.Primary.Sound			= "gdc/rockets/matadorf.wav"		-- script that calls the primary fire sound
@@ -60,13 +62,13 @@ SWEP.Primary.MaxSurfacePenetrationCount = 7
 SWEP.Primary.PenetrationPower = 75
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 40		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 65		-- How much you 'zoom' in. Less is more! 
 
 SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -115,10 +117,10 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 
 -- Because irons don't magically give you less pellet spread!
 -- Enter iron sight info and bone mod info below
-SWEP.VMPos = Vector(5, 0, 5) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
+SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-1.121, -18.018, -0.64)
+SWEP.IronSightsPos = Vector(0.879, -4, 0.88)
 SWEP.IronSightsAng = Vector(0, 0, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
@@ -177,7 +179,8 @@ SWEP.Type_Displayed             = "Proteus Pattern Mk. I"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/legion_missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(-17.282, -0.94, 5.977), angle = Angle(-5.965, 175.337, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["missilelauncher"] = { type = "Model", model = "models/joazzz/weapons/legion_missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(-17.282, -0.94, 5.977), angle = Angle(0, -180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "missilelauncher", pos = Vector(-7.151, 8, -2), angle = Angle(0, 0, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -194,11 +197,15 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = {"cat_rocket_krak","cat_rocket_he","cat_rocket_melta"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(0.119, -2, -4.441)
+SWEP.IronSightsAng_Short = Vector(0.911, -1.354, 0) 
 
 --[[PROJECTILES]]--
 

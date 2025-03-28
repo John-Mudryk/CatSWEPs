@@ -175,9 +175,11 @@ SWEP.Type_Displayed             = "Tigrus Pattern Mk. II"
 SWEP.VElements = {
 	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -11.096), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 5, [3] = 0} },
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_straight.mdl", bone = "mag_bone", rel = "", pos = Vector(-0.573, 0.507, -8.759), angle = Angle(8.02, 0, 0), size = Vector(1, 1.25, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_drum.mdl", bone = "mag_bone", rel = "", pos = Vector(3.374, 0.324, 0.521), angle = Angle(7.876, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
-}
+	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_drum.mdl", bone = "mag_bone", rel = "", pos = Vector(3.374, 0.324, 0.521), angle = Angle(7.876, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterT", pos = Vector(-1.662, 0.004, 18.812), angle = Angle(-15, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterT", pos = Vector(-0.926, 0.004, 18.812), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+}
 
 SWEP.WElements = {
 	["bolterT"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(9.996, 1.71, 5.876), angle = Angle(-13.002, -1.818, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[3] = 0} }
@@ -194,7 +196,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_astartes"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_light2_hud", "cat_scope_heavy2_hud", "cat_scope_astartes"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_extend_one"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_bayonetchain"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_grip", "cat_grip2"}, order = 6 },
@@ -203,3 +205,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-4.321, -2, 1.08)
+SWEP.IronSightsAng_Light = Vector(-14.065, -1.479, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.401, -2, 1.08)
+SWEP.IronSightsAng_Heavy = Vector(-13.773, -1.935, 0)

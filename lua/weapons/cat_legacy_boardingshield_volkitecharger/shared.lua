@@ -66,7 +66,7 @@ SWEP.Primary.PenetrationMultiplier = 1
 
 SWEP.Secondary.IronFOV			= 50		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -229,3 +229,62 @@ SWEP.RiotShieldDamageTypes = {DMG_BULLET, DMG_SLASH, DMG_CLUB, DMG_BLAST} -- Wha
 SWEP.RiotShieldMaximum = 0 -- 100% damage reduction
 SWEP.RiotShieldDamageCap = 500 -- Max damage the shield can absorb
 SWEP.RiotShieldImpact = "Shield_Impact" -- Block sound effect
+
+function SWEP:ShootBullet(...)
+	-- Call base logic first (handles animations, sounds, ammo)
+	self.BaseClass.ShootBullet(self, ...)
+
+	-- Fire custom invisible bullet for explosion logic
+	self:FireVolkiteEffectBullet()
+end
+
+function SWEP:FireVolkiteEffectBullet()
+	local ply = self:GetOwner()
+	if not IsValid(ply) then return end
+
+	local bullet = {}
+	bullet.Num    = 1
+	bullet.Src    = ply:GetShootPos()
+	bullet.Dir    = ply:GetAimVector()
+	bullet.Spread = Vector(0, 0, 0)
+	bullet.Tracer = 0
+	bullet.Force  = 0
+	bullet.Damage = 0 -- No actual damage
+	bullet.Callback = function(attacker, tr, dmginfo)
+		local ent = tr.Entity
+		if not IsValid(ent) or not ent:IsNPC() then return end
+
+		if math.random() < 0.10 then -- 10% chance
+
+			local pos = ent:GetPos()
+
+			-- Charge-up
+			local charge = EffectData()
+			charge:SetEntity(ent)
+			charge:SetOrigin(pos)
+			util.Effect("volkite_chargeup", charge)
+			ent:Ignite(2, 0)
+			ent:EmitSound("ambient/fire/gascan_ignite1.wav", 75, 100)
+
+			timer.Simple(0.3, function()
+				if not IsValid(ent) then return end
+
+				-- Boom
+				local boom = EffectData()
+				boom:SetOrigin(pos)
+				util.Effect("volkite_explosion", boom, true, true)
+
+				sound.Play("ambient/explosions/explode_4.wav", pos)
+				sound.Play("npc/roller/mine/rmine_explode_shock1.wav", pos)
+
+				util.Decal("FadingScorch", pos + Vector(0,0,5), pos - Vector(0,0,30), attacker)
+
+				-- Do some blast damage
+				local dmg = self.Primary and self.Primary.Damage or 100
+				util.BlastDamage(attacker, attacker, pos, 128, dmg * 0.25)
+			end)
+		end
+	end
+
+	ply:FireBullets(bullet)
+end

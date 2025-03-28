@@ -23,7 +23,7 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 1
 
-SWEP.ViewModelFOV			= 54
+SWEP.ViewModelFOV			= 60
 SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_phosphor_v.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_phosphor.mdl"	-- Weapon world model
@@ -167,6 +167,7 @@ SWEP.ImpactDecal = "FadingScorch"--Impact Decal
 
 -- Attachments
 SWEP.VElements = {
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "", pos = Vector(-2.1, 0.1, 7.5), angle = Angle(0, 180, 0), size = Vector(0.209, 0.209, 0.209), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
@@ -187,10 +188,13 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_phosphor_std"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_light_hud"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-3.52, 0, -1.88)
+SWEP.IronSightsAng_Light = Vector(-3.109, -0.57, 0)

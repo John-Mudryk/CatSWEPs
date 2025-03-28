@@ -37,8 +37,10 @@ SWEP.Primary.Force = 5 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 0.5 -- Autodetected if nil; this is the velocity kickback
 
 SWEP.ViewModelBoneMods = {
-	["weapon_bone"] = { scale = Vector(0.247, 0.247, 0.247), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(2, -3, 2), angle = Angle(0, 0, 0) },
+	["weapon_bone"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, -3.5), angle = Angle(0, 0, 0) }
 }
+
 
 SWEP.Primary.Sound			= "weapons/lasgun/ig_lasgun_fire1.wav"		-- script that calls the primary fire sound
 SWEP.Primary.RPM			= 1200
@@ -112,11 +114,11 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 
 -- Because irons don't magically give you less pellet spread!
 -- Enter iron sight info and bone mod info below
-SWEP.VMPos = Vector(0, -1, 2) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
-SWEP.VMAng = Vector(-7.5, -0.1, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
+SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
+SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.88, -4.75, 1.843)
-SWEP.IronSightsAng = Vector(-0.647, -1.68, 0)
+SWEP.IronSightsPos = Vector(-5.321, 0, 5)
+SWEP.IronSightsAng = Vector(-4.909, -1.749, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -172,8 +174,10 @@ SWEP.Type_Displayed             = "Fortis Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_multilaser.mdl", bone = "weapon_bone", rel = "", pos = Vector(4.185, 1.439, -6.389), angle = Angle(-8.33, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["multilaser"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_multilaser.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.618, 1.75, -5), angle = Angle(-5, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "", rel = "multilaser", pos = Vector(-2.6, 4.5, 10.32), angle = Angle(-90, -90, 90), size = Vector(0.035, 0.05, 0.03), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 }
+
 SWEP.WElements = {
 	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_multilaser.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(25.853, 0.638, 0), angle = Angle(167.347, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
@@ -187,9 +191,12 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
-	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot"}, order = 1 },
+	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-1, -5, 5)
+SWEP.IronSightsAng_Short = Vector(-4.573, -1.474, 0)

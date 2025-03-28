@@ -59,9 +59,9 @@ SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 10
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 45		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -134,8 +134,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.369, -3.096, 0.986)
-SWEP.IronSightsAng = Vector(-4.976, -1.711, 0)
+SWEP.IronSightsPos = Vector(0, -5, 0)
+SWEP.IronSightsAng = Vector(0, 0, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -191,12 +191,13 @@ SWEP.Type_Displayed             = "Mars-Omega Pattern Mk. I"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/volkite_caliver.mdl", bone = "weapon_bone", rel = "", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["volkitecaliver"] = { type = "Model", model = "models/joazzz/weapons/volkite_caliver.mdl", bone = "weapon_bone", rel = "", pos = Vector(0, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "volkitecaliver", pos = Vector(-10.662, 0.004, 7.479), angle = Angle(0, 180, 0), size = Vector(0.4, 0.4, 0.4), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/volkite_caliver.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(12.961, 1.179, -3.872), angle = Angle(-12.556, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["volkitecaliver"] = { type = "Model", model = "models/joazzz/weapons/volkite_caliver.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(12.961, 1.179, -3.872), angle = Angle(-12.556, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 }
 
 -- Define reload sound events
@@ -208,8 +209,72 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-3.84, -2.589, -1.081)
+SWEP.IronSightsAng_Short = Vector(-5.728, -1.803, 0)
+
+function SWEP:ShootBullet(...)
+	-- Call base logic first (handles animations, sounds, ammo)
+	self.BaseClass.ShootBullet(self, ...)
+
+	-- Fire custom invisible bullet for explosion logic
+	self:FireVolkiteEffectBullet()
+end
+
+function SWEP:FireVolkiteEffectBullet()
+	local ply = self:GetOwner()
+	if not IsValid(ply) then return end
+
+	local bullet = {}
+	bullet.Num    = 1
+	bullet.Src    = ply:GetShootPos()
+	bullet.Dir    = ply:GetAimVector()
+	bullet.Spread = Vector(0, 0, 0)
+	bullet.Tracer = 0
+	bullet.Force  = 0
+	bullet.Damage = 0 -- No actual damage
+	bullet.Callback = function(attacker, tr, dmginfo)
+		local ent = tr.Entity
+		if not IsValid(ent) or not ent:IsNPC() then return end
+
+		if math.random() < 0.10 then -- 10% chance
+
+			local pos = ent:GetPos()
+
+			-- Charge-up
+			local charge = EffectData()
+			charge:SetEntity(ent)
+			charge:SetOrigin(pos)
+			util.Effect("volkite_chargeup", charge)
+			ent:Ignite(2, 0)
+			ent:EmitSound("ambient/fire/gascan_ignite1.wav", 75, 100)
+
+			timer.Simple(0.3, function()
+				if not IsValid(ent) then return end
+
+				-- Boom
+				local boom = EffectData()
+				boom:SetOrigin(pos)
+				util.Effect("volkite_explosion", boom, true, true)
+
+				sound.Play("ambient/explosions/explode_4.wav", pos)
+				sound.Play("npc/roller/mine/rmine_explode_shock1.wav", pos)
+
+				util.Decal("FadingScorch", pos + Vector(0,0,5), pos - Vector(0,0,30), attacker)
+
+				-- Do some blast damage
+				local dmg = self.Primary and self.Primary.Damage or 100
+				util.BlastDamage(attacker, attacker, pos, 128, dmg * 0.25)
+			end)
+		end
+	end
+
+	ply:FireBullets(bullet)
+end
+

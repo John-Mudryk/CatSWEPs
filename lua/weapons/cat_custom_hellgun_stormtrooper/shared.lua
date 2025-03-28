@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Hellgun Stormtrooper"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Stormtrooper Hellgun"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -175,12 +175,12 @@ SWEP.Type_Displayed             = "Mk. 2 Gyro-stabilised"
 -- Attachments
 SWEP.VElements = {
 	["hellgunG"] = { type = "Model", model = "models/gutsy/warhammer40k/cadia/hellgun.mdl", bone = "weapon_bone", rel = "", pos = Vector(4.232, 0.36, -1.45), angle = Angle(0.991, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(14.819, 0.316, 2.036), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
+	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(14.819, 0.316, 2.036), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
 	["hellgunGW"] = { type = "Model", model = "models/gutsy/warhammer40k/cadia/hellgun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(12.088, 0.972, -4.299), angle = Angle(-167.211, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(21.08, 0.976, -9.768), angle = Angle(-11.098, 0, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
+	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(21.08, 0.976, -9.768), angle = Angle(-11.098, 0, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
 -- Define reload sound events

@@ -166,6 +166,11 @@ SWEP.Type_Displayed             = "Lucius Pattern Mk. IV Lance"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "tag_weapon", rel = "", pos = Vector(5.4, -0.201, 6.099), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "tag_weapon", rel = "", pos = Vector(2.599, -0.201, 6), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "", pos = Vector(1.32, -0.201, 6.199), angle = Angle(0, 180, 0), size = Vector(0.25, 0.25, 0.25), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
+
 }
 
 SWEP.WElements = {
@@ -186,7 +191,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge_hell", "cat_am_overcharge_hell"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light", "cat_scope_reflex_hud", "cat_scope_dot_hud", "cat_scope_light_hud"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_bayonetchain"}, order = 4 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_bar_compensator"}, order = 3 },
@@ -195,3 +200,12 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-3.12, -5, -0.48)
+SWEP.IronSightsAng_Reflex = Vector(-2.52, 0.054, 0)
+
+SWEP.IronSightsPos_Short = Vector(-3.12, -6, -0.48)
+SWEP.IronSightsAng_Short = Vector(-3.032, 0.057, 0)
+
+SWEP.IronSightsPos_Light = Vector(-3.142, -5, -0.48)
+SWEP.IronSightsAng_Light = Vector(-4.456, -0.145, 0)

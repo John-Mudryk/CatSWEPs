@@ -34,13 +34,18 @@ ATTACHMENT.WeaponTable = {
 		["lascarbineG"] = {
 			["bodygroup"] = {[2] = 1},
 		},
+		["longlasV"] = {
+			["bodygroup"] = {[2] = 1},
+		},
 		["lasgunK"] = {
 			["bodygroup"] = {[2] = 1},
 		},
 		["lascarbineK"] = {
 			["bodygroup"] = {[2] = 1},
 		},
-
+		["longlasKW"] = {
+			["bodygroup"] = {[2] = 1},
+		},
 	},
 ["WElements"] = {
 		["autogunW"] = {
@@ -58,10 +63,16 @@ ATTACHMENT.WeaponTable = {
 		["lascarbineGW"] = {
 			["bodygroup"] = {[2] = 1},
 		},
+		["longlasVW"] = {
+			["bodygroup"] = {[2] = 1},
+		},
 		["lasgunKW"] = {
 			["bodygroup"] = {[2] = 1},
 		},
 		["lascarbineKW"] = {
+			["bodygroup"] = {[2] = 1},
+		},
+		["longlasKW"] = {
 			["bodygroup"] = {[2] = 1},
 		},
 	},

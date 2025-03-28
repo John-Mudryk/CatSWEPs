@@ -37,7 +37,7 @@ SWEP.Primary.Knockback = 5 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, -3, -3), angle = Angle(0, 0, 0) }
 }
 
 
@@ -60,9 +60,9 @@ SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 200
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 20		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -141,7 +141,7 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 
 -- Because irons don't magically give you less pellet spread!
 -- Enter iron sight info and bone mod info below
-SWEP.VMPos = Vector(3, 0, -3) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
+SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-0.487, -7.713, -0.918)
@@ -201,7 +201,8 @@ SWEP.Type_Displayed             = "Sol Militarus Pattern Mk. IIa"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["gun"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "gun", pos = Vector(3.75, -11.601, 2.45), angle = Angle(0, 180, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -217,8 +218,12 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
+	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(4.306, -3, 5.445)
+SWEP.IronSightsAng_Short = Vector(0, -0.075, 0)

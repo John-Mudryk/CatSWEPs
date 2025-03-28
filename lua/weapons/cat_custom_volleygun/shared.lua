@@ -166,6 +166,9 @@ SWEP.Type_Displayed             = "Ryza Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.299, 0.349, 3), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-1.701, 0.4, 2.799), angle = Angle(-92, -90, 90), size = Vector(0.029, 0.029, 0.029), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 SWEP.WElements = {
@@ -181,9 +184,15 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge_hell", "cat_am_overcharge_hell"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_reflex_hud", "cat_scope_dot_hud"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-4.1, -7, 4.11)
+SWEP.IronSightsAng_Reflex = Vector(-5.566, -1.718, 0)
+
+SWEP.IronSightsPos_Short = Vector(-4.1, -7, 4.11)
+SWEP.IronSightsAng_Short = Vector(-5.972, -1.476, 0)

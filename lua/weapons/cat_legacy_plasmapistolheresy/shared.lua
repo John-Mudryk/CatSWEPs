@@ -37,8 +37,11 @@ SWEP.Primary.Knockback = 2 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["tag_weapon"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["tag_weapon"] = { scale = Vector(0.4, 0.4, 0.4), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["tag_clip"] = { scale = Vector(3, 3, 3), pos = Vector(1.779, 0, -0.209), angle = Angle(0, 0, 0) }
 }
+
+
 
 SWEP.Primary.Sound			= "40k/plasma1.wav"		-- script that calls the primary fire sound
 SWEP.Primary.RPM			= 50		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM

@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_custom_longlas_kantrael"
+	"$translucent" 1
+}

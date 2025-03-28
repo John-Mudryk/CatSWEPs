@@ -15,22 +15,47 @@ ATTACHMENT.WeaponTable = {
 		["IronAccuracy"] = function(wep,stat) return stat * 0.75 end
 	},
 	["Secondary"] = {
-		["UseMilDot"] = function(wep,stat) return true end,
-		["IronFOV"] = function(wep,stat) return 20 end,
+		["ScopeTable"] = {
+			ScopeBorder = Color(0, 0, 0, 0), -- no border
+			ScopeMaterial = Material("scope/gdcw_closedsight"),
+			ScopeMaterialScale = 1.5,
+			ScopeOverlay = Material(""),
+			ScopeCrosshair = { 
+				r = 255, g = 255, b = 255, a = 225, -- Crosshair color
+				scale = 1, -- Scale
+				Material = Material("entities/scope_medium_crosshair.png") 
+				
+			}
+		},
+		["IronFOV"] = function(wep, stat) return 60 end, -- Adjust zoom
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.5 end,
-	["Scoped"] = function(wep,stat) return true end,
+	["Scoped"] = function(wep,stat) return false end,
 	["ScopeScale"] = function(wep,stat) return 0.6 end,
-	["IronSightsPos"] = function(wep,stat) return Vector(0, -10, 0) end,
+	["IronSightsPos"] = function(wep,stat) return wep.IronSightsPos_Light end,
+	["IronSightsAng"] = function(wep,stat) return wep.IronSightsAng_Light end,
+
 ["VElements"] = {
+		["scope_light"] = {
+            		active = true
+        	},
 		["autogun"] = {
-			["bodygroup"] = {[1] = 2},
+			["bodygroup"] = {[1] = 3},
+		},
+		["lucius"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["luciusH"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 		["lasgunK"] = {
 			["bodygroup"] = {[5] = 1},
 		},
 		["lascarbineK"] = {
 			["bodygroup"] = {[5] = 2},
+		},
+		["longlasK"] = {
+			["bodygroup"] = {[5] = 1},
 		},
 		["laspistolK"] = {
 			["bodygroup"] = {[4] = 2},
@@ -71,13 +96,22 @@ ATTACHMENT.WeaponTable = {
 	},
 ["WElements"] = {
 		["autogunW"] = {
-			["bodygroup"] = {[1] = 2},
+			["bodygroup"] = {[1] = 3},
+		},
+		["lucius"] = {
+			["bodygroup"] = {[1] = 1},
+		},
+		["luciusH"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 		["lasgunKW"] = {
 			["bodygroup"] = {[5] = 1},
 		},
 		["lascarbineKW"] = {
 			["bodygroup"] = {[5] = 2},
+		},
+		["longlasKW"] = {
+			["bodygroup"] = {[5] = 1},
 		},
 		["laspistolKW"] = {
 			["bodygroup"] = {[4] = 2},
@@ -118,12 +152,73 @@ ATTACHMENT.WeaponTable = {
 	},
 }
 
+-- Cache reticle material once
+local reticleMat_LightScope = Material("entities/scope_medium_crosshair")
+local rtmod2 = Color(255,255,255,2)
+local fov = 7
+local cd = {}
+
+
 
 function ATTACHMENT:Attach(wep)
 
 	JamChance = wep["JamChance"]
 
 	wep.JamChance = JamChance - 0.10 -- the (maximal) chance the weapon will jam. Newly spawned weapon will never jam on first shot for example.
+	
+	if not IsValid(wep) then return end
+	wep.RTCodeOld = wep.RTCodeOld or wep.RTCode
+
+	wep.RTCode = function(myself, rt, scrw, scrh)
+		if not IsValid(myself.Owner) then return end
+		local wcol = myself.Owner:GetWeaponColor()
+		rtmod2.r = wcol.x * 255 * 2
+		rtmod2.g = wcol.y * 255 * 2
+		rtmod2.b = wcol.z * 255 * 2
+
+		local reticle = reticleMat_LightScope
+		local reticleScale = 1.1
+
+		local w, h = ScrW(), ScrH()
+		local scaledW, scaledH = w * reticleScale, h * reticleScale
+		local x = (w - scaledW) / 2
+		local y = (h - scaledH) / 2
+
+		render.OverrideAlphaWriteEnable(true, true)
+		surface.SetDrawColor(color_white)
+		surface.DrawRect(-ScrW(), -ScrH(), ScrW() * 2, ScrH() * 2)
+		render.OverrideAlphaWriteEnable(true, true)
+		local ang = myself.Owner:EyeAngles()
+		cd.angles = ang
+		cd.origin = myself.Owner:GetShootPos()
+		local rtw, rth = ScrW(), ScrH()
+		cd.x = 0
+		cd.y = 0
+		cd.w = ScrW()
+		cd.h = ScrH()
+		cd.fov = fov
+		cd.drawviewmodel = false
+		cd.drawhud = false
+		render.Clear(0, 0, 0, 255, true, true)
+		render.SetScissorRect(0, 0, rtw, rth, true)
+
+		if myself.CLIronSightsProgress > 0.005 then
+			render.RenderView(cd)
+		end
+
+		render.SetScissorRect(0, 0, rtw, rth, false)
+		render.OverrideAlphaWriteEnable(false, true)
+		cam.Start2D()
+		draw.NoTexture()
+		surface.SetDrawColor(ColorAlpha(color_black, 255 * (1 - myself.CLIronSightsProgress)))
+		surface.DrawRect(0, 0, rtw, rth)
+		surface.SetMaterial(reticle)
+		surface.SetDrawColor(color_white)
+		surface.DrawTexturedRect(x, y, scaledW, scaledH)
+		surface.SetDrawColor(rtmod2)
+		surface.DrawRect(0, 0, ScrW(), ScrH())
+		cam.End2D()
+	end
 
 end
 

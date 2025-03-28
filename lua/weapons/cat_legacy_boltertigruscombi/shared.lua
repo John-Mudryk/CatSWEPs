@@ -173,7 +173,10 @@ SWEP.Type_Displayed             = "Tigrus Pattern Mk. IIc"
 
 -- Attachments
 SWEP.VElements = {
-	["bolterTC2"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern_combibolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -11.096), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["bolterTC2"] = { type = "Model", model = "models/joazzz/weapons/bolter_tigruspattern_combibolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.25, 0.521, -11.096), angle = Angle(5.947, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterTC2", pos = Vector(-1.662, 0.004, 18.812), angle = Angle(-15, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterTC2", pos = Vector(-0.926, 0.004, 18.812), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 
@@ -192,7 +195,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_under_bolter", "cat_under_plasma", "cat_under_melta"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_astartes"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_light2_hud", "cat_scope_heavy2_hud", "cat_scope_astartes"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
@@ -201,3 +204,9 @@ SWEP.AttachmentExclusions = {}
 
 SWEP.Primary.MGSound			= "40k/meltagun-fire.mp3"
 SWEP.Primary.PGSound			= "40k/plasma1.wav"
+
+SWEP.IronSightsPos_Light = Vector(-4.321, -2, 1.08)
+SWEP.IronSightsAng_Light = Vector(-14.065, -1.479, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.401, -2, 1.08)
+SWEP.IronSightsAng_Heavy = Vector(-13.773, -1.935, 0)

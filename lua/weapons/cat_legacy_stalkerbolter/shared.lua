@@ -59,9 +59,9 @@ SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 10
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 10		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
@@ -73,16 +73,29 @@ SWEP.ReticleScale = 0.5 --Scale of the reticle overlay
 
 SWEP.Secondary.UseACOG			= false	 	--Overlay option
 SWEP.Secondary.UseMilDot		= false		--Overlay option
-SWEP.Secondary.UseSVD			= true		--Overlay option
+SWEP.Secondary.UseSVD			= false		--Overlay option
 SWEP.Secondary.UseParabolic		= false		--Overlay option
 SWEP.Secondary.UseElcan			= false	 	--Overlay option
 SWEP.Secondary.UseGreenDuplex		= false		--Overlay option
 
+	SWEP.Secondary.ScopeTable = {
+			ScopeBorder = Color(0, 0, 0, 0), -- no border
+			ScopeMaterial = Material("scope/gdcw_closedsight"),
+			ScopeMaterialScale = 2,
+			ScopeOverlay = Material(""),
+			ScopeCrosshair = { 
+				r = 255, g = 255, b = 255, a = 250, -- Crosshair color
+				scale = 1.35, -- Scale
+				Material = Material("entities/scope_heavy_crosshair.png") 
+				
+			}
+	}
+
 SWEP.DamageType = DMG_BULLET
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
 SWEP.Primary.Damage		= 425	-- Base damage per bullet
-SWEP.Primary.Spread		= 0.005	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
-SWEP.Primary.IronAccuracy = 0.0005	-- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.Spread		= 0.01	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
+SWEP.Primary.IronAccuracy = 0.001	-- Ironsight accuracy, should be the same for shotguns
 
 --Range Related
 SWEP.Primary.RangeFalloffLUT = {
@@ -127,11 +140,11 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 
 -- Because irons don't magically give you less pellet spread!
 -- Enter iron sight info and bone mod info below
-SWEP.VMPos = Vector(2, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
+SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.08, -4.14, -1.241)
-SWEP.IronSightsAng = Vector(0, 0, 0)
+SWEP.IronSightsPos = Vector(-6.481, 0, 3.16)
+SWEP.IronSightsAng = Vector(-4.319, 2.455, -40.484)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -187,7 +200,9 @@ SWEP.Type_Displayed             = "Godwyn Pattern Mk. IIIb"
 
 -- Attachments
 SWEP.VElements = {
-	["stalkerbolter"] = { type = "Model", model = "models/joazzz/weapons/bolter_stalkerbolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.472, 0.714, 0.917), angle = Angle(0, -90, 5.137), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["stalkerbolter"] = { type = "Model", model = "models/joazzz/weapons/bolter_stalkerbolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.472, 0.714, 0.917), angle = Angle(0, -90, 5.137), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+		["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "stalkerbolter", pos = Vector(-0.087, 14.272, 6.453), angle = Angle(0, -90, 0), size = Vector(0.736, 0.736, 0.736), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+
 }
 
 SWEP.WElements = {
@@ -204,8 +219,12 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_heavy2", "cat_scope_heavy2_hud"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Heavy = Vector(-4.401, -5, 0.239)
+SWEP.IronSightsAng_Heavy = Vector(-4.653, -1.815, 0)

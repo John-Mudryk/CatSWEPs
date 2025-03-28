@@ -27,6 +27,9 @@ ATTACHMENT.WeaponTable = {
 		["lascarbineK"] = {
 			["bodygroup"] = {[4] = 2},
 		},
+		["longlasK"] = {
+			["bodygroup"] = {[4] = 2},
+		},
 		["lasgunG"] = {
 			["bodygroup"] = {[4] = 1},
 		},
@@ -75,6 +78,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["lasgunKW"] = {
 			["bodygroup"] = {[4] = 0},
+		},
+		["longlasKW"] = {
+			["bodygroup"] = {[4] = 2},
 		},
 		["lascarbineGW"] = {
 			["bodygroup"] = {[4] = 2},

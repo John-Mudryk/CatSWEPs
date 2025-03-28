@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellAttachment			= "w shotgun" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Autogun Agripinaa"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Agripinaa Autogun"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -182,6 +182,10 @@ SWEP.VElements = {
 	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
 
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(5.099, -0.051, 7.05), angle = Angle(-90, 0, 0), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(8.234, 0.035, 7.21), angle = Angle(0, 0, 0), size = Vector(0.214, 0.214, 0.214), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(9.843, -0.022, 7.184), angle = Angle(0, 0, 0), size = Vector(0.196, 0.196, 0.196), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 SWEP.WElements = {
@@ -200,9 +204,18 @@ SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary"}, order = 1 },
         [2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor", "cat_bar_extend_one"}, order = 3 },
-	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2", "cat_scope_dot2", "cat_scope_heavy2"}, order = 4 },
+	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2", "cat_scope_dot2", "cat_scope_light2", "cat_scope_reflex2_hud", "cat_scope_dot2_hud", "cat_scope_light2_hud"}, order = 4 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-4.321, -10, 0.959)
+SWEP.IronSightsAng_Reflex = Vector(-0.066, -3.823, 0)
+
+SWEP.IronSightsPos_Short = Vector(-3.921, -14, 0.879)
+SWEP.IronSightsAng_Short = Vector(-1.964, -2.991, 0)
+
+SWEP.IronSightsPos_Light = Vector(-4.16, -12, 0.759)
+SWEP.IronSightsAng_Light = Vector(0.787, -4.006, 0)

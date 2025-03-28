@@ -166,6 +166,9 @@ SWEP.Type_Displayed             = "Kantreal Mk. XXI"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-4.85, 0.8, 3.7), angle = Angle(0, -180, 0), size = Vector(0.27, 0.27, 0.27), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.1, 0.8, 3.5), angle = Angle(0, -180, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 SWEP.WElements = {
@@ -181,7 +184,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge", "cat_am_overcharge"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy", "cat_scope_light_hud", "cat_scope_heavy_hud"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 4 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
@@ -190,3 +193,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-4.421, -5, 3.519)
+SWEP.IronSightsAng_Light = Vector(-7.985, -0.864, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.421, -5, 3.519)
+SWEP.IronSightsAng_Heavy = Vector(-8.804, -0.65, 0)

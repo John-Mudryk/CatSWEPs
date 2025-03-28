@@ -54,6 +54,10 @@ SWEP.Primary.PenetrationMultiplier = 1
 
 SWEP.Secondary.IronFOV			= 70		-- How much you 'zoom' in. Less is more! 
 
+SWEP.Scoped = false 
+SWEP.Secondary.RTScope = false 
+SWEP.Scoped_3D = false
+
 SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
 
@@ -177,17 +181,13 @@ SWEP.IronSightsPos_SG = Vector(0.017, -9.07, 4.372)
 SWEP.IronSightsAng_SG = Vector(0, 0, 0)
 SWEP.Primary.SGSound = Sound("40k/shotgun-fire1.mp3")
 
-SWEP.RTMaterialOverride = -1
-
-local cd = {}
-local crosscol = Color(255, 255, 255, 255)
-local rtmod = Color(255,0,0,4)
-SWEP.RTOpaque = true
-
-SWEP.RTCode = nil
-
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-2.901, 0.5, 3.4), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.001), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-2.901, 0.5, 3.15), angle = Angle(-90, -90, 90), size = Vector(0.0325, 0.0325, 0.0325), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.171, 0.689, 4.059), angle = Angle(0, -178.601, 0), size = Vector(0.268, 0.268, 0.268), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.171, 0.689, 4.059), angle = Angle(0, -178.601, 0), size = Vector(0.268, 0.268, 0.268), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(23.17, 1.995, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
@@ -209,7 +209,7 @@ SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary"}, order = 1 },
     	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two", "cat_mag_extend_three"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_stock_heavy", "cat_stock_light"}, order = 3 },
-	[4] = { offset = { 0, 0 }, atts = {"cat_scope_reflex" ,"cat_scope_dot","cat_scope_light","cat_scope_heavy"}, order = 4 },
+	[4] = { offset = { 0, 0 }, atts = {"cat_scope_reflex" ,"cat_scope_dot","cat_scope_light","cat_scope_heavy", "cat_scope_reflex_hud" ,"cat_scope_dot_hud","cat_scope_light_hud","cat_scope_heavy_hud"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_under_shotgun", "cat_under_launcher"}, order = 6 },
     	[7] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor", "cat_bar_extend_one"}, order = 7 },
@@ -219,3 +219,15 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-4.481, -10, 2.691)
+SWEP.IronSightsAng_Reflex = Vector(-3.452, -3.906, 0)
+
+SWEP.IronSightsPos_Short = Vector(-4.481, -10, 2.769)
+SWEP.IronSightsAng_Short = Vector(-2.3, -3.85, 0)
+
+SWEP.IronSightsPos_Light = Vector(-4.761, -5, 2.559)
+SWEP.IronSightsAng_Light = Vector(-6.342, -3.44, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.761, -5, 2.559)
+SWEP.IronSightsAng_Heavy = Vector(-6.442, -3.44, 0)

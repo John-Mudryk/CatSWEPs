@@ -37,8 +37,9 @@ SWEP.Primary.Knockback = 5 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, -4), angle = Angle(-4, 0, 0) }
 }
+
 
 
 SWEP.Primary.Sound			= "asuran/fire2.wav"		-- script that calls the primary fire sound
@@ -59,9 +60,9 @@ SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 200
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 20		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 SWEP.BoltAction			= false  --Unscope/sight after you shoot?
-SWEP.Scoped			= true  --Draw a scope overlay?
+SWEP.Scoped			= false  --Draw a scope overlay?
 
 SWEP.ScopeOverlayThreshold = 0.875 --Percentage you have to be sighted in to see the scope.
 SWEP.BoltTimerOffset = 0.1 --How long you stay sighted in after shooting, with a bolt action.
@@ -140,11 +141,11 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 
 -- Because irons don't magically give you less pellet spread!
 -- Enter iron sight info and bone mod info below
-SWEP.VMPos = Vector(3, 0, -3) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
+SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-0.487, -7.713, -0.918)
-SWEP.IronSightsAng = Vector(0.078, 0.512, -4.463)
+SWEP.IronSightsAng = Vector(2.578, 0.512, -4.463)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -200,11 +201,13 @@ SWEP.Type_Displayed             = "Mars Pattern Mk. III"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.484, 0.644, 2.111), angle = Angle(0, 91.75, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.484, 0.644, 2.111), angle = Angle(0, 91.75, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lascannon", pos = Vector(3.788, -6.608, 3.575), angle = Angle(0, 90, 0), size = Vector(0.349, 0.349, 0.349), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.934, 2.734, -8.74), angle = Angle(180, 90, -9.653), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.934, 2.734, -8.74), angle = Angle(180, 90, -9.653), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -216,8 +219,12 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
+[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
 [10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-2, -5, 4.679)
+SWEP.IronSightsAng_Short = Vector(-1.494, -9.077, 0)

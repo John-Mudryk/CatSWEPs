@@ -175,7 +175,10 @@ SWEP.Type_Displayed             = "Godwyn Pattern Mk. IIIc"
 SWEP.VElements = {
 	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_box.mdl", bone = "mag_bone", rel = "", pos = Vector(6.139, 0, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["mag"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_curve.mdl", bone = "mag_bone", rel = "", pos = Vector(6.139, 0.4, 0), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["bolterGC"] = { type = "Model", model = "models/joazzz/weapons/bolter_combi.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.651, 0.46, -3.234), angle = Angle(2.115, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[2] = 3} }
+	["bolterGC"] = { type = "Model", model = "models/joazzz/weapons/bolter_combi.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.651, 0.46, -3.234), angle = Angle(2.115, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[2] = 3} },
+
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterGC", pos = Vector(-9.301, 0, 10.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "bolterGC", pos = Vector(-9.728, 0, 10.5), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 }
 
 
@@ -195,7 +198,7 @@ SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_under_plasma", "cat_under_melta", "cat_under_flamer"}, order = 1 },
     	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 3 },
-    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2"}, order = 4 },
+    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_light2_hud", "cat_scope_heavy2_hud"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_stock_heavy"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
@@ -205,3 +208,9 @@ SWEP.AttachmentExclusions = {}
 
 SWEP.Primary.MGSound			= "40k/meltagun-fire.mp3"
 SWEP.Primary.PGSound			= "40k/plasma1.wav"	
+
+SWEP.IronSightsPos_Light = Vector(-4.841, -3, -1.481)
+SWEP.IronSightsAng_Light = Vector(0.667, -4.266, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.841, -3, -1.481)
+SWEP.IronSightsAng_Heavy = Vector(0.597, -4.396, 0)

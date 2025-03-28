@@ -174,6 +174,12 @@ SWEP.Primary.SGSound = Sound("40k/shotgun-fire1.mp3")
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.5, 0.25, 2.799), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-1.75, 0.25, 2.38), angle = Angle(-90, -90, 90), size = Vector(0.029, 0.029, 0.029), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-3.1, 0.25, 2.4), angle = Angle(0, -180, 0), size = Vector(0.27, 0.27, 0.27), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
+
+
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.306, 1.513, 0), angle = Angle(3.131, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
@@ -192,7 +198,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge_hell", "cat_am_overcharge_hell"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light", "cat_scope_reflex_hud", "cat_scope_dot_hud", "cat_scope_light_hud"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_under_shotgun", "cat_under_launcher"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 6 },
@@ -201,3 +207,12 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-3.981, -10, 3.869)
+SWEP.IronSightsAng_Reflex = Vector(-4.807, -2.02, 0)
+
+SWEP.IronSightsPos_Short = Vector(-3.901, -12, 3.829)
+SWEP.IronSightsAng_Short = Vector(-4.725, -2.055, 0)
+
+SWEP.IronSightsPos_Light = Vector(-3.901, -10, 3.63)
+SWEP.IronSightsAng_Light = Vector(-3.057, -1.625, 0)

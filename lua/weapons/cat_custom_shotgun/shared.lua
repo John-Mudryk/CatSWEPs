@@ -173,6 +173,10 @@ SWEP.Bodygroups_W       = {
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-2.35, 0.75, 3.6), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-2.901, 0.75, 3.2), angle = Angle(-92, -90, 90), size = Vector(0.032, 0.032, 0.032), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+
+
 }
 
 SWEP.WElements = {
@@ -190,7 +194,7 @@ SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_slug", "cat_am_birdshot", "cat_am_incend", "cat_am_boltslug"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two", "cat_mag_extend_three"}, order = 2 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_stock_heavy", "cat_stock_light"}, order = 3 },
-	[4] = { offset = { 0, 0 }, atts = {  "cat_scope_reflex", "cat_scope_dot"}, order = 4 },
+	[4] = { offset = { 0, 0 }, atts = {  "cat_scope_reflex", "cat_scope_dot", "cat_scope_reflex_hud", "cat_scope_dot_hud"}, order = 4 },
 	[5] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_bayonet"}, order = 6 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
@@ -198,3 +202,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-4.604, -10, 2.599)
+SWEP.IronSightsAng_Reflex = Vector(-3.912, -3.024, 0)
+
+SWEP.IronSightsPos_Short = Vector(-4.612, -10, 2.599)
+SWEP.IronSightsAng_Short = Vector(-1.51, -3.1, 0)

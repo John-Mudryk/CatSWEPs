@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "entities/scope_medium_crosshair"
+	"$translucent" 1
+}

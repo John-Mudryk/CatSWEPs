@@ -1,0 +1,29 @@
+"UnlitGeneric"
+{
+	"$basetexture" "entities/scope_short_crosshair"
+	"$translucent" "1"
+
+	"$detail" "scope/gdcw_noise"
+	"$detailscale" "1"
+	"$detailblendmode" "1" // multiply = darken
+	"$detailblendfactor" "1.0"
+
+	"$detailtexturetransform" "center 0.5 0.5 scale 1 1 rotate 0 translate 0 0"
+
+	"Proxies"
+	{
+		"Sine"
+		{
+			"sineperiod" "0.3"
+			"sinemin" "0.5"
+			"sinemax" "1.0"
+			"resultVar" "$detailblendfactor"
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$detailtexturetransform"
+			"texturescrollrate" "10"
+			"texturescrollangle" "-55"
+		}
+	}
+}

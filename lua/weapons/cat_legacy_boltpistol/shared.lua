@@ -181,7 +181,9 @@ SWEP.Bodygroups_W       = {
 -- Attachments
 SWEP.VElements = {
 	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(-1.249, 0, 5.232), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} },
-	["mag"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(-2.748, 0, 1.166), angle = Angle(-9.54, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["mag"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_mag.mdl", bone = "tag_clip", rel = "", pos = Vector(-2.748, 0, 1.166), angle = Angle(-9.54, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "boltpistolG", pos = Vector(1.899, -0.051, 3.2), angle = Angle(0, 0, 0), size = Vector(0.449, 0.449, 0.449), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+
 }
 
 SWEP.WElements = {
@@ -203,9 +205,12 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2", "cat_scope_astartes"}, order = 4 },
+    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud", "cat_scope_astartes"}, order = 4 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Short = Vector(-3.28, -4, -3)
+SWEP.IronSightsAng_Short = Vector(-4.324, 1.217, 0)

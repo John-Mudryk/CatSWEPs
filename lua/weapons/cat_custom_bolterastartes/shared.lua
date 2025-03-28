@@ -167,8 +167,10 @@ SWEP.Type_Displayed             = "Godwyn Mk. VIc"
 
 -- Attachments
 SWEP.VElements = {
-["knife"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_knife_astartes.mdl", bone = "weapon_bone", rel = "", pos = Vector(14.053, -0.065, -1.872), angle = Angle(-3.237, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
-["knife2"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_chaonsword.mdl", bone = "weapon_bone", rel = "", pos = Vector(13.758, 0.62, -0.543), angle = Angle(-0.678, -90, -87.292), size = Vector(0.621, 0.4, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-9.211, 0.62, 5.63), angle = Angle(180, 0, 180), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
+	["knife"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_knife_astartes.mdl", bone = "weapon_bone", rel = "", pos = Vector(14.053, -0.065, -1.872), angle = Angle(-3.237, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
+	["knife2"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_chaonsword.mdl", bone = "weapon_bone", rel = "", pos = Vector(13.758, 0.62, -0.543), angle = Angle(-0.678, -90, -87.292), size = Vector(0.621, 0.4, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -187,7 +189,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two", "cat_mag_extend_three", "cat_mag_extend_four"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_heavy","cat_scope_astartes"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_scope_heavy", "cat_scope_heavy_hud","cat_scope_astartes"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_bayonetchain"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_grip"}, order = 6 },
@@ -198,3 +200,6 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Heavy = Vector(-4.56, 0, 2.359)
+SWEP.IronSightsAng_Heavy = Vector(-11.209, -1.825, 0)

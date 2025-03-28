@@ -166,6 +166,10 @@ SWEP.Type_Displayed             = "Agripinaa Pattern Mk. X"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "tag_weapon", rel = "", pos = Vector(4, -0.101, 6.199), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "tag_weapon", rel = "", pos = Vector(2, -0.16, 5.949), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
+
 	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "tag_weapon", rel = "", pos = Vector(6.697, -1.502, 3.164), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
 }
 
@@ -191,7 +195,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary"}, order = 1 },
     	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_three"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = {"cat_scope_reflex", "cat_scope_dot"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = {"cat_scope_reflex", "cat_scope_dot", "cat_scope_reflex_hud", "cat_scope_dot_hud"}, order = 3 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 4 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
@@ -199,3 +203,9 @@ SWEP.Attachments = {
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-3.12, -5, -0.601)
+SWEP.IronSightsAng_Reflex = Vector(-2.695, 0.584, 0)
+
+SWEP.IronSightsPos_Short = Vector(-3.142, -8, -0.608)
+SWEP.IronSightsAng_Short = Vector(-2.53, 0.275, 0)

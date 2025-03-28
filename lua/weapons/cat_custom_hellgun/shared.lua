@@ -167,6 +167,11 @@ SWEP.Type_Displayed             = "Ryza Pattern Mk. III"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.599, 0.18, 3.049), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.5, 0.25, 2.799), angle = Angle(-90, -90, 90), size = Vector(0.029, 0.029, 0.029), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-3.1, 0.25, 3.5), angle = Angle(0, -180, 0), size = Vector(0.27, 0.27, 0.27), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-5.65, 0.4, 3.5), angle = Angle(0, -180, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+
 }
 
 SWEP.WElements = {
@@ -182,10 +187,22 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge_hell", "cat_am_overcharge_hell"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light", "cat_scope_heavy"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_reflex", "cat_scope_dot", "cat_scope_light", "cat_scope_heavy", "cat_scope_reflex_hud", "cat_scope_dot_hud", "cat_scope_light_hud", "cat_scope_heavy_hud"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_bar_compensator", "cat_bar_muzzlebreak"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Reflex = Vector(-3.981, -10, 3.75)
+SWEP.IronSightsAng_Reflex = Vector(-4.98, -2.29, 0)
+
+SWEP.IronSightsPos_Short = Vector(-3.981, -10, 3.75)
+SWEP.IronSightsAng_Short = Vector(-5.075, -2.107, 0)
+
+SWEP.IronSightsPos_Light = Vector(-3.981, -10, 3.39)
+SWEP.IronSightsAng_Light = Vector(-8.858, -2.278, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.06, -7, 3.789)
+SWEP.IronSightsAng_Heavy = Vector(-11.003, -1.222, 0)

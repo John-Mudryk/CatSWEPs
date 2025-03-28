@@ -166,6 +166,8 @@ SWEP.Type_Displayed             = "Goth Pattern Mk. II Lion"
 
 -- Attachments
 SWEP.VElements = {
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.301, 0.389, 3.619), angle = Angle(0, -180, 0), size = Vector(0.15, 0.15, 0.15), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-2.401, 0.389, 3.549), angle = Angle(0, -180, 0), size = Vector(0.174, 0.174, 0.174), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
@@ -180,10 +182,16 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
-	[1] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy"}, order = 1 },
+	[1] = { offset = { 0, 0 }, atts = { "cat_scope_light", "cat_scope_heavy", "cat_scope_light_hud", "cat_scope_heavy_hud"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_bar_extend_one", "cat_galvanic_rifle"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-3.84, -10, 3.039)
+SWEP.IronSightsAng_Light = Vector(-5.516, -0.716, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-3.84, -10, 3.039)
+SWEP.IronSightsAng_Heavy = Vector(-6.382, -0.495, 0)

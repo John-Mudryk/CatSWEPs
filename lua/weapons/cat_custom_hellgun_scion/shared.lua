@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Hellgun Scion"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Scion Hellgun"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -178,12 +178,13 @@ SWEP.VElements = {
 	["sight1"] = { type = "Model", model = "models/mechanics/solid_steel/steel_beam45_3.mdl", bone = "weapon_bone", rel = "", pos = Vector(-6.541, 0.217, 0.847), angle = Angle(0, 45, 0), size = Vector(0.019, 0.019, 0.019), color = Color(155, 155, 155, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 
 	["hellgunR"] = { type = "Model", model = "models/ninja/wh40k/imperialguard/weapons/hellgun_stormtrooper.mdl", bone = "weapon_bone", rel = "", pos = Vector(5.758, 0.433, -5.593), angle = Angle(-2.87, 179.136, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.147, 2.604, 0.001), angle = Angle(0, -1.902, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
+	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "weapon_bone", rel = "", pos = Vector(2.147, 2.604, 0.001), angle = Angle(0, -1.902, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "hellgunR", pos = Vector(7.5, 2.65, 7.9), angle = Angle(0, 0, 0), size = Vector(0.349, 0.349, 0.349), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
-["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(16.194, -1.678, -7.138), angle = Angle(-11.098, 0, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
+	["laser"] = { type = "Model", model = "models/tfa/lbeam.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(16.194, -1.678, -7.138), angle = Angle(-11.098, 0, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["hellgunRW"] = { type = "Model", model = "models/ninja/wh40k/imperialguard/weapons/hellgun_stormtrooper.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(15.918, 0.801, -2.123), angle = Angle(168.843, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 }
 
@@ -197,10 +198,13 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_lowcharge_hell", "cat_am_overcharge_hell"}, order = 1 },
-	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light"}, order = 2 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_light2_hud"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_flashlight", "cat_lasersight"}, order = 3 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-2.28, -12, 4.519)
+SWEP.IronSightsAng_Light = Vector(-6.353, -9.372, 0)
