@@ -176,12 +176,12 @@ SWEP.Type_Displayed             = "Soundstrike Pattern Mk. I Modified"
 
 -- Attachments
 SWEP.VElements = {
-	["missilelauncher"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(-18.333, 0.76, 2.677), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "missilelauncher", pos = Vector(8.55, 13.399, 2.95), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+	["missilelauncherCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "weapon_bone", rel = "", pos = Vector(-18.333, 0.76, 2.677), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "missilelauncherCH", pos = Vector(8.55, 13.399, 2.95), angle = Angle(0, 90, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-7.917, 0.961, -4.993), angle = Angle(180, 90, -11.518), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["missilelauncherCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/missilelauncher.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-7.917, 0.961, -4.993), angle = Angle(180, 90, -11.518), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -195,6 +195,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = {"cat_rocket_krak","cat_rocket_he","cat_rocket_melta"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 2 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

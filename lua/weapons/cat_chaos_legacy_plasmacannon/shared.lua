@@ -175,11 +175,11 @@ SWEP.ImpactDecal = "FadingScorch"--Impact Decal
 
 -- Attachments
 SWEP.VElements = {
-	["plasmacannon_chaos"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_plasmacannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(6.796, 1.001, 2.642), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["plasmacannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_plasmacannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(6.796, 1.001, 2.642), angle = Angle(0, 90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["plasmacannon_chaos_w"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_plasmacannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(16.523, 3.414, -7.147), angle = Angle(180, 88.327, -3.802), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["plasmacannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_plasmacannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(16.523, 3.414, -7.147), angle = Angle(180, 88.327, -3.802), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -192,6 +192,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_plasma_fast_chaos", "cat_am_plasmacannon_overcharge_chaos", "cat_am_plasmacannon_bolt_chaos"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
@@ -431,16 +432,16 @@ function SWEP:CanPrimaryAttack()
 end
 
 local heatModifiers = {
-	["cat_am_plasma_overcharge"] = 0.5,
+	["cat_am_plasma_overcharge"] = 0.75,
 	["cat_am_plasma_fast"] = -0.3,
-	["cat_am_plasma_bolt"] = 0.3,
-	["cat_am_plasmacannon_overcharge"] = 0.5,
-	["cat_am_plasmacannon_bolt"] = 0.3,
-	["cat_am_plasma_overcharge_chaos"] = 0.5,
+	["cat_am_plasma_bolt"] = 0.5,
+	["cat_am_plasmacannon_overcharge"] = 0.75,
+	["cat_am_plasmacannon_bolt"] = 0.5,
+	["cat_am_plasma_overcharge_chaos"] = 0.75,
 	["cat_am_plasma_fast_chaos"] = -0.3,
-	["cat_am_plasma_bolt_chaos"] = 0.3,
-	["cat_am_plasmacannon_overcharge_chaos"] = 0.5,
-	["cat_am_plasmacannon_bolt_chaos"] = 0.3
+	["cat_am_plasma_bolt_chaos"] = 0.5,
+	["cat_am_plasmacannon_overcharge_chaos"] = 0.75,
+	["cat_am_plasmacannon_bolt_chaos"] = 0.5
 }
 
 function SWEP:GetHeatMultiplier()

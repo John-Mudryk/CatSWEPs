@@ -177,11 +177,11 @@ SWEP.Type_Displayed             = "Solar Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/heavybolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(4.526, 1.34, 0.361), angle = Angle(-8.112, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["heavybolter"] = { type = "Model", model = "models/joazzz/weapons/heavybolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(4.526, 1.34, 0.361), angle = Angle(-8.112, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/heavybolter.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(20.622, 2.348, -7.046), angle = Angle(167.268, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["heavybolter"] = { type = "Model", model = "models/joazzz/weapons/heavybolter.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(20.622, 2.348, -7.046), angle = Angle(167.268, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events

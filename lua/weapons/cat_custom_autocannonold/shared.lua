@@ -121,7 +121,7 @@ SWEP.VMPos = Vector(7, 0, 0) -- The viewmodel positional offset, constantly.  Su
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-10.503, -12.23, 3.045)
-SWEP.IronSightsAng = Vector(-2.645, -1.575, 0)
+SWEP.IronSightsAng = Vector(-3.455, -1.575, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -178,14 +178,15 @@ SWEP.Type_Displayed             = "Fuscus Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "weapon_bone", rel = "", pos = Vector(-5.002, -0.815, 1.055), angle = Angle(11.189, 0, 0), size = Vector(0.885, 0.885, 0.885), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "weapon_bone", rel = "", pos = Vector(-5.002, 0.625, 1.055), angle = Angle(-11.189, 180, 0), size = Vector(0.885, 0.885, 0.885), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "sight", pos = Vector(-0.8, 0.7, 1.1), angle = Angle(-90, -90, 90), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {} },
 	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_autocannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(0.829, 0.289, -7.68), angle = Angle(-9.19, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["shield"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_shield.mdl", bone = "weapon_bone", rel = "", pos = Vector(11.371, 0, -7.08), angle = Angle(-40.245, 180, 0), size = Vector(1, 0.675, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 
 }
 
 SWEP.WElements = {
-	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(19.334, 2.858, -9.535), angle = Angle(-169.594, -180, 0), size = Vector(1.21, 1.21, 1.21), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(19.334, 2.858, -9.535), angle = Angle(-169.594, 180, 0), size = Vector(1.21, 1.21, 1.21), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_autocannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(26.912, 1.467, -1.134), angle = Angle(167.445, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 	["shield"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_shield.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(34.471, 1.467, -2.829), angle = Angle(146.518, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
 

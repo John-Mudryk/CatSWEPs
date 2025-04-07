@@ -228,11 +228,11 @@ SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 }
 SWEP.VElements = {
-	["axe"] = { type = "Model", model = "models/joazzz/weapons/chainaxe_heavy.mdl", bone = "RW_Weapon", rel = "", pos = Vector(10.036, 0.079, 25.324), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 17, bodygroup = {[0] = 2, [1] = 1, [2] = 1, [3] = 1} }
+	["axeCH"] = { type = "Model", model = "models/joazzz/weapons/chainaxe_heavy.mdl", bone = "RW_Weapon", rel = "", pos = Vector(10.036, 0.079, 25.324), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 8, bodygroup = {[0] = 2, [1] = 1, [2] = 1, [3] = 1} }
 }
 
 SWEP.WElements = {
-	["axe"] = { type = "Model", model = "models/joazzz/weapons/chainaxe_heavy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(21.555, 9.489, -22.969), angle = Angle(-166.67, -13.167, 7.964), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 17, bodygroup = {[0] = 2, [1] = 1, [2] = 1, [3] = 1} }
+	["axeCH"] = { type = "Model", model = "models/joazzz/weapons/chainaxe_heavy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(21.555, 9.489, -22.969), angle = Angle(-166.67, -13.167, 7.964), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 8, bodygroup = {[0] = 2, [1] = 1, [2] = 1, [3] = 1} }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -241,6 +241,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Charatran Pattern Mk. I"
 
 SWEP.Attachments = {
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

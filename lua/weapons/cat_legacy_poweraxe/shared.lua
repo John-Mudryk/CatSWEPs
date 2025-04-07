@@ -259,6 +259,7 @@ SWEP.Type_Displayed             = "Mars-Proteus Pattern Mk. II"
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_poweraxe"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

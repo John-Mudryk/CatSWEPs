@@ -249,11 +249,11 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/chaos/powermace_accursedcrozius.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0, 5.6), angle = Angle(0, 180, 90), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 1, [1] = 1}}
+	["crozius"] = { type = "Model", model = "models/joazzz/weapons/chaos/powermace_accursedcrozius.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0, 5.6), angle = Angle(0, 180, 90), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 1, [1] = 1}}
 }
 
 SWEP.WElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/chaos/powermace_accursedcrozius.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.596, 0, -7.765), angle = Angle(0, 180, -90), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 1, [1] = 1} }
+	["crozius"] = { type = "Model", model = "models/joazzz/weapons/chaos/powermace_accursedcrozius.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.596, 0, -7.765), angle = Angle(0, 180, -90), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 1, [1] = 1} }
 }
 
 SWEP.InspectionActions = { ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -265,6 +265,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Arcanum Mk. I"
 
 SWEP.Attachments = {
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_powermaul"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

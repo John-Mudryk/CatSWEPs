@@ -176,11 +176,11 @@ SWEP.Type_Displayed             = "Sol Militarus Pattern Mk. IIb"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.146, 1.531, -2.563), angle = Angle(6.855, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["heavybolterCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(7.146, 1.531, -2.563), angle = Angle(6.855, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["heavybolterCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -194,6 +194,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 1 },
 	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

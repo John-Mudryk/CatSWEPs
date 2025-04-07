@@ -601,7 +601,7 @@ if CLIENT then
         -- Draw the cooldown timer
         local timeLeft = math.max(0, math.Round(nextEffectTime - CurTime()))
         draw.SimpleTextOutlined(
-            "Next Effect: " .. timeLeft .. "s",
+            "Next Blessing: " .. timeLeft .. "s",
             "DermaLarge",
             x + width / 2, y + height / 2, -- Adjust position slightly above
             Color(55, 0, 255, 255), -- Slight purple to stand out

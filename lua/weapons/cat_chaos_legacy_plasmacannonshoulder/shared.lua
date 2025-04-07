@@ -192,12 +192,12 @@ SWEP.ImpactDecal = "FadingScorch"--Impact Decal
 
 -- Attachments
 SWEP.VElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 3} },
-	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "gun", pos = Vector(3.75, -11.601, 2.45), angle = Angle(0, 180, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+	["plasmacannonCHH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 2, bodygroup = {[0] = 3} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "plasmacannonCHH", pos = Vector(3.75, -11.601, 2.45), angle = Angle(0, 180, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 3} }
+	["plasmacannonCHH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 2, bodygroup = {[0] = 3} }
 }
 
 -- Define reload sound events
@@ -453,16 +453,16 @@ function SWEP:CanPrimaryAttack()
 end
 
 local heatModifiers = {
-	["cat_am_plasma_overcharge"] = 0.5,
+	["cat_am_plasma_overcharge"] = 0.75,
 	["cat_am_plasma_fast"] = -0.3,
-	["cat_am_plasma_bolt"] = 0.3,
-	["cat_am_plasmacannon_overcharge"] = 0.5,
-	["cat_am_plasmacannon_bolt"] = 0.3,
-	["cat_am_plasma_overcharge_chaos"] = 0.5,
+	["cat_am_plasma_bolt"] = 0.5,
+	["cat_am_plasmacannon_overcharge"] = 0.75,
+	["cat_am_plasmacannon_bolt"] = 0.5,
+	["cat_am_plasma_overcharge_chaos"] = 0.75,
 	["cat_am_plasma_fast_chaos"] = -0.3,
-	["cat_am_plasma_bolt_chaos"] = 0.3,
-	["cat_am_plasmacannon_overcharge_chaos"] = 0.5,
-	["cat_am_plasmacannon_bolt_chaos"] = 0.3
+	["cat_am_plasma_bolt_chaos"] = 0.5,
+	["cat_am_plasmacannon_overcharge_chaos"] = 0.75,
+	["cat_am_plasmacannon_bolt_chaos"] = 0.5
 }
 
 function SWEP:GetHeatMultiplier()

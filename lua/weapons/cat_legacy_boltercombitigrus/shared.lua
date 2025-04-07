@@ -193,6 +193,7 @@ SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_under_bolter"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

@@ -266,6 +266,7 @@ SWEP.Type_Displayed             = "Infernus Pattern Mk. IIa"
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_poweraxe"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}
@@ -290,6 +291,11 @@ function SWEP:ChooseSecondaryAttack()
 end
 
 function SWEP:Think2(...)
+
+    if self.BaseClass and self.BaseClass.Think2 then
+        self.BaseClass.Think2(self, ...)
+    end
+
     if not self:VMIV() then return end
 
     local stat = self:GetStatus()
@@ -302,8 +308,13 @@ function SWEP:Think2(...)
                 self.ShieldModel = ClientsideModel("models/props_trainstation/trainstation_clock001.mdl")
                 self.ShieldModel:SetNoDraw(false)  -- Ensure it's visible
                 self.ShieldModel:SetMaterial("models/props_combine/portalball001_sheet")
-		self.ShieldModel:SetColor(Color(0, 20, 40, 255))
+                self.ShieldModel:SetColor(Color(0, 40, 80, 255))
                 self.ShieldModel:SetModelScale(1, 0)
+
+                -- Play sound when blocking starts
+                if not self.WasBlocking then
+                    self:GetOwner():EmitSound("ambient/levels/citadel/weapon_disintegrate1.wav")
+                end
             end
 
             -- Get player's hand position to attach the shield
@@ -322,31 +333,65 @@ function SWEP:Think2(...)
                     self.ShieldModel:SetAngles(ang)
                 end
             end
+
+            -- Play looped humming sound while blocking
+            if not self.BlockingLoop then
+                self.BlockingLoop = CreateSound(self:GetOwner(), "ambient/levels/citadel/field_loop1.wav")
+                self.BlockingLoop:Play()
+            end
         else
             -- Hide or remove the shield if not blocking
             if IsValid(self.ShieldModel) then
                 self.ShieldModel:Remove()
                 self.ShieldModel = nil
             end
+
+            -- Stop the looped blocking sound
+            if self.BlockingLoop then
+                self.BlockingLoop:Stop()
+                self.BlockingLoop = nil
+            end
+
+            -- Play sound when blocking stops
+            if self.WasBlocking then
+                self:GetOwner():EmitSound("ambient/levels/citadel/weapon_disintegrate3.wav")
+            end
         end
     end
+
+    self.WasBlocking = isBlocking  -- Track state change
 
     self.BaseClass.Think2(self, ...)
 end
 
 function SWEP:Holster(...)
-    if CLIENT and IsValid(self.ShieldModel) then
-        self.ShieldModel:Remove()
-        self.ShieldModel = nil
+    if CLIENT then
+        if IsValid(self.ShieldModel) then
+            self.ShieldModel:Remove()
+            self.ShieldModel = nil
+        end
+
+        -- Stop sound when weapon is holstered
+        if self.BlockingLoop then
+            self.BlockingLoop:Stop()
+            self.BlockingLoop = nil
+        end
     end
+
     return self.BaseClass.Holster(self, ...)
 end
 
 function SWEP:OnRemove()
-    if CLIENT and IsValid(self.ShieldModel) then
-        self.ShieldModel:Remove()
-        self.ShieldModel = nil
+    if CLIENT then
+        if IsValid(self.ShieldModel) then
+            self.ShieldModel:Remove()
+            self.ShieldModel = nil
+        end
+
+        -- Stop sound when weapon is removed
+        if self.BlockingLoop then
+            self.BlockingLoop:Stop()
+            self.BlockingLoop = nil
+        end
     end
 end
-
-

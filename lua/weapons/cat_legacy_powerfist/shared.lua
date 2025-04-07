@@ -263,6 +263,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Mezoa Pattern Mk. I"
 
 SWEP.Attachments = {
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_gauntlet"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

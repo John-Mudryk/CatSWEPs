@@ -117,7 +117,7 @@ SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Su
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-6.085, -8.254, 2.331)
-SWEP.IronSightsAng = Vector(-1.933, -1.56, 0)
+SWEP.IronSightsAng = Vector(-1.633, -1.56, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -173,7 +173,8 @@ SWEP.Type_Displayed             = "Fortis Pattern Mk. XIV"
 
 -- Attachments
 SWEP.VElements = {
-	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/doctorrds.mdl", bone = "weapon_bone", rel = "", pos = Vector(-6.722, 2.397, 1.409), angle = Angle(-7.632, 180, 0), size = Vector(2, 1.72, 2), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/doctorrds.mdl", bone = "weapon_bone", rel = "", pos = Vector(-6.722, 2.397, 1.409), angle = Angle(7.632, 0, 0), size = Vector(2, 1.72, 2), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "weapon_bone", rel = "sight", pos = Vector(0.7, 0, 1.15), angle = Angle(-90, 0, 0), size = Vector(0.02, 0.02, 0.02), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {} },
 	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_stationare_heavy_stubber.mdl", bone = "weapon_bone", rel = "", pos = Vector(9.203, 2.805, -6.823), angle = Angle(-7.957, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 

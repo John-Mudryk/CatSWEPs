@@ -5,7 +5,7 @@ end
 ATTACHMENT.Name = "Vengeance Bolts"
 ATTACHMENT.Description = { TFA.AttachmentColors["="], "Load armour-piercing bolts", TFA.AttachmentColors["+"], "Ignores armour", "Increased penetration", TFA.AttachmentColors["-"], "Increased recoil", "Reduced damage", "Reduced fire-rate"}
 ATTACHMENT.Icon = "entities/deathwatch_ammo_saw.png"
-ATTACHMENT.ShortName = "SAW"
+ATTACHMENT.ShortName = "VENGEANCE"
 
 ATTACHMENT.WeaponTable = {
 	["Primary"] = {

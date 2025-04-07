@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_primaris_legacy_assaultbolter"
+	"$translucent" 1
+}

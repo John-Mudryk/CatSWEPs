@@ -245,11 +245,16 @@ SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 }
 SWEP.VElements = {
-	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-15.6), angle = Angle(0, 180, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {}}
+	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.4, 0,-15.6), angle = Angle(0, 180, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {}},
+	["powerfield+"] = { type = "Model", model = "models/hunter/tubes/circle2x2d.mdl", bone = "ValveBiped.Bip01", rel = "poweraxe", pos = Vector(-7.881, 0, 33.4), angle = Angle(90, 0, -89.7), size = Vector(0.159, 0.07, 0.2), color = Color(255, 255, 255, 100), surpresslightning = false, material = "models/spawn_effect2", skin = 0, bodygroup = {} },
+	["powerfield"] = { type = "Model", model = "models/hunter/tubes/circle2x2d.mdl", bone = "ValveBiped.Bip01", rel = "poweraxe", pos = Vector(-7.881, 0, 33.4), angle = Angle(-90, 180, -89.7), size = Vector(0.159, 0.07, 0.2), color = Color(255, 255, 255, 100), surpresslightning = false, material = "models/spawn_effect2", skin = 0, bodygroup = {} }
+
 }
 
 SWEP.WElements = {
 	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe_long.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, 15), angle = Angle(0, 180, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} },
+	["powerfield+"] = { type = "Model", model = "models/hunter/tubes/circle2x2d.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "poweraxe", pos = Vector(-11.181, 0, 48.099), angle = Angle(90, 0, -89.7), size = Vector(0.23, 0.1, 0.2), color = Color(255, 255, 255, 100), surpresslightning = false, material = "models/spawn_effect2", skin = 0, bodygroup = {} },
+	["powerfield"] = { type = "Model", model = "models/hunter/tubes/circle2x2d.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "poweraxe", pos = Vector(-11.181, 0, 48.099), angle = Angle(-90, 180, -89.7), size = Vector(0.23, 0.1, 0.2), color = Color(255, 255, 255, 100), surpresslightning = false, material = "models/spawn_effect2", skin = 0, bodygroup = {} }
 }
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
 

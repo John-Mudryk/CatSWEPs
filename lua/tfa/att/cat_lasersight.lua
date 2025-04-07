@@ -21,12 +21,18 @@ ATTACHMENT.WeaponTable = {
 		["laser"] = {
 			active = true,
 		},
+		["plasmaincinerator"] = {
+			["bodygroup"] = {[2] = 1},
+		},
 
 	},
 	["WElements"] = {
 		["laser"] = {
 			active = true,
 		}, 
+		["plasmaincinerator"] = {
+			["bodygroup"] = {[2] = 1},
+		},
 	},
 }
 

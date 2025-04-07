@@ -14,6 +14,12 @@ ATTACHMENT.WeaponTable = {
 		["powersword"] = {
 			["skin"] = 0
 		},
+		["powergladius"] = {
+			["skin"] = 0
+		},
+		["powergreatsword"] = {
+			["skin"] = 0
+		},
 		["poweraxe"] = {
 			["skin"] = 0
 		},
@@ -46,12 +52,24 @@ ATTACHMENT.WeaponTable = {
 		},
 		["powerclaw_rC"] = {
 			["bodygroup"] = {[1] = 1},
+		},
+		["powerfield"] = {
+			["active"] = false
+		},
+		["powerfield+"] = {
+			["active"] = false
 		},
 	},	
 	["WElements"] = {
 		["powersword"] = {
 			["skin"] = 0
 		},
+		["powergladius"] = {
+			["skin"] = 0
+		},
+		["powergreatsword"] = {
+			["skin"] = 0
+		},
 		["poweraxe"] = {
 			["skin"] = 0
 		},
@@ -84,6 +102,12 @@ ATTACHMENT.WeaponTable = {
 		},
 		["powerclaw_rC"] = {
 			["bodygroup"] = {[1] = 1},
+		},
+		["powerfield"] = {
+			["active"] = false
+		},
+		["powerfield+"] = {
+			["active"] = false
 		},
 	},	
 	["Primary"] = {

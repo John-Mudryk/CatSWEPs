@@ -431,16 +431,16 @@ function SWEP:CanPrimaryAttack()
 end
 
 local heatModifiers = {
-	["cat_am_plasma_overcharge"] = 0.5,
+	["cat_am_plasma_overcharge"] = 0.75,
 	["cat_am_plasma_fast"] = -0.3,
-	["cat_am_plasma_bolt"] = 0.3,
-	["cat_am_plasmacannon_overcharge"] = 0.5,
-	["cat_am_plasmacannon_bolt"] = 0.3,
-	["cat_am_plasma_overcharge_chaos"] = 0.5,
+	["cat_am_plasma_bolt"] = 0.5,
+	["cat_am_plasmacannon_overcharge"] = 0.75,
+	["cat_am_plasmacannon_bolt"] = 0.5,
+	["cat_am_plasma_overcharge_chaos"] = 0.75,
 	["cat_am_plasma_fast_chaos"] = -0.3,
-	["cat_am_plasma_bolt_chaos"] = 0.3,
-	["cat_am_plasmacannon_overcharge_chaos"] = 0.5,
-	["cat_am_plasmacannon_bolt_chaos"] = 0.3
+	["cat_am_plasma_bolt_chaos"] = 0.5,
+	["cat_am_plasmacannon_overcharge_chaos"] = 0.75,
+	["cat_am_plasmacannon_bolt_chaos"] = 0.5
 }
 
 function SWEP:GetHeatMultiplier()

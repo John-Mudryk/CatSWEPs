@@ -201,12 +201,12 @@ SWEP.Type_Displayed             = "Sol Militarus Pattern Mk. IIa"
 
 -- Attachments
 SWEP.VElements = {
-	["gun"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} },
-	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "gun", pos = Vector(3.75, -11.601, 2.45), angle = Angle(0, 180, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+	["lascannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 2, bodygroup = {[0] = 1} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lascannonCH", pos = Vector(3.75, -11.601, 2.45), angle = Angle(0, 180, 0), size = Vector(0.625, 0.625, 0.625), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["lascannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 2, bodygroup = {[0] = 1} }
 }
 
 -- Define reload sound events
@@ -219,6 +219,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

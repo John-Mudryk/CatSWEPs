@@ -250,11 +250,11 @@ SWEP.ViewModelBoneMods = {
 
 
 SWEP.VElements = {
-	["powerfist"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_r.mdl", bone = "RightForeArm_1stP", rel = "", pos = Vector(-19.574, -0.274, 3.871), angle = Angle(0, 180, 138.811), size = Vector(0.649, 0.649, 0.649), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 13, bodygroup = {[2] = 7} }
+	["powerfist"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_r.mdl", bone = "RightForeArm_1stP", rel = "", pos = Vector(-19.574, -0.274, 3.871), angle = Angle(0, 180, 138.811), size = Vector(0.649, 0.649, 0.649), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 13, bodygroup = {[2] = 5} }
 }
 
 SWEP.WElements = {
-	["powerfist"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_terminator_r.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(5.821, 5.846, -3.633), angle = Angle(-3.659, -31.937, -91.435), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 13, bodygroup = {[2] = 7} }
+	["powerfist"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_terminator_r.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(5.821, 5.846, -3.633), angle = Angle(-3.659, -31.937, -91.435), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 13, bodygroup = {[2] = 5} }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -263,6 +263,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Crusade Pattern Mk. IIIc"
 
 SWEP.Attachments = {
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_gauntlet_crusade"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

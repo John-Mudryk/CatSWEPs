@@ -176,11 +176,11 @@ SWEP.ImpactDecal = "none"--Impact Decal
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "weapon_bone", rel = "", pos = Vector(-10.039, 0.774, 0.815), angle = Angle(0, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_shoulder.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-8.181, 3.076, -9.136), angle = Angle(-171.734, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 2} }
 }
 
 -- Define reload sound events
@@ -192,6 +192,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_melta_overcharge_chaos"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

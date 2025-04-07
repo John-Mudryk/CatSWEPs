@@ -18,7 +18,7 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(4, 7, -6)
-SWEP.Primary.Damage = 650
+SWEP.Primary.Damage = 1650
 SWEP.Primary.Range = 130
 
 
@@ -246,6 +246,7 @@ SWEP.SequenceLengthOverride = {
 
 
 SWEP.Attachments = {
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_powermaul"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

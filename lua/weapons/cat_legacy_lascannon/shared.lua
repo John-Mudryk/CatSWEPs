@@ -203,11 +203,11 @@ SWEP.Type_Displayed             = "Mars Pattern Mk. IV"
 -- Attachments
 SWEP.VElements = {
 	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "lascannon", pos = Vector(16.829, 14.31, 41.368), angle = Angle(69.158, 170.052, 17.937), size = Vector(0.4, 0.4, 0.4), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
-	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/devastator_weapon_nocable.mdl", bone = "weapon_bone", rel = "", pos = Vector(32.507, -19.236, -25.116), angle = Angle(72.981, 0.068, 5.251), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/devastator_weapon_nocable.mdl", bone = "weapon_bone", rel = "", pos = Vector(32.507, -19.236, -25.116), angle = Angle(72.981, 0.068, 5.251), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/devastator_weapon_nocable.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(45.669, 24.944, 11.786), angle = Angle(-96.693, -174.211, 7.175), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/devastator_weapon_nocable.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(45.669, 24.944, 11.786), angle = Angle(-96.693, -174.211, 7.175), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -227,4 +227,4 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Short = Vector(-3.84, -5, 8.52)
-SWEP.IronSightsAng_Short = Vector(-8.647, -6.865, 9)
+SWEP.IronSightsAng_Short = Vector(-8.547, -6.865, 9)

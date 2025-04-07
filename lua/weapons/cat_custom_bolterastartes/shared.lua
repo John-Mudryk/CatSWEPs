@@ -167,7 +167,7 @@ SWEP.Type_Displayed             = "Godwyn Mk. VIc"
 
 -- Attachments
 SWEP.VElements = {
-	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-9.211, 0.62, 5.63), angle = Angle(180, 0, 180), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_heavy"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-9.311, 0.62, 5.63), angle = Angle(180, 0, 180), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 
 	["knife"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_knife_astartes.mdl", bone = "weapon_bone", rel = "", pos = Vector(14.053, -0.065, -1.872), angle = Angle(-3.237, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 	["knife2"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_chaonsword.mdl", bone = "weapon_bone", rel = "", pos = Vector(13.758, 0.62, -0.543), angle = Angle(-0.678, -90, -87.292), size = Vector(0.621, 0.4, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false }
@@ -201,5 +201,6 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
-SWEP.IronSightsPos_Heavy = Vector(-4.56, 0, 2.359)
-SWEP.IronSightsAng_Heavy = Vector(-11.209, -1.825, 0)
+
+SWEP.IronSightsPos_Heavy = Vector(-4.56, 5, 2.359)
+SWEP.IronSightsAng_Heavy = Vector(-8, -1.285, 0)

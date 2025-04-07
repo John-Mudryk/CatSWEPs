@@ -107,7 +107,7 @@ function ATTACHMENT:Attach(wep)
 		rtmod2.b = wcol.z * 255 * 2
 
 		local reticle = reticleMat_ShortScope
-		local reticleScale = 0.5
+		local reticleScale = 0.65
 
 		local w, h = ScrW(), ScrH()
 		local scaledW, scaledH = w * reticleScale, h * reticleScale

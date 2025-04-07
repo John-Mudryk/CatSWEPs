@@ -242,6 +242,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Mk. II Hell's Teeth"
 
 SWEP.Attachments = {
+	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white", "cat_skin_stripes"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

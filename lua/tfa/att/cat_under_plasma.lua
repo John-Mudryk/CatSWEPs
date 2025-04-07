@@ -34,20 +34,6 @@ ATTACHMENT.WeaponTable = {
 		["ClipSize"] = ATTACHMENT.ClipSize,
 		["Ammo"] = function(wep,stat) return wep:GetStat("Primary.Ammo") end,
 	},
-	["IronSightsPos"] = function(wep,val)
-		if wep:PGDeployed() then
-			return wep.IronSightsPos_PG, true, true
-		else
-			return val, false, true
-		end
-	end,
-	["IronSightsAng"] = function(wep,val)
-		if wep:PGDeployed() then
-			return wep.IronSightsAng_PG, true, true
-		else
-			return val, false, true
-		end
-	end,
 	["MoveSpeed"] = function(wep,stat) return stat * 0.975 end,
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.975 end,
 	["VElements"] = {

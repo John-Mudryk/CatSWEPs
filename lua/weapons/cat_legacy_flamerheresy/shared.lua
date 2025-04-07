@@ -297,10 +297,10 @@ SWEP.AnimCycle = 0 -- Start on the right
 --[[ATTACHMENTS]]--
 
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/flamer_heresy.mdl", bone = "weapon_bone", rel = "", pos = Vector(0.814, 0.252, -1.759), angle = Angle(5.018, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
+	["flamerH"] = { type = "Model", model = "models/joazzz/weapons/flamer_heresy.mdl", bone = "weapon_bone", rel = "", pos = Vector(0.814, 0.252, -1.759), angle = Angle(5.018, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
 }
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/flamer_heresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(13.232, 1.095, -3.968), angle = Angle(-12.252, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
+	["flamerH"] = { type = "Model", model = "models/joazzz/weapons/flamer_heresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(13.232, 1.095, -3.968), angle = Angle(-12.252, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
 }
 
 SWEP.ShowViewModel = true
@@ -312,6 +312,7 @@ SWEP.ViewModelBoneMods = {
 
 
 SWEP.Attachments = {
+	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 	--[MDL_ATTACHMENT] = = { offset = { 0, 0 }, atts = { "si_eotech" }, sel = 0 }
 	--Sorry for kind-of copying your syntax, Spy, but it makes it easier on the users and you did an excellent job.  The internal code's all mine anyways.

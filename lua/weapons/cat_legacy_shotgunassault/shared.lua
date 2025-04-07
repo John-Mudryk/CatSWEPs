@@ -190,6 +190,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_slug", "cat_am_birdshot", "cat_am_incend", "cat_am_boltslug"}, order = 1 },
 	[2] = { offset = { 0, 0 }, atts = { "cat_stock_heavy"}, order = 2 },
+	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

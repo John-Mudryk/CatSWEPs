@@ -179,11 +179,11 @@ SWEP.Type_Displayed             = "Reaper Mk.II"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/autocannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-3.998, 1.113, 7.765), angle = Angle(3.971, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["autocannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/autocannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-3.998, 1.113, 7.765), angle = Angle(3.971, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/autocannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(17.191, 2.421, -18.324), angle = Angle(-12.691, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["autocannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/autocannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(17.191, 2.421, -18.324), angle = Angle(-12.691, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -196,6 +196,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
     	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_he"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

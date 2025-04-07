@@ -174,11 +174,11 @@ SWEP.Type_Displayed             = "Primus Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/meltagun_heresy.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.026, 1.07, -1.987), angle = Angle(9.493, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/meltagun_heresy.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.026, 1.07, -1.987), angle = Angle(9.493, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/meltagun_heresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.604, 1.809, -3.843), angle = Angle(-10.931, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/meltagun_heresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.604, 1.809, -3.843), angle = Angle(-10.931, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} }
 }
 
 -- Define reload sound events
@@ -190,6 +190,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_melta_overcharge_chaos"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

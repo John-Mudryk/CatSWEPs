@@ -180,11 +180,11 @@ SWEP.Bodygroups_W       = {
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(3.457, 0, -0.413), angle = Angle(0, 90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["boltpistolCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(3.457, 0, -0.413), angle = Angle(0, 90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(7.596, 1.199, 0.167), angle = Angle(180, 90, -12.638), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["boltpistolCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(7.596, 1.199, 0.167), angle = Angle(180, 90, -12.638), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -203,6 +203,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
     	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

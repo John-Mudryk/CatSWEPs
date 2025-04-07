@@ -16,46 +16,63 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(5, 5, -6)
-SWEP.Primary.Damage = 675
+SWEP.Primary.Damage = 725
 SWEP.Primary.Range = 165
 
 
-SWEP.Primary.Attacks = { 
+SWEP.Primary.Attacks = {
 	{
-		["act"] = ACT_VM_HITCENTER, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["act"] = ACT_VM_HITLEFT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
-		["dir"] = Vector(0, 0, 0), -- Trace arc cast
+		["dir"] = Vector(120, 0, 0), -- Trace arc cast
 		["dmg"] = SWEP.Primary.Damage, --Damage
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss3.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
 		["hull"] = 42, --Hullsize
-		["direction"] = "F", --Swing dir,
+		["direction"] = "R", --Swing dir,
+		["hitflesh"] = Sound("weapons/tfa_kf2/zweihander/hitflesh_3.wav"),
+		["hitworld"] = Sound("weapons/tfa_kf2/katana/block01.wav"),
+	},
+	{
+		["act"] = ACT_VM_HITRIGHT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range, -- Trace distance
+		["dir"] = Vector(-120, 0, 0), -- Trace arc cast
+		["dmg"] = SWEP.Primary.Damage, --Damage
+		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
+		["delay"] = 0.45, --Delay
+		["spr"] = false, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss3.wav"), -- Sound ID
+		["snd_delay"] = 0.26,
+		["viewpunch"] = Angle(1, 5, 0), --viewpunch angle
+		["end"] = 0.8, --time before next attack
+		["hull"] = 42, --Hullsize
+		["direction"] = "L", --Swing dir,
 		["hitflesh"] = Sound("weapons/tfa_kf2/zweihander/hitflesh_3.wav"),
 		["hitworld"] = Sound("weapons/tfa_kf2/katana/block01.wav"),
 	},
 	{
 		["act"] = ACT_VM_HITCENTER, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
-		["dir"] = Vector(0, 0, 0), -- Trace arc cast
+		["dir"] = Vector(0, 20, -70), -- Trace arc cast
 		["dmg"] = SWEP.Primary.Damage, --Damage
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
-		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["spr"] = true, --Allow attack while sprinting?
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss3.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
-		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
+		["viewpunch"] = Angle(0, 0, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
 		["hull"] = 42, --Hullsize
 		["direction"] = "F", --Swing dir,
 		["hitflesh"] = Sound("weapons/tfa_kf2/zweihander/hitflesh_3.wav"),
 		["hitworld"] = Sound("weapons/tfa_kf2/katana/block01.wav"),
 	},
-	{
+		{
 		["act"] = ACT_VM_PRIMARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
 		["len"] = SWEP.Primary.Range, -- Trace distance
 		["dir"] = Vector(0, 20, -70), -- Trace arc cast
@@ -63,7 +80,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss3.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -80,7 +97,7 @@ SWEP.Primary.Attacks = {
 		["dmgtype"] = bit.bor(DMG_SLASH,DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.45, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/katana/katana_swing_miss3.wav"), -- Sound ID
 		["snd_delay"] = 0.26,
 		["viewpunch"] = Angle(-5, 0, 0), --viewpunch angle
 		["end"] = 0.8, --time before next attack
@@ -94,13 +111,13 @@ SWEP.Primary.Attacks = {
 SWEP.Secondary.Attacks = {
 	{
 		["act"] = ACT_VM_SECONDARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(0, 20, -70), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.25, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = DMG_SLASH, --DMG_SLASH,DMG_CRUSH, etc.
 		["delay"] = 0.6, --Delay
 		["spr"] = true, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_2.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(5, 0, 0), --viewpunch angle
 		["end"] = 0.9, --time before next attack
@@ -111,13 +128,13 @@ SWEP.Secondary.Attacks = {
 	},
 	{
 		["act"] = ACT_VM_MISSLEFT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(120, 0, 0), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.25, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.7, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_2.wav"), -- Sound ID
 		["snd_delay"] = 0.4,
 		["viewpunch"] = Angle(1, -5, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -128,13 +145,13 @@ SWEP.Secondary.Attacks = {
 	},
 	{
 		["act"] = ACT_VM_MISSRIGHT, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(-120, 0, 0), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.25, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.65, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_2.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(1, 5, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -144,14 +161,14 @@ SWEP.Secondary.Attacks = {
 		["hitworld"] = Sound("weapons/tfa_kf2/katana/block01.wav"),
 	},
 	{
-		["act"] = ACT_VM_HITCENTER, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
+		["act"] = ACT_VM_SECONDARYATTACK, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(0, 20, -70), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.25, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.8, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_2.wav"), -- Sound ID
 		["snd_delay"] = 0.6,
 		["viewpunch"] = Angle(10, 0, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -162,13 +179,13 @@ SWEP.Secondary.Attacks = {
 	},
 	{
 		["act"] = ACT_VM_PULLBACK_HIGH, -- Animation; ACT_VM_THINGY, ideally something unique per-sequence
-		["len"] = SWEP.Primary.Range, -- Trace distance
+		["len"] = SWEP.Primary.Range * 1.1, -- Trace distance
 		["dir"] = Vector(0, 20, -70), -- Trace arc cast
-		["dmg"] = SWEP.Primary.Damage * 1.25, --Damage
+		["dmg"] = SWEP.Primary.Damage * 1.2, --Damage
 		["dmgtype"] = bit.bor(bit.bor(DMG_SLASH,DMG_ALWAYSGIB), DMG_ALWAYSGIB), --bit.bor(DMG_SLASH,DMG_ALWAYSGIB),DMG_CRUSH, etc.
 		["delay"] = 0.55, --Delay
 		["spr"] = false, --Allow attack while sprinting?
-		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_hard_1.wav"), -- Sound ID
+		["snd"] = Sound("weapons/tfa_kf2/zweihander/swing_light_2.wav"), -- Sound ID
 		["snd_delay"] = 0.5,
 		["viewpunch"] = Angle(7.5, 0, 0), --viewpunch angle
 		["end"] = 1.1, --time before next attack
@@ -246,20 +263,21 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, -10.324), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 0} }
+	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/poweraxe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.036, 0.079, 20.324), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 6, [1] = 2, [2] = 1, [3] = 1, [4] = 4} }
 }
 
 SWEP.WElements = {
-	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/polearm.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(4, 1.489, 8.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 0} }
+	["powerhalberd"] = { type = "Model", model = "models/joazzz/weapons/poweraxe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(-4, 1.489, -28.969), angle = Angle(-166.67, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 6, [1] = 2, [2] = 1, [3] = 1, [4] = 4} }
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
 
 SWEP.Type                       = nil 
-SWEP.Type_Displayed             = "Proteus Pattern Mk. IIc"
+SWEP.Type_Displayed             = "Reaper Pattern Mk. IId"
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_poweraxe"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}

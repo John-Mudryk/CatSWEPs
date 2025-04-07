@@ -172,11 +172,11 @@ SWEP.Type_Displayed             = "Sol Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["shotgun"] = { type = "Model", model = "models/joazzz/weapons/shotgun_spacemarines.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.961, 0.704, -9.04), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[2] = 1} }
+	["shotgunC"] = { type = "Model", model = "models/joazzz/weapons/shotgun_spacemarines.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.961, 0.704, -9.04), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[2] = 1} }
 }
 
 SWEP.WElements = {
-	["shotgunW"] = { type = "Model", model = "models/joazzz/weapons/shotgun_spacemarines.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(8.102, 1.032, 6.731), angle = Angle(-10.551, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["shotgunC"] = { type = "Model", model = "models/joazzz/weapons/shotgun_spacemarines.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(8.102, 1.032, 6.731), angle = Angle(-10.551, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -188,6 +188,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_slug", "cat_am_birdshot", "cat_am_incend", "cat_am_boltslug"}, order = 1 },
+	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

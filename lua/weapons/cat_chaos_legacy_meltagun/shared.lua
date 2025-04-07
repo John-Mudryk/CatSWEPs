@@ -174,11 +174,11 @@ SWEP.Type_Displayed             = "Vulkan Pattern Mk. II"
 
 -- Attachments
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/meltagun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-11.026, 1.07, -5.987), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/meltagun.mdl", bone = "weapon_bone", rel = "", pos = Vector(-11.026, 1.07, -5.987), angle = Angle(0, -90, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["element_name"] = { type = "Model", model = "models/joazzz/weapons/chaos/meltagun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.604, 1.809, 0.843), angle = Angle(-10.931, 90, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["meltaCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/meltagun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.604, 1.809, 0.843), angle = Angle(-10.931, 90, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -190,6 +190,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_melta_overcharge_chaos"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

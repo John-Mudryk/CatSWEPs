@@ -31,8 +31,6 @@ ATTACHMENT.WeaponTable = {
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.95 end,
 	["Scoped"] = function(wep,stat) return true end,
-	["IronSightsPos"] = function(wep,stat) return wep.IronSightsPos_Short end,
-	["IronSightsAng"] = function(wep,stat) return wep.IronSightsAng_Short end,
 ["VElements"] = {
 		["autogun"] = {
 			["bodygroup"] = {[1] = 2},
@@ -66,6 +64,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["boltpistolT"] = {
 			["bodygroup"] = {[2] = 1},
+		},
+		["plasmaincinerator"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 	},
 ["WElements"] = {
@@ -101,6 +102,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["boltpistolT"] = {
 			["bodygroup"] = {[2] = 1},
+		},
+		["plasmaincinerator"] = {
+			["bodygroup"] = {[1] = 1},
 		},
 	},
 }

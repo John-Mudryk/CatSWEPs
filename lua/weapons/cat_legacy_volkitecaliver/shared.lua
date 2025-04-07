@@ -217,7 +217,7 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Short = Vector(-3.84, -2.589, -1.081)
-SWEP.IronSightsAng_Short = Vector(-5.728, -1.803, 0)
+SWEP.IronSightsAng_Short = Vector(-5.628, -1.803, 0)
 
 function SWEP:ShootBullet(...)
 	-- Call base logic first (handles animations, sounds, ammo)

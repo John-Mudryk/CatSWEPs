@@ -201,13 +201,13 @@ SWEP.Type_Displayed             = "Mars Pattern Mk. III"
 
 -- Attachments
 SWEP.VElements = {
-	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.484, 0.644, 2.111), angle = Angle(0, 91.75, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lascannon", pos = Vector(3.788, -6.608, 3.575), angle = Angle(0, 90, 0), size = Vector(0.349, 0.349, 0.349), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["lascannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "weapon_bone", rel = "", pos = Vector(-0.484, 0.644, 2.111), angle = Angle(0, 91.75, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "lascannonCH", pos = Vector(3.788, -6.608, 3.575), angle = Angle(0, 90, 0), size = Vector(0.349, 0.349, 0.349), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 
 }
 
 SWEP.WElements = {
-	["lascannon"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.934, 2.734, -8.74), angle = Angle(180, 90, -9.653), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["lascannonCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/heavyweapon_lascannon.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(14.934, 2.734, -8.74), angle = Angle(180, 90, -9.653), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {} }
 }
 
 -- Define reload sound events
@@ -219,12 +219,13 @@ SWEP.EventTable = {
 }
 
 SWEP.Attachments = {
-[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
-[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
+	[1] = { offset = { 0, 0 }, atts = { "cat_scope_dot2", "cat_scope_dot2_hud"}, order = 1 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
+	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Short = Vector(-2, -5, 4.679)
-SWEP.IronSightsAng_Short = Vector(-1.494, -9.077, 0)
+SWEP.IronSightsAng_Short = Vector(-1.494, -9.177, 0)

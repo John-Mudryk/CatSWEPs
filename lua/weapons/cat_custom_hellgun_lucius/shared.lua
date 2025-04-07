@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Hotshot Lucius Lasgun"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Lucius Hotshot Lasgun"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -212,7 +212,7 @@ SWEP.IronSightsPos_Reflex = Vector(-4.08, -6, 2.079)
 SWEP.IronSightsAng_Reflex = Vector(-1.175, -1.813, 0)
 
 SWEP.IronSightsPos_Short = Vector(-3.66, -20, 1.399)
-SWEP.IronSightsAng_Short = Vector(-1.53, -2.191, 0)
+SWEP.IronSightsAng_Short = Vector(-1.63, -2.191, 0)
 
 SWEP.IronSightsPos_Light = Vector(-3.64, -18, 1.32)
-SWEP.IronSightsAng_Light = Vector(-1.101, -1.363, 0)
+SWEP.IronSightsAng_Light = Vector(-1.301, -1.363, 0)

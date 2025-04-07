@@ -198,6 +198,7 @@ SWEP.Attachments = {
 	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_heavy2", "cat_scope_light2_hud", "cat_scope_heavy2_hud", "cat_scope_astartes"}, order = 3 },
     	[5] = { offset = { 0, 0 }, atts = { "cat_bayonet", "cat_bayonetchain"}, order = 5 },
     	[6] = { offset = { 0, 0 }, atts = { "cat_grip"}, order = 6 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
@@ -208,4 +209,4 @@ SWEP.IronSightsPos_Light = Vector(-4.12, -2, 0.759)
 SWEP.IronSightsAng_Light = Vector(-9.938, -0.487, 0)
 
 SWEP.IronSightsPos_Heavy = Vector(-4.12, -2, 0.759)
-SWEP.IronSightsAng_Heavy = Vector(-10.758, -0.302, 0)
+SWEP.IronSightsAng_Heavy = Vector(-10.558, -0.302, 0)

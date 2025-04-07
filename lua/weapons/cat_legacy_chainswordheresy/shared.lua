@@ -230,11 +230,11 @@ SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.01, 0.01, 0.01), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 }
 SWEP.VElements = {
-	["sword"] = { type = "Model", model = "models/joazzz/weapons/chainsword_horusheresy.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -1.5, 6), angle = Angle(-3.507, 90, -0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
+	["chainsword"] = { type = "Model", model = "models/joazzz/weapons/chainsword_horusheresy.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -1.5, 6), angle = Angle(-3.507, 90, -0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
 }
 
 SWEP.WElements = {
-	["sword"] = { type = "Model", model = "models/joazzz/weapons/chainsword_horusheresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(1.5, 1.557, -6.5), angle = Angle(180, 0.169, 1.17), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
+	["chainsword"] = { type = "Model", model = "models/joazzz/weapons/chainsword_horusheresy.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(1.5, 1.557, -6.5), angle = Angle(180, 0.169, 1.17), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
 }
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
 
@@ -242,6 +242,7 @@ SWEP.Type                       = nil
 SWEP.Type_Displayed             = "Thunder Edge Mk. IIb"
 
 SWEP.Attachments = {
+	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white", "cat_skin_stripes"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}
