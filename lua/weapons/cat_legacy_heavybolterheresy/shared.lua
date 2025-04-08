@@ -37,7 +37,7 @@ SWEP.Primary.Knockback = 1 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(-3.497, 9.359, 2.443), angle = Angle(-3.669, 0.028, 12.258) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(-4.497, 9.359, 2.443), angle = Angle(-3.669, 0.028, 12.258) },
 	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
 }
 

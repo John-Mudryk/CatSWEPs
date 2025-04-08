@@ -18,7 +18,7 @@ SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(0, 0, 0)
 SWEP.Primary.Damage = 850
 SWEP.Primary.Range = 110
-
+SWEP.Primary.End = 1
 
 SWEP.Primary.Attacks = {
 	{
@@ -252,15 +252,19 @@ function SWEP:ChoosePrimaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
 	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack["end"] = self:GetStat("Primary.End") or attack["end"]
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        local baseEnd = self:GetStat("Primary.End")
+        attack["end"] = (baseEnd and baseEnd * 1.25) or attack["end"]
     end
     return ind, attack
 end

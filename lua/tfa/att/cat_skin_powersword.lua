@@ -8,7 +8,7 @@ ATTACHMENT.Description = {
 	TFA.Attachments.Colors["+"], "Press RELOAD + USE to select parts",
 	TFA.Attachments.Colors["+"], "Then detatch to apply",
 }
-ATTACHMENT.Icon = "entities/skingauntlet.png"
+ATTACHMENT.Icon = "entities/skinforge.png"
 ATTACHMENT.ShortName = "FORGE"
 
 function table.Range(a, b)
@@ -22,6 +22,11 @@ local sword_config = {
 	["cat_legacy_powersword"] = {
 		element = "powersword",
 		blade = {0, 2, 4, 6, 16, 18},
+		guard = table.Range(0, 21),
+	},
+	["cat_legacy_powerswordshield"] = {
+		element = "powersword",
+		blade = {0, 2, 4, 6, 12, 14, 16, 18},
 		guard = table.Range(0, 21),
 	},
 	["cat_legacy_powergladius"] = {
@@ -56,6 +61,31 @@ local blade_names = {
 
 local guard_names = {
 	["cat_legacy_powersword"] = {
+		[0] = "Proteus Guard",
+		[1] = "Templar Skull",
+		[2] = "Double-Lock",
+		[3] = "Extended Quillons",
+		[4] = "Imperialis",
+		[5] = "Grand Imperialis",
+		[6] = "Aquila",
+		[7] = "Grand Aquila",
+		[8] = "Imperialis Short",
+		[9] = "Gladius Round",
+		[10] = "Gladius Straight",
+		[11] = "Aquila Gladius",
+		[12] = "Sabre Imperialis",
+		[13] = "Utility Sabre",
+		[14] = "Imperialis Ultra",
+		[15] = "Gladius Ultra",
+		[16] = "Blood Tear",
+		[17] = "Eye of Terra",
+		[18] = "Fenrisian Jewel",
+		[19] = "Calibanite Livery",
+		[20] = "Wings of Terror",
+		[21] = "Templar Cross"
+	},
+
+	["cat_legacy_powerswordshield"] = {
 		[0] = "Proteus Guard",
 		[1] = "Templar Skull",
 		[2] = "Double-Lock",

@@ -16,8 +16,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(5, 5, -6)
-SWEP.Primary.Damage = 675
+SWEP.Primary.Damage = 875
 SWEP.Primary.Range = 125
+SWEP.Primary.End = 1.15
 
 SWEP.Primary.Attacks = {
 	{
@@ -276,6 +277,7 @@ function SWEP:ChoosePrimaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage")
         attack.len = self:GetStat("Primary.Range")
+        attack["end"] = self:GetStat("Primary.End") or attack["end"]
 
         attack.callback = function(attk, wep, trace)
             if not trace.Hit then return end
@@ -293,6 +295,9 @@ function SWEP:ChooseSecondaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") * 1.25
         attack.len = self:GetStat("Primary.Range") * 1.1
+
+        local baseEnd = self:GetStat("Primary.End")
+        attack["end"] = (baseEnd and baseEnd * 1.25) or attack["end"]
 
         attack.callback = function(attk, wep, trace)
             if not trace.Hit then return end

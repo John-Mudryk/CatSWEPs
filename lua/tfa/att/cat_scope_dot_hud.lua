@@ -17,8 +17,8 @@ ATTACHMENT.WeaponTable = {
 	["Secondary"] = {
 		["ScopeTable"] = {
 			ScopeBorder = Color(0, 0, 0, 0), -- no border
-			ScopeMaterial = Material("scope/gdcw_closedsight"),
-			ScopeMaterialScale = 1,
+			ScopeMaterial = Material("entities/scope_reflex_overlay.png"),
+			ScopeMaterialScale = 1.5,
 			ScopeOverlay = Material(""),
 			ScopeCrosshair = { 
 				r = 255, g = 255, b = 255, a = 225, -- Crosshair color

@@ -16,8 +16,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(0, 0, 0)
-SWEP.Primary.Damage = 700
+SWEP.Primary.Damage = 600
 SWEP.Primary.Range = 90
+SWEP.Primary.End = 0.8
 
 SWEP.Primary.Attacks = {
 	{
@@ -258,7 +259,7 @@ SWEP.VElements = {
 
 SWEP.WElements = {
 	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(3.253, -14.933, -4.876), angle = Angle(52.659, 95.986, 0), size = Vector(0.85, 0.85, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 7} },
-	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.74, 3.598, -7.038), angle = Angle(-171.896, -21.816, 13.963), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 6, [2] = 2} }
+	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, -7), angle = Angle(0, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 6, [2] = 2} },
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}
@@ -268,6 +269,7 @@ SWEP.Type_Displayed             = "Proteus Pattern Mk. II + Deliverance Pattern 
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_powersword"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}
@@ -278,15 +280,19 @@ function SWEP:ChoosePrimaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
 	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack["end"] = self:GetStat("Primary.End") or attack["end"]
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        local baseEnd = self:GetStat("Primary.End")
+        attack["end"] = (baseEnd and baseEnd * 1.25) or attack["end"]
     end
     return ind, attack
 end

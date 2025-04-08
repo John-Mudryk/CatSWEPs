@@ -6,7 +6,7 @@ ATTACHMENT.Description = {
 	TFA.Attachments.Colors["+"], "Press RELOAD + USE to open menu",
 	TFA.Attachments.Colors["+"], "Then detach to apply"
 }
-ATTACHMENT.Icon = "entities/skingauntlet.png"
+ATTACHMENT.Icon = "entities/skinforge.png"
 ATTACHMENT.ShortName = "FORGE"
 
 function table.Range(a, b)

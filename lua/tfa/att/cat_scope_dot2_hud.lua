@@ -31,6 +31,7 @@ ATTACHMENT.WeaponTable = {
 	},
 	["IronSightsMoveSpeed"] = function(wep,stat) return stat * 0.95 end,
 	["Scoped"] = function(wep,stat) return true end,
+	["IronSightsPos"] = Vector(2.88, -10.238, -10.03),
 ["VElements"] = {
 		["autogun"] = {
 			["bodygroup"] = {[1] = 2},

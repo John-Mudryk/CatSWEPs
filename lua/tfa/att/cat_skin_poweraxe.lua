@@ -6,7 +6,7 @@ ATTACHMENT.Description = {
 	TFA.Attachments.Colors["+"], "Press RELOAD + USE to open menu",
 	TFA.Attachments.Colors["+"], "Then detach to apply"
 }
-ATTACHMENT.Icon = "entities/skingauntlet.png"
+ATTACHMENT.Icon = "entities/skinforge.png"
 ATTACHMENT.ShortName = "FORGE"
 
 function table.Range(a, b)
@@ -18,6 +18,12 @@ end
 -- Config for axe forge
 local axe_config = {
 	["cat_legacy_poweraxe"] = {
+		element = "poweraxe",
+		blade = table.Range(0, 5),
+		backblade = table.Range(0, 3),
+		decor = table.Range(0, 5),
+	},
+	["cat_legacy_poweraxeshield"] = {
 		element = "poweraxe",
 		blade = table.Range(0, 5),
 		backblade = table.Range(0, 3),

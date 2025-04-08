@@ -1,6 +1,6 @@
 SWEP.Base = "tfa_melee_base"
 SWEP.Category = "Cat's Legacy SWEPs"
-SWEP.PrintName = "Power Axe + Storm Shield"
+SWEP.PrintName = "Power Axe + Combat Shield"
 SWEP.ViewModel = "models/zadkiel/weapons/c_shield_mace.mdl"
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
@@ -16,8 +16,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(0, 0, 0)
-SWEP.Primary.Damage = 700
+SWEP.Primary.Damage = 600
 SWEP.Primary.Range = 90
+SWEP.Primary.End = 0.9
 
 SWEP.Primary.Attacks = {
 	{
@@ -248,17 +249,16 @@ SWEP.ViewModelBoneMods = {
 	["RW_Weapon"] = { scale = Vector(0.1, 0.1, 0.1), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
 	["LW_Weapon"] = { scale = Vector(0, 0, 0), pos = Vector(100, 0, 0), angle = Angle(0, 0, 0) },
 	["RightArm_1stP"] = { scale = Vector(1, 1, 1), pos = Vector(-6, 0, 0), angle = Angle(0, 0, 0) },
-	["LeftHandPinky1_1stP"] = { scale = Vector(1, 1, 1), pos = Vector(11.427, -3.385, 2.948), angle = Angle(0, 126.593, -123.961) }
 }
 
 
 SWEP.VElements = {
-	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "LeftForeArm_1stP", rel = "", pos = Vector(3.053, -7, -15.449), angle = Angle(2.253, 94.565, 0), size = Vector(0.75, 0.75, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 18} },
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "LeftForeArm_1stP", rel = "", pos = Vector(5.053, -7, -12.449), angle = Angle(2.253, 94.565, 0), size = Vector(0.75, 0.75, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 4} },
 	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe.mdl", bone = "RW_Weapon", rel = "", pos = Vector(-0.345, 0.211, 12.26), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [4] = 1} }
 }
 
 SWEP.WElements = {
-	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(3.253, -18.933, -4.876), angle = Angle(52.659, 95.986, 0), size = Vector(0.85, 0.85, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 18} },
+	["shield"] = { type = "Model", model = "models/zadkiel/w_shield.mdl", bone = "ValveBiped.Bip01_L_Forearm", rel = "", pos = Vector(3.253, -12.933, -4.876), angle = Angle(52.659, 95.986, 0), size = Vector(0.85, 0.85, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 4} },
 	["poweraxe"] = { type = "Model", model = "models/joazzz/weapons/poweraxe.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.164, 1.935, -10.077), angle = Angle(0, 0, 180), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [4] = 1} }
 
 }
@@ -270,6 +270,7 @@ SWEP.Type_Displayed             = "Proteus Pattern Mk. II + Deliverance Pattern 
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_melee_power"}, order = 1 },
+	[2] = { offset = { 0, 0 }, atts = { "cat_skin_poweraxe"}, order = 2 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 SWEP.AttachmentDependencies = {}
@@ -280,15 +281,19 @@ function SWEP:ChoosePrimaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
 	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack["end"] = self:GetStat("Primary.End") or attack["end"]
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        local baseEnd = self:GetStat("Primary.End")
+        attack["end"] = (baseEnd and baseEnd * 1.25) or attack["end"]
     end
     return ind, attack
 end

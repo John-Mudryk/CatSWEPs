@@ -20,7 +20,7 @@ SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(4, 7, -6)
 SWEP.Primary.Damage = 1650
 SWEP.Primary.Range = 130
-
+SWEP.Primary.End = 1.35
 
 SWEP.Primary.Attacks = {
 	{
@@ -261,7 +261,7 @@ SWEP.VElements = {
 }
 
 SWEP.WElements = {
-	["thunderhammer"] = { type = "Model", model = "models/joazzz/weapons/thunderhammer.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.596, 0, -7.765), angle = Angle(0, 180, -90), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 3} }
+	["thunderhammer"] = { type = "Model", model = "models/joazzz/weapons/thunderhammer.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.5, 2.5, -7.765), angle = Angle(0, 180, -90), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[0] = 2, [1] = 3} }
 }
 
 
@@ -278,15 +278,19 @@ function SWEP:ChoosePrimaryAttack()
     if attack then
         attack.dmg = self:GetStat("Primary.Damage") -- Force damage update
 	attack.len = self:GetStat("Primary.Range") -- Update range dynamically
+        attack["end"] = self:GetStat("Primary.End") or attack["end"]
     end
     return ind, attack
 end
 
 function SWEP:ChooseSecondaryAttack()
-    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self) -- Call original function
+    local ind, attack = self.BaseClass.ChooseSecondaryAttack(self)
     if attack then
-        attack.dmg = self:GetStat("Primary.Damage") * 1.25 -- Force damage update for secondary attacks
-	attack.len = self:GetStat("Primary.Range") * 1.1 -- Update secondary attack range dynamically
+        attack.dmg = self:GetStat("Primary.Damage") * 1.25
+        attack.len = self:GetStat("Primary.Range") * 1.1
+
+        local baseEnd = self:GetStat("Primary.End")
+        attack["end"] = (baseEnd and baseEnd * 1.25) or attack["end"]
     end
     return ind, attack
 end

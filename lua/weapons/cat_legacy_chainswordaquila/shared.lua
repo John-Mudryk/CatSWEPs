@@ -16,8 +16,9 @@ SWEP.Spawnable = true
 SWEP.AdminOnly = false
 SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(5, 5, -6)
-SWEP.Primary.Damage = 525
+SWEP.Primary.Damage = 550
 SWEP.Primary.Range = 90
+SWEP.Primary.End = 0.75
 
 SWEP.Primary.Attacks = {
 	{

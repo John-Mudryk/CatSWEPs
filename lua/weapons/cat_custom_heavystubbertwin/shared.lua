@@ -96,7 +96,7 @@ SWEP.FireModes = {
 --[[VIEWMODEL BLOWBACK]]--
 
 SWEP.BlowbackEnabled = true --Enable Blowback?
-SWEP.BlowbackVector = Vector(0, 1, 0.00) --Vector to move bone <or root> relative to bone <or view> orientation.
+SWEP.BlowbackVector = Vector(0, -1, 0.00) --Vector to move bone <or root> relative to bone <or view> orientation.
 SWEP.BlowbackCurrentRoot = 0 --Amount of blowback currently, for root
 SWEP.BlowbackCurrent = 0 --Amount of blowback currently, for bones
 SWEP.BlowbackBoneMods = nil --Viewmodel bone mods via SWEP Creation Kit
