@@ -139,8 +139,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-6.481, 0, 3.16)
-SWEP.IronSightsAng = Vector(-2.319, -2.455, -30.484)
+SWEP.IronSightsPos = Vector(-4.261, 0, 1.24)
+SWEP.IronSightsAng = Vector(-4.824, -0.66, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -196,10 +196,14 @@ SWEP.Type_Displayed             = "Absolution Pattern Mk. III"
 
 -- Attachments
 SWEP.VElements = {
-	["scope_sniper"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.521, 0.536, 4.015), angle = Angle(0, -180, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
+	["scope_sniper"] = { type = "Model", model = "models/rtcircle.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.521, 0.536, 4.015), angle = Angle(0, -180, 0), size = Vector(0.3, 0.3, 0.3), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "sight", pos = Vector(-0.801, 0.566, 0.893), angle = Angle(-90, -90, 90), size = Vector(0.014, 0.014, 0.014), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {} },
+	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "weapon_bone", rel = "", pos = Vector(-7.492, 1.139, 4.679), angle = Angle(0, 178.802, -1.371), size = Vector(0.699, 0.699, 0.699), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+
 }
 
 SWEP.WElements = {
+	["sight"] = { type = "Model", model = "models/wystan/attachments_tfa/eotech557sight.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.326, -0.452, -8.719), angle = Angle(165.281, 0, 0), size = Vector(0.856, 0.856, 0.856), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 -- Define reload sound events

@@ -43,6 +43,11 @@ local sword_config = {
 		element = "forcesword",
 		blade = {0, 2, 4, 6, 8}, -- Static blade
 		guard = table.Range(0, 15),
+	},
+	["cat_legacy_forcesabre"] = {
+		element = "forcesword",
+		blade = {0, 2, 4, 6, 8}, -- Static blade
+		guard = table.Range(0, 15),
 	}
 }
 
@@ -144,6 +149,25 @@ local guard_names = {
 	},
 
 	["cat_legacy_forcesword"] = {
+		[0] = "Proteus Guard",
+		[1] = "Templar Skull",
+		[2] = "Double-Lock",
+		[3] = "Extended Quillons",
+		[4] = "Imperialis",
+		[5] = "Grand Imperialis",
+		[6] = "Aquila",
+		[7] = "Grand Aquila",
+		[8] = "Sabre Imperialis",
+		[9] = "Utility Sabre",
+		[10] = "Imperialis Ultra",
+		[11] = "Blood Tear",
+		[12] = "Eye of Terra",
+		[13] = "Fenrisian Jewel",
+		[14] = "Calibanite Livery",
+		[15] = "Wings of Terror",
+	},
+
+	["cat_legacy_forcesabre"] = {
 		[0] = "Proteus Guard",
 		[1] = "Templar Skull",
 		[2] = "Double-Lock",

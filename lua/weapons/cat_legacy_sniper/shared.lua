@@ -150,8 +150,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-6.481, 0, 3.16)
-SWEP.IronSightsAng = Vector(-2.319, -2.455, -30.484)
+SWEP.IronSightsPos = Vector(-3.84, 0, -1.481)
+SWEP.IronSightsAng = Vector(-1.515, -1.752, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
