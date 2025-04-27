@@ -44,8 +44,8 @@ SWEP.Primary.Sound			= "40k/b_fire3.wav"		-- script that calls the primary fire 
 SWEP.Primary.RPM			= 480		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 100		-- Size of a clip
-SWEP.Primary.DefaultClip		= 200	                -- Default number of bullets in a clip
+SWEP.Primary.ClipSize			= 200		-- Size of a clip
+SWEP.Primary.DefaultClip		= 400	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .4		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
@@ -138,7 +138,7 @@ SWEP.ThirdPersonReloadDisable = false --Disable third person reload?  True disab
 
 -- Reload 
 SWEP.SequenceTimeOverride = {
-        [ACT_VM_RELOAD] = 6            
+        [ACT_VM_RELOAD] = 10            
 }
 
 --[[EFFECTS]]--

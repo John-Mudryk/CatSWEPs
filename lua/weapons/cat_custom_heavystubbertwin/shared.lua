@@ -139,7 +139,7 @@ SWEP.ThirdPersonReloadDisable = false --Disable third person reload?  True disab
 
 -- Reload 
 SWEP.SequenceTimeOverride = {
-        [ACT_VM_RELOAD] = 6            
+        [ACT_VM_RELOAD] = 10            
 }
 
 --[[EFFECTS]]--

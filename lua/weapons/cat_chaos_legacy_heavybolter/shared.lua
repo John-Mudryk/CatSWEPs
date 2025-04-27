@@ -47,8 +47,8 @@ SWEP.Primary.Sound			= "40k/b_fire3.wav"		-- script that calls the primary fire 
 SWEP.Primary.RPM			= 600		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 100		-- Size of a clip
-SWEP.Primary.DefaultClip		= 300	                -- Default number of bullets in a clip
+SWEP.Primary.ClipSize			= 250		-- Size of a clip
+SWEP.Primary.DefaultClip		= 500	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .4		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
@@ -141,7 +141,7 @@ SWEP.ThirdPersonReloadDisable = false --Disable third person reload?  True disab
 
 -- Reload 
 SWEP.SequenceTimeOverride = {
-        [ACT_VM_RELOAD] = 4            
+        [ACT_VM_RELOAD] = 7            
 }
 
 --[[EFFECTS]]--
@@ -192,6 +192,7 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 1 },
+    	[2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },	
     	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
     	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },

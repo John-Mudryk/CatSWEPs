@@ -249,11 +249,11 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["forcesword"] = { type = "Model", model = "models/joazzz/weapons/forcesword.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -0.518, 5.5), angle = Angle(-3.507, -90.675, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 2, [2] = 8} }
+	["forcesabre"] = { type = "Model", model = "models/joazzz/weapons/forcesword.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, -0.518, 5.5), angle = Angle(-3.507, -90.675, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 8, [2] = 2} }
 }
 
 SWEP.WElements = {
-	["forcesword"] = { type = "Model", model = "models/joazzz/weapons/forcesword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, -7), angle = Angle(0, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 2, [2] = 8} },
+	["forcesabre"] = { type = "Model", model = "models/joazzz/weapons/forcesword.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3, 2, -7), angle = Angle(0, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 8, [2] = 2} },
 }
 
 SWEP.InspectionActions = {ACT_VM_RECOIL1, ACT_VM_RECOIL2, ACT_VM_RECOIL3}

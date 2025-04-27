@@ -45,7 +45,7 @@ local sword_config = {
 		guard = table.Range(0, 15),
 	},
 	["cat_legacy_forcesabre"] = {
-		element = "forcesword",
+		element = "forcesabre",
 		blade = {0, 2, 4, 6, 8}, -- Static blade
 		guard = table.Range(0, 15),
 	}
