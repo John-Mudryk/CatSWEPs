@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellAttachment			= "w shotgun" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Agripinaa Autogun"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Agripinaa Stubber"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -21,7 +21,7 @@ SWEP.DisableChambering = true
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive 
 -- you're mostly going to use ar2, smg, shotgun or pistol. rpg and crossbow make for good sniper rifles
 
-SWEP.MoveSpeed = 0.95
+SWEP.MoveSpeed = 0.9
 
 SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
@@ -43,10 +43,10 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.Primary.Sound			= "weapons/autogun/weapon_autogun.wav"		-- script that calls the primary fire sound
-SWEP.Primary.RPM			= 625		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
+SWEP.Primary.RPM			= 500		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 15		-- Size of a clip
+SWEP.Primary.ClipSize			= 30		-- Size of a clip
 SWEP.Primary.DefaultClip		= 120	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .15		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .15		-- Maximum down recoil (skeet)
@@ -67,7 +67,7 @@ SWEP.data.ironsights			= 1
 
 SWEP.DamageType = DMG_BULLET
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
-SWEP.Primary.Damage		= 55	-- Base damage per bullet
+SWEP.Primary.Damage		= 85	-- Base damage per bullet
 SWEP.Primary.Spread		= 0.006	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
 SWEP.Primary.IronAccuracy = 0.001	-- Ironsight accuracy, should be the same for shotguns
 
@@ -178,18 +178,18 @@ SWEP.Type_Displayed             = "Agripinaa Pattern Type II" -- Weapon type ove
 
 -- Attachments
 SWEP.VElements = {
-	["autogun"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.595, 0.081, -2.419), angle = Angle(0, -177.976, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 3} },
-	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["mag2"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1}, active = false },
+	["stubber"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "weapon_bone", rel = "", pos = Vector(3.595, 0.081, -2.419), angle = Angle(0, -177.976, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 3, [2] = 1, [6] = 2} },
+	["mag"] = { type = "Model", model = "models/bloocobalt/dow/deathwing/weapons/lasgun_mag.mdl", bone = "mag_bone", rel = "", pos = Vector(5.107, -0.024, 0.021), angle = Angle(0, -177.976, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1} },
+	["mag2"] = { type = "Model", model = "models/joazzz/weapons/bolter_mag_drum.mdl", bone = "mag_bone", rel = "", pos = Vector(-1.507, -0.024, 2.021), angle = Angle(0, -177.976, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {}, active = false },
 
-	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(5.099, -0.051, 7.05), angle = Angle(-90, 0, 0), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
-	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(8.234, 0.035, 7.21), angle = Angle(0, 0, 0), size = Vector(0.214, 0.214, 0.214), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
-	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "autogun", pos = Vector(9.843, -0.022, 7.184), angle = Angle(0, 0, 0), size = Vector(0.196, 0.196, 0.196), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_reflex"] = { type = "Model", model = "models/hunter/plates/plate1x1.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "stubber", pos = Vector(5.099, -0.051, 7.05), angle = Angle(-90, 0, 0), size = Vector(0.025, 0.025, 0.025), color = Color(255, 255, 255, 255), surpresslightning = false, material = "entities/scope_reflex_reticle", skin = 0, bodygroup = {}, active = false },
+	["scope_short"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "stubber", pos = Vector(8.234, 0.035, 7.21), angle = Angle(0, 0, 0), size = Vector(0.214, 0.214, 0.214), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "stubber", pos = Vector(9.843, -0.022, 7.184), angle = Angle(0, 0, 0), size = Vector(0.196, 0.196, 0.196), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 
 }
 
 SWEP.WElements = {
-	["autogunW"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(15.522, 1.715, -2.704), angle = Angle(167.658, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["stubberW"] = { type = "Model", model = "models/gutsy/warhammer40k/weapons/agripinaaautogun.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(15.522, 1.715, -2.704), angle = Angle(167.658, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[0] = 1, [2] = 1, [6] = 2} }
 }
 
 -- Define reload sound events
@@ -203,7 +203,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[1] = { offset = { 0, 0 }, atts = { "cat_am_ap", "cat_am_match", "cat_am_magnum", "cat_am_incendiary"}, order = 1 },
         [2] = { offset = { 0, 0 }, atts = { "cat_mag_extend_two"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor", "cat_bar_extend_one"}, order = 3 },
+	[3] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor"}, order = 3 },
 	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2", "cat_scope_dot2", "cat_scope_light2", "cat_scope_reflex2_hud", "cat_scope_dot2_hud", "cat_scope_light2_hud"}, order = 4 },
 	[5] = { offset = { 0, 0 }, atts = { "cat_stock_light"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },

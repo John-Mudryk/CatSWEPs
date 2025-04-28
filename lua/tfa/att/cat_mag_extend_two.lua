@@ -184,6 +184,9 @@ ATTACHMENT.WeaponTable = {
 		["bolterH"] = {
 			["bodygroup"] = {[1] = 3},
 		},
+		["stubberW"] = {
+			["bodygroup"] = {[0] = 2},
+		},
 		["mag"] = {
 			["active"] = false,
 		},

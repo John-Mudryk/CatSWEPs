@@ -73,6 +73,9 @@ ATTACHMENT.WeaponTable = {
 		["plasmaincinerator"] = {
 			["bodygroup"] = {[1] = 1},
 		},
+		["stubber"] = {
+			["bodygroup"] = {[1] = 2},
+		},
 	},
 ["WElements"] = {
 		["autogunW"] = {
@@ -110,6 +113,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["plasmaincinerator"] = {
 			["bodygroup"] = {[1] = 1},
+		},
+		["stubberW"] = {
+			["bodygroup"] = {[1] = 2},
 		},
 	},
 }

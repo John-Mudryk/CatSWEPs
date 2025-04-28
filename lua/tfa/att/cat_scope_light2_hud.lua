@@ -93,6 +93,9 @@ ATTACHMENT.WeaponTable = {
 		["boltrifle"] = {
 			["bodygroup"] = {[2] = 1},
 		},
+		["stubber"] = {
+			["bodygroup"] = {[1] = 3},
+		},
 	},
 ["WElements"] = {
 		["autogunW"] = {
@@ -151,6 +154,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["boltrifle"] = {
 			["bodygroup"] = {[2] = 1},
+		},
+		["stubberW"] = {
+			["bodygroup"] = {[1] = 3},
 		},
 	},
 }

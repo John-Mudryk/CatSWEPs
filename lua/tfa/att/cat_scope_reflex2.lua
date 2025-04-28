@@ -43,7 +43,10 @@ ATTACHMENT.WeaponTable = {
 		},
         	["scope_reflex"] = {
             		active = true
-        	}
+        	},
+		["stubber"] = {
+			["bodygroup"] = {[1] = 4},
+		},
 	},
 ["WElements"] = {
 		["autogunW"] = {
@@ -51,6 +54,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["luciusHW"] = {
 			["bodygroup"] = {[1] = 3},
+		},
+		["stubberW"] = {
+			["bodygroup"] = {[1] = 4},
 		},
 	},
 }

@@ -24,11 +24,17 @@ ATTACHMENT.WeaponTable = {
 	["VElements"] = {
 		["autogun"] = {
 			["bodygroup"] = {[2] = 3},
+		},
+		["stubber"] = {
+			["bodygroup"] = {[2] = 2},
 		}
 	},
 	["WElements"] = {
 		["autogunW"] = {
 			["bodygroup"] = {[2] = 3},
+		},
+		["stubberW"] = {
+			["bodygroup"] = {[2] = 2},
 		}
 	},
 }

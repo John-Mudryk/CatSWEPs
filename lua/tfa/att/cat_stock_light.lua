@@ -46,6 +46,9 @@ ATTACHMENT.WeaponTable = {
 		["longlasKW"] = {
 			["bodygroup"] = {[2] = 1},
 		},
+		["stubber"] = {
+			["bodygroup"] = {[5] = 1},
+		},
 	},
 ["WElements"] = {
 		["autogunW"] = {
@@ -74,6 +77,9 @@ ATTACHMENT.WeaponTable = {
 		},
 		["longlasKW"] = {
 			["bodygroup"] = {[2] = 1},
+		},
+		["stubberW"] = {
+			["bodygroup"] = {[5] = 1},
 		},
 	},
 }
