@@ -211,7 +211,7 @@ SWEP.Primary.MGSound			= "40k/meltagun-fire.mp3"
 SWEP.Primary.PGSound			= "40k/plasma1.wav"	
 
 SWEP.IronSightsPos_Light = Vector(-4.841, -3, -1.481)
-SWEP.IronSightsAng_Light = Vector(0.667, -4.266, 0)
+SWEP.IronSightsAng_Light = Vector(0.607, -4.306, 0)
 
 SWEP.IronSightsPos_Heavy = Vector(-4.841, -3, -1.481)
 SWEP.IronSightsAng_Heavy = Vector(0.657, -4.396, 0)

@@ -216,7 +216,7 @@ SWEP.IronSightsPos_Reflex = Vector(-4.321, -10, 0.959)
 SWEP.IronSightsAng_Reflex = Vector(-0.066, -3.823, 0)
 
 SWEP.IronSightsPos_Short = Vector(-3.921, -14, 0.879)
-SWEP.IronSightsAng_Short = Vector(-1.964, -2.991, 0)
+SWEP.IronSightsAng_Short = Vector(-1.964, -3.141, 0)
 
 SWEP.IronSightsPos_Light = Vector(-4.16, -12, 0.759)
-SWEP.IronSightsAng_Light = Vector(0.787, -4.006, 0)
+SWEP.IronSightsAng_Light = Vector(0.787, -4.106, 0)

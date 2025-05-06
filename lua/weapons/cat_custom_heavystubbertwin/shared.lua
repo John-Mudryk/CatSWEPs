@@ -117,7 +117,7 @@ SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Su
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-6.085, -8.254, 2.331)
-SWEP.IronSightsAng = Vector(-1.633, -1.56, 0)
+SWEP.IronSightsAng = Vector(-1.633, -1.59, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)

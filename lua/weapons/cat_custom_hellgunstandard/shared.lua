@@ -110,7 +110,7 @@ SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Su
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
 SWEP.IronSightsPos = Vector(-4.02, -8.04, 3.93)
-SWEP.IronSightsAng = Vector(-2.757, -2.063, 0)
+SWEP.IronSightsAng = Vector(-2.907, -2.092, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -209,10 +209,10 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Reflex = Vector(-3.981, -10, 3.869)
-SWEP.IronSightsAng_Reflex = Vector(-4.807, -2.02, 0)
+SWEP.IronSightsAng_Reflex = Vector(-4.827, -2.02, 0)
 
 SWEP.IronSightsPos_Short = Vector(-3.901, -12, 3.829)
 SWEP.IronSightsAng_Short = Vector(-4.725, -2.055, 0)
 
 SWEP.IronSightsPos_Light = Vector(-3.901, -10, 3.63)
-SWEP.IronSightsAng_Light = Vector(-3.057, -1.625, 0)
+SWEP.IronSightsAng_Light = Vector(-3.117, -1.625, 0)

@@ -234,4 +234,4 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Sniper = Vector(-3.721, -5, 0.759)
-SWEP.IronSightsAng_Sniper = Vector(-4.653, -1.875, 0)
+SWEP.IronSightsAng_Sniper = Vector(-4.593, -1.875, 0)

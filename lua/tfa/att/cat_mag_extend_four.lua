@@ -4,7 +4,7 @@ end
 
 ATTACHMENT.Name = "Extended Magazine"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
-ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize a greater magazine size", TFA.Attachments.Colors["="], "Quadruple magazine capacity", TFA.AttachmentColors["-"], "Increased reload time", "Decreased mobility" }
+ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize a greater magazine size", TFA.Attachments.Colors["+"], "Quadruple magazine capacity", TFA.AttachmentColors["-"], "Increased reload time", "Decreased mobility" }
 ATTACHMENT.Icon = "gm_construct/overlay_4" 
 ATTACHMENT.ShortName = "MAG 4X"
 

@@ -115,8 +115,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.771, -4.884, 2.563)
-SWEP.IronSightsAng = Vector(0.56, -3.55, 0)
+SWEP.IronSightsPos = Vector(-4.761, -5, 2.599)
+SWEP.IronSightsAng = Vector(0.291, -3.498, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -220,14 +220,14 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
-SWEP.IronSightsPos_Reflex = Vector(-4.481, -10, 2.691)
-SWEP.IronSightsAng_Reflex = Vector(-3.452, -3.906, 0)
+SWEP.IronSightsPos_Reflex = Vector(-4.761, -5, 2.599)
+SWEP.IronSightsAng_Reflex = Vector(-1.81, -3.643, 0)
 
 SWEP.IronSightsPos_Short = Vector(-4.481, -10, 2.769)
-SWEP.IronSightsAng_Short = Vector(-2.3, -3.85, 0)
+SWEP.IronSightsAng_Short = Vector(-2.35, -3.87, 0)
 
 SWEP.IronSightsPos_Light = Vector(-4.761, -5, 2.559)
-SWEP.IronSightsAng_Light = Vector(-6.342, -3.44, 0)
+SWEP.IronSightsAng_Light = Vector(-6.402, -3.44, 0)
 
 SWEP.IronSightsPos_Heavy = Vector(-4.761, -5, 2.559)
 SWEP.IronSightsAng_Heavy = Vector(-6.402, -3.44, 0)

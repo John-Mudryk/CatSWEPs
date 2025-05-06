@@ -119,7 +119,7 @@ SWEP.FireModes = {
 --[[VIEWMODEL BLOWBACK]]--
 
 SWEP.BlowbackEnabled = true --Enable Blowback?
-SWEP.BlowbackVector = Vector(2,-7,1.00) --Vector to move bone <or root> relative to bone <or view> orientation.
+SWEP.BlowbackVector = Vector(0,-2,1.00) --Vector to move bone <or root> relative to bone <or view> orientation.
 SWEP.BlowbackCurrentRoot = 0 --Amount of blowback currently, for root
 SWEP.BlowbackCurrent = 0 --Amount of blowback currently, for bones
 SWEP.BlowbackBoneMods = nil --Viewmodel bone mods via SWEP Creation Kit
@@ -224,4 +224,4 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Sniper = Vector(-4.171, -5.578, 2.9)
-SWEP.IronSightsAng_Sniper = Vector(-10.26, -0.667, 0)
+SWEP.IronSightsAng_Sniper = Vector(-10.26, -0.647, 0)

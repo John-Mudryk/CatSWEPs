@@ -167,7 +167,7 @@ SWEP.ImpactDecal = "FadingScorch"--Impact Decal
 
 -- Attachments
 SWEP.VElements = {
-	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "", pos = Vector(-2.1, 0.1, 7.5), angle = Angle(0, 180, 0), size = Vector(0.209, 0.209, 0.209), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {} }
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "tag_weapon", rel = "", pos = Vector(-2.1, 0.1, 7.5), angle = Angle(0, 180, 0), size = Vector(0.209, 0.209, 0.209), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false }
 }
 
 SWEP.WElements = {

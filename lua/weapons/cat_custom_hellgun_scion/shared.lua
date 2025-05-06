@@ -207,4 +207,4 @@ SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
 SWEP.IronSightsPos_Light = Vector(-2.28, -12, 4.519)
-SWEP.IronSightsAng_Light = Vector(-6.353, -9.372, 0)
+SWEP.IronSightsAng_Light = Vector(-6.353, -9.452, 0)
