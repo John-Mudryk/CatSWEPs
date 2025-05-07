@@ -1,4 +1,4 @@
-SWEP.Category                           = "Cat's Primaris Legacy SWEPs"
+SWEP.Category                           = "Cat's Legacy Primaris SWEPs"
 SWEP.Author				= "The Cat"
 SWEP.Contact				= ""
 SWEP.Purpose				= ""

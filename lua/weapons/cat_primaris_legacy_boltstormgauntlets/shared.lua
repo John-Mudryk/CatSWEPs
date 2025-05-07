@@ -5,7 +5,7 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Primaris Bolt Pistol"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Boltstorm Gauntlets"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -15,7 +15,7 @@ SWEP.DrawCrosshair			= true		-- set false if you want no crosshair
 SWEP.Weight				= 30			-- rank relative ot other weapons. bigger is better
 SWEP.AutoSwitchTo			= true		-- Auto switch to if we pick it up
 SWEP.AutoSwitchFrom			= false		-- Auto switch from if you pick up a better weapon
-SWEP.HoldType 				= "pistol"	-- how others view you carrying the weapon
+SWEP.HoldType 				= "duel"	-- how others view you carrying the weapon
 SWEP.UseHands   = true
 SWEP.DisableChambering = true
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive 
@@ -23,9 +23,9 @@ SWEP.DisableChambering = true
 
 SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 90
+SWEP.ViewModelFOV			= 70
 SWEP.ViewModelFlip			= false
-SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_boltpistol_v.mdl"	-- Weapon view model
+SWEP.ViewModel				= "models/weapons/cstrike/c_pist_elite.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_boltpistol.mdl"	-- Weapon world model
 SWEP.ViewModelFlip                      = false
 SWEP.Base 				= "tfa_bash_base"
@@ -37,29 +37,50 @@ SWEP.Primary.Knockback = 1 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["tag_clip"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["tag_weapon"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["v_weapon.magazine_right"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["v_weapon.magazine_left"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["v_weapon.elite_right"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["v_weapon.elite_left"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
 }
 
 
+
 SWEP.Primary.Sound			= "40k/b_fire4.wav"		-- script that calls the primary fire sound
-SWEP.Primary.RPM			= 240		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
+SWEP.Primary.RPM			= 600		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 20		-- Size of a clip
-SWEP.Primary.DefaultClip		= 120	                -- Default number of bullets in a clip
-SWEP.Primary.KickUp			= .3		-- Maximum up recoil (rise)
+SWEP.Primary.ClipSize			= 500		-- Size of a clip
+SWEP.Primary.DefaultClip		= 500	                -- Default number of bullets in a clip
+SWEP.Primary.KickUp			= .2		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .1		-- Maximum down recoil (skeet)
 SWEP.Primary.KickHorizontal		= .1	             -- Maximum up recoil (stock)
-SWEP.Primary.Automatic			= false 		-- Automatic/Semi Auto
+SWEP.Primary.Automatic			= true 		-- Automatic/Semi Auto
 SWEP.Primary.Ammo			= "slam"	-- pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, AirboatGun
+
 SWEP.Secondary.CanBash = true
+SWEP.Secondary.BashDamage = 800
+SWEP.Secondary.BashLength = 70
+SWEP.Secondary.BashSound = "weapons/tfa_kf2/zweihander/swing_hard_2.wav"
+SWEP.Secondary.BashHitSound       = "gb_sfx/sndbreakdoor.wav"
+SWEP.Secondary.BashHitSound_Flesh = "spl_shock_hit.wav"
+SWEP.Secondary.BashEnd = 1
+
+function SWEP:ChooseBashAnim()
+    return true, ACT_VM_PRIMARYATTACK, TFA.Enum.ANIMATION_ACT
+end
+
+function SWEP:BashAnim()
+    if not IsFirstTimePredicted() then return end
+
+    -- Play the primary attack animation (firing animation)
+    self:SendViewModelAnim(ACT_VM_PRIMARYATTACK)
+end
 
 SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 10
 SWEP.Primary.PenetrationMultiplier = 1
 
-SWEP.Secondary.IronFOV			= 70		-- How much you 'zoom' in. Less is more! 
+SWEP.Secondary.IronFOV			= 60		-- How much you 'zoom' in. Less is more! 
 
 SWEP.data 				= {}				--The starting firemode
 SWEP.data.ironsights			= 1
@@ -67,8 +88,8 @@ SWEP.data.ironsights			= 1
 SWEP.DamageType = DMG_BULLET
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
 SWEP.Primary.Damage		= 275	-- Base damage per bullet
-SWEP.Primary.Spread		= 0.0075	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
-SWEP.Primary.IronAccuracy = 0.001	-- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.Spread		= 0.015	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
+SWEP.Primary.IronAccuracy = 0.002	-- Ironsight accuracy, should be the same for shotguns
 
 --Range Related
 SWEP.Primary.RangeFalloffLUT = {
@@ -89,7 +110,8 @@ SWEP.Primary.RangeFalloffLUT = {
 
 SWEP.SelectiveFire              = true
 SWEP.FireModes = {
-        "Single"
+        "Single",
+	"Auto"
 }
 
 --[[VIEWMODEL BLOWBACK]]--
@@ -115,8 +137,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4, -3, -1.04)
-SWEP.IronSightsAng = Vector(-0.241, -0.119, 0)
+SWEP.IronSightsPos = Vector(0, -5, 0)
+SWEP.IronSightsAng = Vector(0, 0, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -138,7 +160,7 @@ SWEP.ThirdPersonReloadDisable = false --Disable third person reload?  True disab
 
 -- Reload
 SWEP.SequenceTimeOverride = {
-    [ACT_VM_RELOAD] = 2,           	-- Standard reload
+    [ACT_VM_RELOAD] = 3,           	-- Standard reload
     [ACT_VM_RELOAD_EMPTY] = 4		-- Empty reload
 }
 
@@ -169,7 +191,7 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Pistol" 
-SWEP.Type_Displayed             = "Cawl Pattern Mk. IIb"
+SWEP.Type_Displayed             = "Godwyn Pattern Mk. III + Godwyn Pattern Mk. III"
 
 SWEP.Bodygroups_V       = {
 [4] = 0
@@ -180,32 +202,100 @@ SWEP.Bodygroups_W       = {
 
 -- Attachments
 SWEP.VElements = {
-	["boltpistolPrimaris"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltpistol.mdl", bone = "tag_weapon", rel = "", pos = Vector(0.358, 0.637, 4.619), angle = Angle(0, 180, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["boltstorm_l"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltstormgauntlet_l.mdl", bone = "v_weapon.elite_left", rel = "", pos = Vector(-2, 1, 6), angle = Angle(100, -90, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 9, bodygroup = {} },
+	["boltstorm_r"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltstormgauntlet_r.mdl", bone = "v_weapon.elite_right", rel = "", pos = Vector(2, 1, 6), angle = Angle(100, -90, 0), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 9, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["boltpistolPrimaris"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltpistol.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(2.819, 2.155, -6.249), angle = Angle(174.917, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["boltstorm_l"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltstormgauntlet_l.mdl", bone = "ValveBiped.Anim_Attachment_LH", rel = "", pos = Vector(-3.444, 1.973, 5.935), angle = Angle(105.569, 0, -90), size = Vector(0.65, 0.65, 0.65), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 9, bodygroup = {} },
+	["boltstorm_r"] = { type = "Model", model = "models/zadkiel/weapons/primaris_boltstormgauntlet_r.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(7.94, 3.483, 2.177), angle = Angle(0, 0, 180), size = Vector(0.65, 0.65, 0.65), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 9, bodygroup = {} }
 }
 
 -- Define reload sound events
 SWEP.EventTable = {
-    [ACT_VM_RELOAD] = { -- Use the appropriate reload animation activity
+     [ACT_VM_RELOAD] = { -- Use the appropriate reload animation activity
         {time = 0.5, type = "sound", value = "40k/b_magout.wav"}, -- Magazine out sound
-        {time = 2, type = "sound", value = "40k/b_magin.wav"}  -- Magazine in sound
-    },
+        {time = 1.5, type = "sound", value = "40k/b_magin.wav"},  -- Magazine in sound
+	{time = 2.5, type = "sound", value = "40k/b_magin.wav"}  -- Magazine in sound
+     },
 	[ACT_VM_RELOAD_EMPTY] = {
         {time = 0.5, type = "sound", value = "40k/b_magout.wav"}, -- Magazine out sound
         {time = 2, type = "sound", value = "40k/b_magin.wav"},  -- Magazine in sound
         {time = 2.5, type = "sound", value = "weapons/sombra_n/out.wav"}
-    }
+     }
 }
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 4 },
-	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
+	[5] = { offset = { 0, 0 }, atts = { "cat_skin_gauntlet_bolt"}, order = 5 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.Primary.SpreadIncrement = 0.75
+SWEP.Primary.SpreadRecovery = 7
+SWEP.Primary.StaticRecoilFactor = 0.85
+
+SWEP.IronSightsPos_Short = Vector(-3.28, -4, -3)
+SWEP.IronSightsAng_Short = Vector(-4.324, 1.217, 0)
+
+SWEP.ViewModelBoneMods_Iron = {
+	["v_weapon.magazine_right"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["v_weapon.magazine_left"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(-22, -10, 18) },
+	["v_weapon.elite_right"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 1.5, 1), angle = Angle(0, -45, 0) },
+	["ValveBiped.Bip01_R_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(22, -10, -18) },
+	["v_weapon.elite_left"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, -1.201, 1.5), angle = Angle(0, 45, 0) }
+}
+
+if CLIENT then
+    -- LerpAngle helper
+    local function LerpAngle(t, from, to)
+        return Angle(
+            Lerp(t, from.p or 0, to.p or 0),
+            Lerp(t, from.y or 0, to.y or 0),
+            Lerp(t, from.r or 0, to.r or 0)
+        )
+    end
+
+    function SWEP:Think2()
+        self.BaseClass.Think2(self)
+
+        local progress = self:GetIronSightsProgress() or 0
+        self.ViewModelBoneMods = self.ViewModelBoneMods or {}
+        self.ViewModelBoneMods_Iron = self.ViewModelBoneMods_Iron or {}
+
+        -- Store default mods
+        if not self.DefaultViewModelBoneMods then
+            self.DefaultViewModelBoneMods = table.Copy(self.ViewModelBoneMods)
+        end
+
+        self.LerpedViewModelBoneMods = self.LerpedViewModelBoneMods or {}
+
+        for bone, defaultMod in pairs(self.DefaultViewModelBoneMods) do
+            local ironMod = self.ViewModelBoneMods_Iron[bone] or defaultMod
+
+
+            -- Fallbacks for missing fields
+            local defScale = defaultMod.scale or Vector(1, 1, 1)
+            local defPos = defaultMod.pos or Vector(0, 0, 0)
+            local defAngle = defaultMod.angle or Angle(0, 0, 0)
+
+            local ironScale = ironMod.scale or defScale
+            local ironPos = ironMod.pos or defPos
+            local ironAngle = ironMod.angle or defAngle
+
+            self.LerpedViewModelBoneMods[bone] = {
+                scale = LerpVector(progress, defScale, ironScale),
+                pos = LerpVector(progress, defPos, ironPos),
+                angle = LerpAngle(progress, defAngle, ironAngle)
+            }
+        end
+
+        self.ViewModelBoneMods = self.LerpedViewModelBoneMods
+    end
+end
+

@@ -1,11 +1,11 @@
-SWEP.Category                           = "Cat's Legacy Primaris SWEPs"
+SWEP.Category                           = "Cat's Legacy SWEPs"
 SWEP.Author				= "The Cat"
 SWEP.Contact				= ""
 SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Assault Bolter"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Godwyn Bolt Pistol + Power Sabre"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 3				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -15,18 +15,18 @@ SWEP.DrawCrosshair			= true		-- set false if you want no crosshair
 SWEP.Weight				= 30			-- rank relative ot other weapons. bigger is better
 SWEP.AutoSwitchTo			= true		-- Auto switch to if we pick it up
 SWEP.AutoSwitchFrom			= false		-- Auto switch from if you pick up a better weapon
-SWEP.HoldType 				= "shotgun"	-- how others view you carrying the weapon
+SWEP.HoldType 				= "pistol"	-- how others view you carrying the weapon
 SWEP.UseHands   = true
 SWEP.DisableChambering = true
 -- normal melee melee2 fist knife smg ar2 pistol rpg physgun grenade shotgun crossbow slam passive 
 -- you're mostly going to use ar2, smg, shotgun or pistol. rpg and crossbow make for good sniper rifles
 
-SWEP.MoveSpeed = 1
+SWEP.MoveSpeed = 0.95
 
-SWEP.ViewModelFOV			= 60
+SWEP.ViewModelFOV			= 90
 SWEP.ViewModelFlip			= false
-SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_bolter_v.mdl"	-- Weapon view model
-SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_bolter.mdl"	-- Weapon world model
+SWEP.ViewModel				= "models/muschi/weapons/muschi_swep_heavy_bolter_v.mdl"	-- Weapon view model
+SWEP.WorldModel				= "models/muschi/weapons/muschi_swep_boltpistol.mdl"	-- Weapon world model
 SWEP.ViewModelFlip                      = false
 SWEP.Base 				= "tfa_bash_base"
 SWEP.Spawnable				= true
@@ -34,26 +34,35 @@ SWEP.AdminSpawnable			= true
 SWEP.Primary.Force = 10 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 1 -- Autodetected if nil; this is the velocity kickback
 
+SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
-
 SWEP.ViewModelBoneMods = {
-	["mag_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(1.848, 5.969, -6.812), angle = Angle(-6.033, 15.18, 109.619) },
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
+	["ValveBiped.Bip01_L_Hand"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(27.621, -34.257, 6.947) },
+	["ValveBiped.Bip01_L_Forearm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(5.69, 57.494, 37.101) }
 }
 
-SWEP.Primary.Sound			= "40k/b_fire1.wav"		-- script that calls the primary fire sound
-SWEP.Primary.RPM			= 480		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
+
+
+SWEP.Primary.Sound			= "40k/b_fire4.wav"		-- script that calls the primary fire sound
+SWEP.Primary.RPM			= 240		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 60		-- Size of a clip
-SWEP.Primary.DefaultClip		= 240	                -- Default number of bullets in a clip
-SWEP.Primary.KickUp			= .45		-- Maximum up recoil (rise)
-SWEP.Primary.KickDown			= .25		-- Maximum down recoil (skeet)
-SWEP.Primary.KickHorizontal		= .25	             -- Maximum up recoil (stock)
-SWEP.Primary.Automatic			= true 		-- Automatic/Semi Auto
+SWEP.Primary.ClipSize			= 20		-- Size of a clip
+SWEP.Primary.DefaultClip		= 120	                -- Default number of bullets in a clip
+SWEP.Primary.KickUp			= .4		-- Maximum up recoil (rise)
+SWEP.Primary.KickDown			= .2		-- Maximum down recoil (skeet)
+SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
+SWEP.Primary.Automatic			= false 		-- Automatic/Semi Auto
 SWEP.Primary.Ammo			= "slam"	-- pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, AirboatGun
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 100
+SWEP.Secondary.BashDamage = 600
+SWEP.Secondary.BashLength = 100
+SWEP.Secondary.BashSound = "weapons/tfa_kf2/katana/katana_swing_miss3.wav"
+SWEP.Secondary.BashHitSound       = "weapons/tfa_kf2/katana/block01.wav"
+SWEP.Secondary.BashHitSound_Flesh = "weapons/tfa_kf2/zweihander/hitflesh_3.wav"
+SWEP.Secondary.BashEnd = 1
 
 SWEP.Primary.MaxSurfacePenetrationCount = 10
 SWEP.Primary.PenetrationPower = 10
@@ -66,9 +75,9 @@ SWEP.data.ironsights			= 1
 
 SWEP.DamageType = DMG_BULLET
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
-SWEP.Primary.Damage		= 350	-- Base damage per bullet
-SWEP.Primary.Spread		= 0.01	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
-SWEP.Primary.IronAccuracy = 0.001	-- Ironsight accuracy, should be the same for shotguns
+SWEP.Primary.Damage		= 275	-- Base damage per bullet
+SWEP.Primary.Spread		= 0.015	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
+SWEP.Primary.IronAccuracy = 0.0015	-- Ironsight accuracy, should be the same for shotguns
 
 --Range Related
 SWEP.Primary.RangeFalloffLUT = {
@@ -81,16 +90,15 @@ SWEP.Primary.RangeFalloffLUT = {
 	-- everything else is considered to be meters
 	lut = { -- providing zero point is not required
 		-- without zero point it is considered to be as {range = 0, damage = 1}
-		{range = 450, damage = 1},
-                {range = 600, damage = 0.75},
-		{range = 650, damage = 0},
+		{range = 400, damage = 1},
+                {range = 550, damage = 1},
+		{range = 600, damage = 0},
 	}
 }
 
 SWEP.SelectiveFire              = true
 SWEP.FireModes = {
-        "Single",
-	"Auto"
+        "Single"
 }
 
 --[[VIEWMODEL BLOWBACK]]--
@@ -116,8 +124,8 @@ SWEP.ShellTime = 1 -- For shotguns, how long it takes to insert a shell.
 SWEP.VMPos = Vector(0, 0, 0) -- The viewmodel positional offset, constantly.  Subtract this from any other modifications to viewmodel position.
 SWEP.VMAng = Vector(0, 0, 0) -- The viewmodel angular offset, constantly.   Subtract this from any other modifications to viewmodel angle.
 
-SWEP.IronSightsPos = Vector(-4.321, -3, -0.401)
-SWEP.IronSightsAng = Vector(-0.811, -1.568, 0)
+SWEP.IronSightsPos = Vector(-4.16, 0, 3.359)
+SWEP.IronSightsAng = Vector(-4.54, -2.388, 0)
 
 SWEP.RunSightsPos = Vector(0, 0, 0)
 SWEP.RunSightsAng = Vector(-11.869, 17.129, -16.056)
@@ -137,9 +145,10 @@ SWEP.Offset = { --Procedural world model animation, defaulted for CS:S purposes.
 
 SWEP.ThirdPersonReloadDisable = false --Disable third person reload?  True disables.
 
--- Reload 
+-- Reload
 SWEP.SequenceTimeOverride = {
-        [ACT_VM_RELOAD] = 2            
+    [ACT_VM_RELOAD] = 2,           	-- Standard reload
+    [ACT_VM_RELOAD_EMPTY] = 4		-- Empty reload
 }
 
 --[[EFFECTS]]--
@@ -168,30 +177,40 @@ SWEP.LuaShellEject = false
 SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
-SWEP.Type                       = "Rifle" 
-SWEP.Type_Displayed             = "Cawl Pattern Mk. IIIa"
+SWEP.Type                       = "Pistol" 
+SWEP.Type_Displayed             = "Godwyn Pattern Mk. III + Proteus Pattern Mk. IIa"
+
+SWEP.Bodygroups_V       = {
+[4] = 0
+}
+SWEP.Bodygroups_W       = {
+[4] = 1
+}
 
 -- Attachments
 SWEP.VElements = {
-	["assaultbolter"] = { type = "Model", model = "models/zadkiel/weapons/primaris_assaultbolter.mdl", bone = "weapon_bone", rel = "", pos = Vector(-3.929, 0.546, -3.156), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 3} }
+	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(2.016, 0.538, 6.512), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 13, [2] = 16} },
+	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.643, 0, 0), angle = Angle(0, 180, 2.092), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
 }
 
 SWEP.WElements = {
-	["assaultbolter"] = { type = "Model", model = "models/zadkiel/weapons/primaris_assaultbolter.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(8.784, 2.128, -2.26), angle = Angle(-12.771, 0, 180), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 3} }
+	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.084, 1.291, -5.715), angle = Angle(169.031, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Anim_Attachment_LH", rel = "", pos = Vector(-0.484, -4.6, 3.592), angle = Angle(47.118, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 13, [2] = 16} }
+
 }
 
 -- Define reload sound events
 SWEP.EventTable = {
     [ACT_VM_RELOAD] = { -- Use the appropriate reload animation activity
         {time = 0.5, type = "sound", value = "40k/b_magout.wav"}, -- Magazine out sound
-        {time = 1.5, type = "sound", value = "40k/b_magin.wav"}  -- Magazine in sound
-    }
+        {time = 2, type = "sound", value = "40k/b_magin.wav"}  -- Magazine in sound
+    },
 }
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-	[3] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 3 },
-	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
+    	[4] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 4 },
+    	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

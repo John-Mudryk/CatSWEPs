@@ -38,6 +38,9 @@ ATTACHMENT.WeaponTable = {
 		["forcesword"] = {
 			["skin"] = 0
 		},
+		["forcesabre"] = {
+			["skin"] = 0
+		},
 		["forceaxe"] = {
 			["skin"] = 0
 		},
@@ -86,6 +89,9 @@ ATTACHMENT.WeaponTable = {
 			["skin"] = 0
 		},
 		["forcesword"] = {
+			["skin"] = 0
+		},
+		["forcesabre"] = {
 			["skin"] = 0
 		},
 		["forceaxe"] = {

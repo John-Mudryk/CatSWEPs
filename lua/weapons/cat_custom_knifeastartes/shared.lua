@@ -18,7 +18,7 @@ SWEP.DisableIdleAnimations = false
 SWEP.VMPos = Vector(5, 5, -6)
 SWEP.Primary.Damage = 350
 SWEP.Primary.Range = 60
-SWEP.Primary.End = 0.4
+SWEP.Primary.End = 0.45
 
 SWEP.Primary.Attacks = {
 	{
@@ -246,7 +246,7 @@ SWEP.ViewModelBoneMods = {
 }
 
 SWEP.VElements = {
-	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_knife_astartes.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, 0.518, 2.596), angle = Angle(-90, 90, 0), size = Vector(0.7, 0.7, 0.7), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 17, [2] = 4} }
+	["element_name"] = { type = "Model", model = "models/muschi/weapons/muschi_swep_knife_astartes.mdl", bone = "RW_Weapon", rel = "", pos = Vector(0.218, 0.518, 2.596), angle = Angle(-90, 90, 0), size = Vector(0.85, 0.85, 0.85), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 17, [2] = 4} }
 }
 
 SWEP.WElements = {

@@ -35,10 +35,10 @@ SWEP.Primary.Force = 50 -- Force value, leave nil to autocalc
 SWEP.Primary.Knockback = 5 -- Autodetected if nil; this is the velocity kickback
 
 SWEP.Primary.Sound			= "weapons/snipgauss/awp1.wav"		-- script that calls the primary fire sound
-SWEP.Primary.RPM			= 120		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
+SWEP.Primary.RPM			= 60		-- This is in Rounds Per Minute This is in Rounds Per Minute / RPM
 SWEP.Primary.RPM_Burst				= 180					-- RPM for burst fire, overrides semi.  
 SWEP.Primary.BurstDelay				= 0.1					-- Delay between bursts, leave nil to autocalculate
-SWEP.Primary.ClipSize			= 16		-- Size of a clip
+SWEP.Primary.ClipSize			= 8		-- Size of a clip
 SWEP.Primary.DefaultClip		= 128	                -- Default number of bullets in a clip
 SWEP.Primary.KickUp			= .1		-- Maximum up recoil (rise)
 SWEP.Primary.KickDown			= .1		-- Maximum down recoil (skeet)
@@ -59,7 +59,7 @@ SWEP.data.ironsights			= 1
 
 SWEP.DamageType = DMG_DIRECT
 SWEP.Primary.NumShots	= 1		-- How many bullets to shoot per trigger pull, AKA pellets
-SWEP.Primary.Damage		= 250	-- Base damage per bullet
+SWEP.Primary.Damage		= 500	-- Base damage per bullet
 SWEP.Primary.Spread		= 0.001	-- Define from-the-hip accuracy 1 is terrible, .0001 is exact)
 SWEP.Primary.IronAccuracy = 0.0001	-- Ironsight accuracy, should be the same for shotguns
 
