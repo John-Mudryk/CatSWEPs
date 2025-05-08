@@ -6,7 +6,7 @@ SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
 SWEP.PrintName				= "Galvanic Rifle"		-- Weapon name (Shown on HUD)	
-SWEP.Slot				= 3				-- Slot in the weapon selection menu
+SWEP.Slot				= 2				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
 SWEP.DrawWeaponInfoBox			= false		-- Should draw the weapon info box
@@ -189,8 +189,8 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
-SWEP.IronSightsPos_Light = Vector(-3.84, -14, 3.039)
-SWEP.IronSightsAng_Light = Vector(-8.516, -1.116, 0)
+SWEP.IronSightsPos_Light = Vector(-3.84, -16, 2.039)
+SWEP.IronSightsAng_Light = Vector(-0.966, -1.526, 0)
 
 SWEP.IronSightsPos_Heavy = Vector(-3.84, -11, 3.039)
 SWEP.IronSightsAng_Heavy = Vector(-7.132, -0.545, 0)

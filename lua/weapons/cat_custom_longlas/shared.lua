@@ -6,7 +6,7 @@ SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
 SWEP.PrintName				= "Longlas"		-- Weapon name (Shown on HUD)	
-SWEP.Slot				= 3				-- Slot in the weapon selection menu
+SWEP.Slot				= 2				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
 SWEP.DrawWeaponInfoBox			= false		-- Should draw the weapon info box
@@ -194,8 +194,8 @@ SWEP.Attachments = {
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
 
-SWEP.IronSightsPos_Light = Vector(-4.421, -5, 3.519)
-SWEP.IronSightsAng_Light = Vector(-8.055, -0.864, 0)
+SWEP.IronSightsPos_Light = Vector(-4.321, -10, 2.919)
+SWEP.IronSightsAng_Light = Vector(-8.955, -0.644, 0)
 
 SWEP.IronSightsPos_Heavy = Vector(-4.421, -5, 3.519)
 SWEP.IronSightsAng_Heavy = Vector(-8.775, -0.65, 0)

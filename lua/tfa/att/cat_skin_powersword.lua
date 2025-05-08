@@ -48,7 +48,12 @@ local sword_config = {
 		element = "forcesabre",
 		blade = {0, 2, 4, 6, 8}, -- Static blade
 		guard = table.Range(0, 15),
-	}
+	},
+	["cat_legacy_boltpistolpowersword"] = {
+		element = "powersword",
+		blade = {0, 2, 4, 6, 16, 18},
+		guard = table.Range(0, 21),
+	},
 }
 
 local blade_names = {
@@ -184,7 +189,32 @@ local guard_names = {
 		[13] = "Fenrisian Jewel",
 		[14] = "Calibanite Livery",
 		[15] = "Wings of Terror",
-	}
+	},
+
+	["cat_legacy_boltpistolpowersword"] = {
+		[0] = "Proteus Guard",
+		[1] = "Templar Skull",
+		[2] = "Double-Lock",
+		[3] = "Extended Quillons",
+		[4] = "Imperialis",
+		[5] = "Grand Imperialis",
+		[6] = "Aquila",
+		[7] = "Grand Aquila",
+		[8] = "Imperialis Short",
+		[9] = "Gladius Round",
+		[10] = "Gladius Straight",
+		[11] = "Aquila Gladius",
+		[12] = "Sabre Imperialis",
+		[13] = "Utility Sabre",
+		[14] = "Imperialis Ultra",
+		[15] = "Gladius Ultra",
+		[16] = "Blood Tear",
+		[17] = "Eye of Terra",
+		[18] = "Fenrisian Jewel",
+		[19] = "Calibanite Livery",
+		[20] = "Wings of Terror",
+		[21] = "Templar Cross"
+	},
 }
 
 -- Apply bodygroups to VElement

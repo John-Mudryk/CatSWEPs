@@ -6,7 +6,7 @@ SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellAttachment			= "w shotgun" 	-- Should be "2" for CSS models or "1" for hl2 models
 SWEP.PrintName				= "Agripinaa Stubber"		-- Weapon name (Shown on HUD)	
-SWEP.Slot				= 3				-- Slot in the weapon selection menu
+SWEP.Slot				= 2				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
 SWEP.DrawWeaponInfoBox			= false		-- Should draw the weapon info box
@@ -206,6 +206,7 @@ SWEP.Attachments = {
 	[3] = { offset = { 0, 0 }, atts = { "cat_bar_suppressor"}, order = 3 },
 	[4] = { offset = { 0, 0 }, atts = { "cat_scope_reflex2", "cat_scope_dot2", "cat_scope_light2", "cat_scope_reflex2_hud", "cat_scope_dot2_hud", "cat_scope_light2_hud"}, order = 4 },
 	[5] = { offset = { 0, 0 }, atts = { "cat_stock_light"}, order = 5 },
+	[6] = { offset = { 0, 0 }, atts = { "cat_grip2"}, order = 6 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 

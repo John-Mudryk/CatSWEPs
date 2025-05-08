@@ -5,8 +5,8 @@ SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Godwyn Bolt Pistol + Power Sabre"		-- Weapon name (Shown on HUD)	
-SWEP.Slot				= 3				-- Slot in the weapon selection menu
+SWEP.PrintName				= "Godwyn Bolt Pistol + Power Sword"		-- Weapon name (Shown on HUD)	
+SWEP.Slot				= 1				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
 SWEP.DrawWeaponInfoBox			= false		-- Should draw the weapon info box
@@ -37,9 +37,9 @@ SWEP.Primary.Knockback = 1 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(1.848, 5.969, -6.812), angle = Angle(-6.033, 15.18, 109.619) },
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(2.848, 10.969, -6.812), angle = Angle(-6.033, 15.18, 109.619) },
 	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["ValveBiped.Bip01_L_Hand"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(27.621, -34.257, 6.947) },
+	["ValveBiped.Bip01_L_Hand"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(57.621, -34.257, 6.947) },
 	["ValveBiped.Bip01_L_Forearm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(5.69, 57.494, 37.101) }
 }
 
@@ -210,6 +210,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 4 },
+    	[5] = { offset = { 0, 0 }, atts = { "cat_skin_powersword"}, order = 5 },
     	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }

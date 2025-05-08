@@ -60,7 +60,8 @@ function ATTACHMENT:Attach(wep)
 			[2] = 4
 		}
 	elseif 	(	Weapon_act == "cat_custom_autorifle" || 
-			Weapon_act == "cat_custom_galvanic"
+			Weapon_act == "cat_custom_galvanic" || 
+			Weapon_act == "cat_custom_galvanic_rifle"
 			) then
 		wep.Bodygroups_W = {
 			[1] = 2
@@ -164,7 +165,8 @@ function ATTACHMENT:Detach(wep)
 		}
 	elseif  ( 	Weapon_act == "cat_custom_autorifle"||
 			Weapon_act == "cat_custom_hellgun" ||
-			Weapon_act == "cat_custom_galvanic"||
+			Weapon_act == "cat_custom_galvanic"|| 
+			Weapon_act == "cat_custom_galvanic_rifle"||
 			Weapon_act == "cat_custom_bolter"||
 			Weapon_act == "cat_custom_bolterastartes"
 				) then

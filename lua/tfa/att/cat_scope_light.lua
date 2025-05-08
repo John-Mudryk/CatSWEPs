@@ -63,7 +63,8 @@ function ATTACHMENT:Attach(wep)
 		}
 	elseif 	(	Weapon_act == "cat_custom_autorifle" || 
 			Weapon_act == "cat_custom_phosphor"|| 
-			Weapon_act == "cat_custom_galvanic"
+			Weapon_act == "cat_custom_galvanic" || 
+			Weapon_act == "cat_custom_galvanic_rifle"
 			) then
 		wep.Bodygroups_W = {
 			[1] = 1
@@ -168,7 +169,8 @@ function ATTACHMENT:Detach(wep)
 		}
 	elseif  (	Weapon_act == "cat_custom_autorifle"|| 
 			Weapon_act == "cat_custom_hellgun"|| 
-			Weapon_act == "cat_custom_galvanic"|| 
+			Weapon_act == "cat_custom_galvanic"||  
+			Weapon_act == "cat_custom_galvanic_rifle"||
 			Weapon_act == "cat_custom_phosphor" 
 				) then
 		wep.Bodygroups_W = {
