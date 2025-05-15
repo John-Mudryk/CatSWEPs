@@ -174,7 +174,8 @@ SWEP.Type_Displayed             = "Mars Pattern Mk. Ia"
 
 -- Attachments
 SWEP.VElements = {
-	["stormbolterT"] = { type = "Model", model = "models/joazzz/weapons/stormbolter_terminator.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.014, 0.093, -3.3), angle = Angle(90, 180, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 2} }
+	["stormbolterT"] = { type = "Model", model = "models/joazzz/weapons/stormbolter_terminator.mdl", bone = "weapon_bone", rel = "", pos = Vector(1.014, 0.093, -3.3), angle = Angle(90, 180, 0), size = Vector(0.6, 0.6, 0.6), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 2} },
+	["scope_light"] = { type = "Model", model = "models/rtcircle.mdl", bone = "ValveBiped.Bip01_Spine4", rel = "stormbolterT", pos = Vector(8.505, 0, -5.008), angle = Angle(-90, 90, 90), size = Vector(0.4, 0.4, 0.4), color = Color(255, 255, 255, 255), surpresslightning = false, material = "!tfa_rtmaterial", skin = 0, bodygroup = {}, active = false },
 }
 
 SWEP.WElements = {
@@ -191,10 +192,13 @@ SWEP.EventTable = {
 
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
-    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_astartes"}, order = 3 },
+    	[3] = { offset = { 0, 0 }, atts = { "cat_scope_light2", "cat_scope_light2_hud", "cat_scope_astartes"}, order = 3 },
 	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white", "cat_skin_stripes"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
 
 SWEP.AttachmentDependencies = {}
 SWEP.AttachmentExclusions = {}
+
+SWEP.IronSightsPos_Light = Vector(-3.6, -5, 1.559)
+SWEP.IronSightsAng_Light = Vector(-5.422, -0.497, 0)
