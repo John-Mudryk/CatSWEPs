@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "vgui/entities/cat_chaos_legacy_boltpistolpowerfist"
+	"$translucent" 1
+}

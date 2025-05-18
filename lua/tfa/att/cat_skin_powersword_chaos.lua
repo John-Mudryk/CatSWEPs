@@ -24,6 +24,11 @@ local sword_config = {
 		blade = table.Range(0, 18),
 		guard = table.Range(0, 17),
 	},
+	["cat_chaos_legacy_boltpistolpowersword"] = {
+		element = "powerswordCH",
+		blade = table.Range(0, 18),
+		guard = table.Range(0, 17),
+	},
 }
 
 local blade_names = {

@@ -1,11 +1,11 @@
-SWEP.Category                           = "Cat's Legacy SWEPs"
+SWEP.Category                           = "Cat's Legacy Chaos SWEPs"
 SWEP.Author				= "The Cat"
 SWEP.Contact				= ""
 SWEP.Purpose				= ""
 SWEP.Instructions				= ""
 SWEP.MuzzleAttachment			= "1" 	-- Should be "1" for CSS models or "muzzle" for hl2 models
 SWEP.ShellEjectAttachment			= "2" 	-- Should be "2" for CSS models or "1" for hl2 models
-SWEP.PrintName				= "Godwyn Bolt Pistol + Power Sword"		-- Weapon name (Shown on HUD)	
+SWEP.PrintName				= "Chaos Bolt Pistol + Power Fist"		-- Weapon name (Shown on HUD)	
 SWEP.Slot				= 1				-- Slot in the weapon selection menu
 SWEP.SlotPos				= 1			-- Position in the slot
 SWEP.DrawAmmo				= true		-- Should draw the default HL2 ammo counter
@@ -37,12 +37,10 @@ SWEP.Primary.Knockback = 1 -- Autodetected if nil; this is the velocity kickback
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = false
 SWEP.ViewModelBoneMods = {
-	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(2.848, 10.969, -6.812), angle = Angle(-6.033, 15.18, 109.619) },
-	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) },
-	["ValveBiped.Bip01_L_Hand"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(57.621, -34.257, 6.947) },
-	["ValveBiped.Bip01_L_Forearm"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(5.69, 57.494, 37.101) }
+	["ValveBiped.Bip01_L_UpperArm"] = { scale = Vector(1, 1, 1), pos = Vector(-13.777, 3.451, -10.639), angle = Angle(-60.18, 72.921, 19.016) },
+	["ValveBiped.Bip01_L_Hand"] = { scale = Vector(1, 1, 1), pos = Vector(0, 0, 0), angle = Angle(-6.354, -71.287, 115.031) },
+	["weapon_bone"] = { scale = Vector(0.009, 0.009, 0.009), pos = Vector(0, 0, 0), angle = Angle(0, 0, 0) }
 }
-
 
 
 SWEP.Primary.Sound			= "40k/b_fire4.wav"		-- script that calls the primary fire sound
@@ -57,11 +55,11 @@ SWEP.Primary.KickHorizontal		= .2	             -- Maximum up recoil (stock)
 SWEP.Primary.Automatic			= false 		-- Automatic/Semi Auto
 SWEP.Primary.Ammo			= "slam"	-- pistol, 357, smg1, ar2, buckshot, slam, SniperPenetratedRound, AirboatGun
 SWEP.Secondary.CanBash = true
-SWEP.Secondary.BashDamage = 600
-SWEP.Secondary.BashLength = 100
-SWEP.Secondary.BashSound = "weapons/tfa_kf2/katana/katana_swing_miss3.wav"
-SWEP.Secondary.BashHitSound       = "weapons/tfa_kf2/katana/block01.wav"
-SWEP.Secondary.BashHitSound_Flesh = "weapons/tfa_kf2/zweihander/hitflesh_3.wav"
+SWEP.Secondary.BashDamage = 850
+SWEP.Secondary.BashLength = 70
+SWEP.Secondary.BashSound = "weapons/tfa_kf2/zweihander/swing_hard_2.wav"
+SWEP.Secondary.BashHitSound       = "gb_sfx/sndbreakdoor.wav"
+SWEP.Secondary.BashHitSound_Flesh = "spl_shock_hit.wav"
 SWEP.Secondary.BashEnd = 1
 
 SWEP.Primary.MaxSurfacePenetrationCount = 10
@@ -178,7 +176,7 @@ SWEP.LuaShellEjectDelay = 0
 SWEP.LuaShellEffect = "ShotgunShellEject" --Defaults to blowback
 
 SWEP.Type                       = "Pistol" 
-SWEP.Type_Displayed             = "Godwyn Pattern Mk. III + Proteus Pattern Mk. IIa"
+SWEP.Type_Displayed             = "Godwyn Pattern Mk. III + Crusade Pattern Mk. I"
 
 SWEP.Bodygroups_V       = {
 [4] = 0
@@ -189,14 +187,15 @@ SWEP.Bodygroups_W       = {
 
 -- Attachments
 SWEP.VElements = {
-	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(2.016, 0.538, 6.512), angle = Angle(0, 0, 0), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 13, [2] = 16} },
-	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.643, 0, 0), angle = Angle(0, 180, 2.092), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} }
+	["powerfistC"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_l.mdl", bone = "ValveBiped.Bip01_L_Hand", rel = "", pos = Vector(3.869, 2.253, 3.134), angle = Angle(13.229, -12.134, -83.211), size = Vector(0.5, 0.5, 0.5), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 4, bodygroup = {[2] = 4} },
+	["mag"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_mag.mdl", bone = "weapon_bone", rel = "", pos = Vector(-9.53, -0.782, -1.537), angle = Angle(-8.513, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["boltpistolCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol2.mdl", bone = "weapon_bone", rel = "", pos = Vector(-8.643, 0, 0), angle = Angle(0, 0, 2.092), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1} }
 }
 
 SWEP.WElements = {
-	["boltpistolG"] = { type = "Model", model = "models/joazzz/weapons/boltpistol.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(3.084, 1.291, -5.715), angle = Angle(169.031, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
-	["powersword"] = { type = "Model", model = "models/joazzz/weapons/powersword.mdl", bone = "ValveBiped.Anim_Attachment_LH", rel = "", pos = Vector(-0.484, -4.6, 3.592), angle = Angle(47.118, -90, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 1, bodygroup = {[1] = 13, [2] = 16} }
-
+	["boltpistolCH"] = { type = "Model", model = "models/joazzz/weapons/chaos/boltpistol2.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(1.828, 1.605, -4.98), angle = Angle(-167.372, 180, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {[1] = 1, [2] = 1, [3] = 1} },
+	["mag"] = { type = "Model", model = "models/joazzz/weapons/boltpistol_mag.mdl", bone = "ValveBiped.Bip01_R_Hand", rel = "", pos = Vector(1.348, 1.83, -3.645), angle = Angle(160.128, 0, 0), size = Vector(1, 1, 1), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 0, bodygroup = {} },
+	["powerfistC"] = { type = "Model", model = "models/joazzz/chaos/chaosmarines/powerfist_l.mdl", bone = "ValveBiped.Anim_Attachment_LH", rel = "", pos = Vector(0, -3.208, 7.342), angle = Angle(91.936, 180, -1.101), size = Vector(0.75, 0.75, 0.75), color = Color(255, 255, 255, 255), surpresslightning = false, material = "", skin = 4, bodygroup = {[2] = 4} },
 }
 
 -- Define reload sound events
@@ -210,7 +209,7 @@ SWEP.EventTable = {
 SWEP.Attachments = {
 	[2] = { offset = { 0, 0 }, atts = { "cat_am_metalstorm", "cat_am_inferno", "cat_am_kraken", "cat_am_saw", "cat_am_stalker", "cat_am_hellfire", "cat_am_warp", "cat_am_psy"}, order = 2 },
     	[4] = { offset = { 0, 0 }, atts = { "cat_scope_astartes"}, order = 4 },
-    	[5] = { offset = { 0, 0 }, atts = { "cat_skin_powersword"}, order = 5 },
+    	[5] = { offset = { 0, 0 }, atts = { "cat_skin_gauntlet_crusade"}, order = 5 },
     	[9] = { offset = { 0, 0 }, atts = { "cat_skin_white"}, order = 9 },
 	[10] = { offset = { 0, 0 }, atts = { "cat_training"}, order = 10 },
 }
