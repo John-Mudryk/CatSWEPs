@@ -6,7 +6,7 @@ end
 ATTACHMENT.Name = "Combi-Flamer"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized flamer attachment", TFA.AttachmentColors["+"], "E+Click to select flamer mode", "Burns enemies in close range", TFA.AttachmentColors["-"], "Limited range", "Low Fuel Capacity" }
-ATTACHMENT.Icon = "entities/cat_under_flamer.png" 
+ATTACHMENT.Icon = "vgui/icons/Flamer.png" 
 ATTACHMENT.ShortName = "FLAMER"
 
 ATTACHMENT.Damage = 50

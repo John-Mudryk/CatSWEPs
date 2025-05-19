@@ -7,7 +7,7 @@ ATTACHMENT.Name = "Combi-Melta"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = {  TFA.AttachmentColors["="], "Utilized melta gun attachment", TFA.AttachmentColors["+"], "E+Click to select melta mode", "Emits close-range superheated beam", "Melts through armor and vehicles", TFA.AttachmentColors["-"], "Limited range", "Consumes high fuel per shot" }
 
-ATTACHMENT.Icon = "entities/cat_under_melta.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Icon = "vgui/icons/Meltagun.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "MELTA"
 
 ATTACHMENT.Damage = 100

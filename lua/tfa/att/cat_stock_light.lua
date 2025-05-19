@@ -5,7 +5,7 @@ end
 ATTACHMENT.Name = "Light Stock"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Utilize a lighter stock", TFA.Attachments.Colors["+"], "Increased Mobility", "Decreased hip-fire spread", TFA.Attachments.Colors["-"], "Increased aiming spread", "Increased recoil" }
-ATTACHMENT.Icon = "entities/gun-stock.png"
+ATTACHMENT.Icon = "entities/gun-stock-light.png"
 ATTACHMENT.ShortName = "LIGHT"
 
 ATTACHMENT.WeaponTable = {

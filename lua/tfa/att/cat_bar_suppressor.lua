@@ -5,7 +5,7 @@ end
 ATTACHMENT.Name = "Suppressor"
 --ATTACHMENT.ID = "base" normally this is just your filename
 ATTACHMENT.Description = { TFA.Attachments.Colors["="], "Attach a silencer", TFA.AttachmentColors["+"], "Suppressed sound", "Increased recoil control", "Decreased aiming spread", TFA.AttachmentColors["-"], "Increased hip-fire spread", }
-ATTACHMENT.Icon = "entities/tfa_br_supp.png"
+ATTACHMENT.Icon = "entities/barrel_suppressor.png"
 ATTACHMENT.ShortName = "SILENCER"
 
 ATTACHMENT.WeaponTable = {

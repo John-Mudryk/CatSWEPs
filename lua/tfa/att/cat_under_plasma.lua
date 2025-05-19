@@ -7,7 +7,7 @@ ATTACHMENT.Name = "Combi-Plasma"
 --ATTACHMENT.ID = "base" -- normally this is just your filename
 ATTACHMENT.Description = { TFA.AttachmentColors["="], "Utilized plasma gun attachment", TFA.AttachmentColors["+"], "E+Click to select plasma mode", "Fires a concentrated plasma beam", TFA.AttachmentColors["-"], "Low fire-rate",  
 }
-ATTACHMENT.Icon = "entities/cat_under_plasma.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
+ATTACHMENT.Icon = "vgui/icons/Plasmagun.png" --Revers to label, please give it an icon though!  This should be the path to a png, like "entities/tfa_ammo_match.png"
 ATTACHMENT.ShortName = "PLASMA"
 
 ATTACHMENT.Damage = 2000
